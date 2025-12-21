@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shredders - AI-Powered Powder Intelligence</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .app-hero {
+            background: linear-gradient(135deg, #0D1A29 0%, #1A2E47 50%, #1F3F8B 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .app-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .app-hero .tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #1F3F8B;
+            margin-bottom: 1rem;
+        }
+        .app-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .app-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #22C55E;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .app-links a:hover {
+            background: #16A34A;
+        }
+        .app-links a.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .app-links a.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .mountains-list {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .mountains-list h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .mountains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .mountain-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ACL Solutions</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/shredders/privacy.html">Privacy</a></li>
+                <li><a href="/shredders/support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="app-hero">
+            <h1>Shredders</h1>
+            <p class="tagline">AI-Powered Powder Intelligence for Skiers & Snowboarders</p>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Real-time snow conditions, weather forecasts, and powder scores for Pacific Northwest mountains. Know before you go.</p>
+            <div class="app-links">
+                <a href="https://shredders-bay.vercel.app">Web App</a>
+                <a href="#" class="secondary">iOS App Coming Soon</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Real-Time Conditions</h3>
+                <p>Live snow depth, 24-hour snowfall, and current weather conditions from SNOTEL stations across the region.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Powder Score</h3>
+                <p>Our AI analyzes multiple data sources to give you a 1-10 powder score, so you know exactly how good the skiing will be.</p>
+            </div>
+            <div class="feature-card">
+                <h3>7-Day Forecast</h3>
+                <p>Detailed weather forecasts including expected snowfall, temperatures, and wind conditions for each mountain.</p>
+            </div>
+            <div class="feature-card">
+                <h3>AI Chat Assistant</h3>
+                <p>Ask our AI assistant anything about conditions, compare mountains, or get personalized recommendations.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Trip Planning</h3>
+                <p>Road conditions, pass status, chain requirements, and drive time estimates to help you plan your trip.</p>
+            </div>
+            <div class="feature-card">
+                <h3>iOS Widget</h3>
+                <p>Glance at current conditions right from your home screen with our beautiful iOS widget.</p>
+            </div>
+        </section>
+
+        <section class="mountains-list">
+            <h2>Supported Mountains</h2>
+            <div class="mountains-grid">
+                <div class="mountain-item">Mt. Baker</div>
+                <div class="mountain-item">Stevens Pass</div>
+                <div class="mountain-item">Crystal Mountain</div>
+                <div class="mountain-item">Snoqualmie</div>
+                <div class="mountain-item">White Pass</div>
+                <div class="mountain-item">Mission Ridge</div>
+                <div class="mountain-item">49 Degrees North</div>
+                <div class="mountain-item">Schweitzer</div>
+                <div class="mountain-item">Lookout Pass</div>
+                <div class="mountain-item">Mt. Hood Meadows</div>
+                <div class="mountain-item">Timberline</div>
+                <div class="mountain-item">Mt. Bachelor</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+                <p>A Wyoming Limited Liability Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="/shredders/privacy.html">Privacy Policy</a>
+                <a href="/shredders/support.html">Support</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

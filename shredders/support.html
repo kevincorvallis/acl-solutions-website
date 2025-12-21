@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Shredders</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .support-hero {
+            background: linear-gradient(135deg, #0D1A29 0%, #1A2E47 50%, #1F3F8B 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .support-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .support-hero p {
+            opacity: 0.9;
+        }
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .support-section {
+            margin-bottom: 3rem;
+        }
+        .support-section h2 {
+            color: #1F3F8B;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .faq-item h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .faq-item p {
+            color: #666;
+            margin: 0;
+        }
+        .contact-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .contact-card h3 {
+            color: #1F3F8B;
+            margin-bottom: 1rem;
+        }
+        .contact-card a {
+            color: #1F3F8B;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        .app-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .app-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1F3F8B;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .app-links a:hover {
+            background: #163066;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ACL Solutions</a>
+            <ul>
+                <li><a href="/shredders/">Shredders</a></li>
+                <li><a href="/shredders/privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="support-hero">
+        <h1>Shredders Support</h1>
+        <p>Get help with the Shredders app</p>
+    </section>
+
+    <main class="support-content">
+        <section class="support-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Where does Shredders get its snow data?</h3>
+                <p>Shredders aggregates data from official sources including SNOTEL (USDA snow monitoring stations), NOAA (National Weather Service forecasts), and Open-Meteo for weather data. We process this data to provide accurate powder scores and conditions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How is the Powder Score calculated?</h3>
+                <p>The Powder Score (1-10) is calculated using multiple factors: recent snowfall (24-48 hours), current snow depth, temperature, wind conditions, and forecasted precipitation. Higher scores indicate better powder conditions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why does the app need my location?</h3>
+                <p>Location access is optional and used only to calculate distances to mountains and provide relevant trip planning information. Your location is never stored or shared. You can use the app without location access.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which mountains are supported?</h3>
+                <p>Shredders currently supports Pacific Northwest mountains including: Mt. Baker, Stevens Pass, Crystal Mountain, Snoqualmie, White Pass, Mission Ridge, 49 Degrees North, Schweitzer, Lookout Pass, Mt. Hood Meadows, Timberline, and Mt. Bachelor.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How often is the data updated?</h3>
+                <p>Snow conditions are updated every 30 minutes from SNOTEL stations. Weather forecasts are refreshed every hour from NOAA. The app automatically fetches the latest data when you open it.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is the iOS app free?</h3>
+                <p>Yes, Shredders is free to download and use. There are no in-app purchases or subscription fees.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I use the AI chat to plan my trip?</h3>
+                <p>Yes! The AI chat assistant can help you compare mountains, understand current conditions, plan your trip, and answer questions about snow conditions and weather forecasts.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>The app shows incorrect data for my mountain. What should I do?</h3>
+                <p>If you notice incorrect data, please contact us with details about the mountain and what data appears incorrect. Data accuracy depends on the SNOTEL station coverage and NOAA forecast zones for each location.</p>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Contact Us</h2>
+            <div class="contact-card">
+                <h3>Need More Help?</h3>
+                <p>For support requests, bug reports, or feature suggestions, please email us at:</p>
+                <p style="margin: 1rem 0; font-size: 1.2rem;">
+                    <a href="mailto:support@aclsolutions.io">support@aclsolutions.io</a>
+                </p>
+                <p style="color: #666; font-size: 0.9rem;">We typically respond within 24-48 hours.</p>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Try Shredders</h2>
+            <div class="contact-card">
+                <h3>Ready to find the best powder?</h3>
+                <p>Check conditions now on the web or download the iOS app.</p>
+                <div class="app-links">
+                    <a href="https://shredders-bay.vercel.app">Web App</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+                <p>A Wyoming Limited Liability Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="/shredders/">Shredders Home</a>
+                <a href="/shredders/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
