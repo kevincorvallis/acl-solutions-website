@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSpender - AI-Powered Personal Finance</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .app-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .app-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .app-hero .tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+        .app-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .app-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .app-links a:hover {
+            background: #c73e54;
+        }
+        .app-links a.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .app-links a.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .how-it-works {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .step-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #0f3460;
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .step-item h3 {
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ACL Solutions</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/smartspender/privacy.html">Privacy</a></li>
+                <li><a href="/smartspender/support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="app-hero">
+            <h1>SmartSpender</h1>
+            <p class="tagline">AI-Powered Personal Finance for Smarter Decisions</p>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Track expenses, analyze spending patterns, and get personalized financial insights using natural language. Just ask a question and get answers.</p>
+            <div class="app-links">
+                <a href="https://smartspender.vercel.app">Launch Web App</a>
+                <a href="#" class="secondary">iOS App Coming Soon</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Natural Language Interface</h3>
+                <p>Ask questions in plain English like "Am I spending too much on dining?" and get instant, actionable insights.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Smart Categorization</h3>
+                <p>Upload your bank statements and watch as transactions are automatically categorized into dining, groceries, entertainment, and more.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-Time Analytics</h3>
+                <p>Interactive charts and visualizations show your spending patterns, trends, and budget progress at a glance.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Budget Tracking</h3>
+                <p>Set budgets by category and get alerts when you're approaching limits. Stay on track with visual progress indicators.</p>
+            </div>
+            <div class="feature-card">
+                <h3>AI-Powered Insights</h3>
+                <p>Get personalized recommendations based on your spending habits. Our AI helps you find ways to save and spend smarter.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Excel & CSV Import</h3>
+                <p>Easily import your credit card statements from any bank. Supports Excel (.xlsx) and CSV formats.</p>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Upload Your Data</h3>
+                    <p>Import your bank or credit card statement. We support Excel and CSV files from all major banks.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Ask Questions</h3>
+                    <p>Use natural language to ask about your finances. "What am I spending the most on?" or "Help me save for a car."</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Get Insights</h3>
+                    <p>Receive AI-powered analysis with charts, recommendations, and actionable advice tailored to your spending.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+                <p>A Wyoming Limited Liability Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="/smartspender/privacy.html">Privacy Policy</a>
+                <a href="/smartspender/support.html">Support</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

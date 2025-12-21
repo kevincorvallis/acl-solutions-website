@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SmartSpender</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .support-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .support-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .support-hero p {
+            opacity: 0.9;
+        }
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .support-section {
+            margin-bottom: 3rem;
+        }
+        .support-section h2 {
+            color: #0f3460;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .faq-item h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .faq-item p {
+            color: #666;
+            margin: 0;
+        }
+        .faq-item ul {
+            color: #666;
+            margin: 0.5rem 0 0 1.5rem;
+        }
+        .contact-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .contact-card h3 {
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+        .contact-card a {
+            color: #0f3460;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        .app-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .app-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0f3460;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .app-links a:hover {
+            background: #0a2647;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ACL Solutions</a>
+            <ul>
+                <li><a href="/smartspender/">SmartSpender</a></li>
+                <li><a href="/smartspender/privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="support-hero">
+        <h1>SmartSpender Support</h1>
+        <p>Get help with the SmartSpender app</p>
+    </section>
+
+    <main class="support-content">
+        <section class="support-section">
+            <h2>Getting Started</h2>
+
+            <div class="faq-item">
+                <h3>How do I upload my bank statement?</h3>
+                <p>Click the "Upload Data" button in the dashboard, then select your Excel (.xlsx, .xls) or CSV file. SmartSpender will automatically detect the format and import your transactions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What file formats are supported?</h3>
+                <p>SmartSpender supports:</p>
+                <ul>
+                    <li>Excel files (.xlsx, .xls) from major banks and credit cards</li>
+                    <li>CSV files with Date, Description, and Amount columns</li>
+                    <li>Statements from American Express, Chase, Citi, Capital One, and more</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I ask questions about my finances?</h3>
+                <p>Use the chat interface to ask questions in plain English. Examples:</p>
+                <ul>
+                    <li>"Am I spending too much on dining?"</li>
+                    <li>"What am I spending the most on?"</li>
+                    <li>"Show me my biggest transactions"</li>
+                    <li>"Help me save for a $300,000 home"</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How does transaction categorization work?</h3>
+                <p>SmartSpender automatically categorizes transactions into 8 categories (Dining, Groceries, Transportation, Entertainment, Shopping, Utilities, Healthcare, Other) using merchant pattern matching. The system recognizes 100+ common merchants and learns from transaction descriptions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How are budgets calculated?</h3>
+                <p>When you upload your first statement, SmartSpender creates automatic budgets based on your actual spending, set at 120% of your current spending to give you flexibility. You can adjust these budgets at any time.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my financial data secure?</h3>
+                <p>Yes. All data is encrypted in transit and at rest. We use enterprise-grade AWS infrastructure with strict access controls. Your data is never shared with third parties for marketing purposes.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I delete my data?</h3>
+                <p>Yes. You can delete individual transactions or request complete account deletion by contacting support. We will permanently remove all your data within 30 days of your request.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why are some transactions categorized as "Other"?</h3>
+                <p>Transactions that don't match known merchant patterns are categorized as "Other." This often includes business expenses, transfers, or merchants with unusual description formats. The AI assistant can still analyze these transactions based on their amounts and descriptions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How often is my data updated?</h3>
+                <p>Your data is updated in real-time as you upload new statements. The dashboard and analytics reflect your current data immediately after upload.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is SmartSpender free to use?</h3>
+                <p>Yes, SmartSpender is free to use with all core features available at no cost.</p>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Contact Us</h2>
+            <div class="contact-card">
+                <h3>Need More Help?</h3>
+                <p>For support requests, bug reports, or feature suggestions, please email us at:</p>
+                <p style="margin: 1rem 0; font-size: 1.2rem;">
+                    <a href="mailto:support@aclsolutions.io">support@aclsolutions.io</a>
+                </p>
+                <p style="color: #666; font-size: 0.9rem;">We typically respond within 24-48 hours.</p>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Try SmartSpender</h2>
+            <div class="contact-card">
+                <h3>Ready to take control of your finances?</h3>
+                <p>Start analyzing your spending today.</p>
+                <div class="app-links">
+                    <a href="https://smartspender.vercel.app">Launch Web App</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+                <p>A Wyoming Limited Liability Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="/smartspender/">SmartSpender Home</a>
+                <a href="/smartspender/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
