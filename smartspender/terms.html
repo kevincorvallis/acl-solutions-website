@@ -4,195 +4,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - SmartSpender</title>
-    <link rel="stylesheet" href="../style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/" class="logo">ACL Solutions</a>
-            <ul>
-                <li><a href="/smartspender/">SmartSpender</a></li>
-                <li><a href="/smartspender/privacy.html">Privacy</a></li>
-                <li><a href="/smartspender/support.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="legal-page">
-        <div class="legal-content">
-            <h1>SmartSpender Terms of Service</h1>
-            <p class="last-updated">Last Updated: December 21, 2025</p>
-
-            <p>Welcome to SmartSpender, a personal finance application operated by ACL Solutions LLC ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of the SmartSpender web application, mobile application, and related services (collectively, the "Service"). By accessing or using SmartSpender, you agree to be bound by these Terms.</p>
-
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using SmartSpender, you confirm that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into these Terms. If you do not agree to these Terms, you may not use the Service.</p>
-
-            <h2>2. Description of Service</h2>
-            <p>SmartSpender is a personal finance management tool that provides:</p>
-            <ul>
-                <li>Transaction tracking and categorization</li>
-                <li>Budget management and spending analysis</li>
-                <li>AI-powered financial insights and recommendations</li>
-                <li>Natural language query interface for financial questions</li>
-                <li>Data visualization and reporting</li>
-                <li>Import functionality for bank and credit card statements</li>
-            </ul>
-
-            <h2>3. Important Financial Disclaimer</h2>
-            <p><strong>SMARTSPENDER IS NOT A FINANCIAL ADVISOR.</strong> The Service provides informational tools and AI-generated insights for educational and personal use only. The information provided through SmartSpender:</p>
-            <ul>
-                <li>Does not constitute financial, investment, tax, or legal advice</li>
-                <li>Should not be relied upon as a substitute for professional financial advice</li>
-                <li>May not account for your complete financial situation</li>
-                <li>Is based on data you provide and may contain errors or inaccuracies</li>
-            </ul>
-            <p>You should consult with qualified financial, tax, and legal professionals before making any financial decisions. We expressly disclaim any liability for actions taken based on information provided by the Service.</p>
-
-            <h2>4. User Accounts</h2>
-            <p>To use certain features of SmartSpender, you may need to create an account. When you create an account, you agree to:</p>
-            <ul>
-                <li>Provide accurate, current, and complete information</li>
-                <li>Maintain and promptly update your account information</li>
-                <li>Keep your password secure and confidential</li>
-                <li>Accept responsibility for all activities that occur under your account</li>
-                <li>Notify us immediately of any unauthorized use of your account</li>
-            </ul>
-
-            <h2>5. Your Financial Data</h2>
-            <p>When you upload financial data (such as bank statements or transaction records) to SmartSpender:</p>
-            <ul>
-                <li>You retain full ownership of your financial data</li>
-                <li>You grant us a limited license to process, store, and analyze your data solely to provide the Service</li>
-                <li>You represent that you have the right to upload and share such data</li>
-                <li>You are responsible for the accuracy and completeness of the data you provide</li>
-            </ul>
-            <p>We will handle your financial data in accordance with our <a href="/smartspender/privacy.html">Privacy Policy</a>.</p>
-
-            <h2>6. AI-Powered Features</h2>
-            <p>SmartSpender uses artificial intelligence to analyze your financial data and generate insights. You acknowledge that:</p>
-            <ul>
-                <li>AI-generated responses may not always be accurate or complete</li>
-                <li>The AI may misinterpret questions or provide unexpected responses</li>
-                <li>Transaction categorization is automated and may require manual correction</li>
-                <li>AI recommendations are suggestions only and should be verified independently</li>
-            </ul>
-
-            <h2>7. Acceptable Use</h2>
-            <p>You agree not to use SmartSpender to:</p>
-            <ul>
-                <li>Upload false, fraudulent, or misleading financial information</li>
-                <li>Violate any applicable laws, regulations, or third-party rights</li>
-                <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
-                <li>Interfere with or disrupt the integrity or performance of the Service</li>
-                <li>Use automated means to access the Service without our express permission</li>
-                <li>Reverse engineer or attempt to extract the source code of our software</li>
-                <li>Use the Service for any commercial purpose without our written consent</li>
-            </ul>
-
-            <h2>8. Data Accuracy and Limitations</h2>
-            <p>SmartSpender relies on data you provide and third-party services. We do not guarantee:</p>
-            <ul>
-                <li>The accuracy of imported transaction data</li>
-                <li>The correctness of automatic categorization</li>
-                <li>The accuracy of budget calculations or projections</li>
-                <li>The availability or reliability of third-party integrations</li>
-            </ul>
-            <p>You are responsible for reviewing and verifying all financial information displayed in the Service.</p>
-
-            <h2>9. Intellectual Property</h2>
-            <p>All content, features, and functionality of SmartSpender, including but not limited to text, graphics, logos, icons, images, software, and the compilation thereof, are the exclusive property of ACL Solutions LLC or its licensors and are protected by intellectual property laws.</p>
-            <p>You may not copy, modify, distribute, sell, or lease any part of the Service or included software without our written permission.</p>
-
-            <h2>10. Third-Party Services</h2>
-            <p>SmartSpender integrates with third-party services including Amazon Web Services, authentication providers, and AI services. We are not responsible for the availability, accuracy, or practices of these third-party services. Your use of third-party services is subject to their respective terms and policies.</p>
-
-            <h2>11. Service Availability</h2>
-            <p>We strive to maintain high availability of SmartSpender but do not guarantee uninterrupted access. The Service may be unavailable due to:</p>
-            <ul>
-                <li>Scheduled maintenance</li>
-                <li>System updates and improvements</li>
-                <li>Technical issues or outages</li>
-                <li>Circumstances beyond our control</li>
-            </ul>
-
-            <h2>12. Termination</h2>
-            <p>We may terminate or suspend your access to SmartSpender immediately, without prior notice, for any reason, including if you breach these Terms. Upon termination:</p>
-            <ul>
-                <li>Your right to use the Service will immediately cease</li>
-                <li>You may request deletion of your data in accordance with our Privacy Policy</li>
-                <li>Provisions that by their nature should survive termination will remain in effect</li>
-            </ul>
-
-            <h2>13. Disclaimers</h2>
-            <p>SMARTSPENDER IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-            <p>WE DO NOT WARRANT THAT:</p>
-            <ul>
-                <li>THE SERVICE WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE</li>
-                <li>THE RESULTS OBTAINED FROM THE SERVICE WILL BE ACCURATE OR RELIABLE</li>
-                <li>ANY ERRORS IN THE SERVICE WILL BE CORRECTED</li>
-                <li>THE SERVICE WILL MEET YOUR SPECIFIC REQUIREMENTS</li>
-            </ul>
-
-            <h2>14. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL ACL SOLUTIONS LLC, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION:</p>
-            <ul>
-                <li>Loss of profits, revenue, or financial opportunities</li>
-                <li>Loss of data or data corruption</li>
-                <li>Financial losses resulting from reliance on the Service</li>
-                <li>Damages arising from unauthorized access to your account</li>
-                <li>Any other intangible losses</li>
-            </ul>
-            <p>OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID TO US, IF ANY, IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
-
-            <h2>15. Indemnification</h2>
-            <p>You agree to defend, indemnify, and hold harmless ACL Solutions LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses arising out of or in any way connected with:</p>
-            <ul>
-                <li>Your access to or use of the Service</li>
-                <li>Your financial data and any actions taken based on Service outputs</li>
-                <li>Your violation of these Terms</li>
-                <li>Your violation of any third-party rights</li>
-            </ul>
-
-            <h2>16. Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the state or federal courts located in Wyoming.</p>
-
-            <h2>17. Changes to Terms</h2>
-            <p>We reserve the right to modify these Terms at any time. If we make material changes, we will provide notice through the Service or by other means. Your continued use of SmartSpender after any such changes constitutes your acceptance of the new Terms.</p>
-
-            <h2>18. Severability</h2>
-            <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect.</p>
-
-            <h2>19. Entire Agreement</h2>
-            <p>These Terms, together with our <a href="/smartspender/privacy.html">Privacy Policy</a>, constitute the entire agreement between you and ACL Solutions LLC regarding your use of SmartSpender.</p>
-
-            <h2>20. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at:</p>
-            <p>
-                ACL Solutions LLC<br>
-                30 N Gould St Ste N<br>
-                Sheridan, WY 82801<br>
-                United States<br>
-                Email: <a href="mailto:legal@aclsolutions.io">legal@aclsolutions.io</a>
-            </p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <i class="fas fa-cube text-primary text-2xl"></i>
+                    <span class="font-bold text-xl">ACL Solutions</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/smartspender" class="text-gray-300 hover:text-white transition">SmartSpender</a>
+                    <a href="/smartspender/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="/smartspender/support" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Launch App
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <div class="footer-links">
-                <a href="/smartspender/">SmartSpender Home</a>
-                <a href="/smartspender/privacy.html">Privacy Policy</a>
-                <a href="/smartspender/support.html">Support</a>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/smartspender" class="block text-gray-300 hover:text-white">SmartSpender</a>
+                <a href="/smartspender/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="/smartspender/support" class="block text-gray-300 hover:text-white">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass px-4 py-2 rounded-full mb-6">
+                <i class="fas fa-file-contract text-primary mr-2"></i>
+                <span class="text-sm text-gray-300">Legal Agreement</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <span class="gradient-text">Terms of Service</span>
+            </h1>
+            <p class="text-gray-400">Last Updated: December 21, 2025</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                    Welcome to SmartSpender, a personal finance application operated by ACL Solutions LLC ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of the SmartSpender web application, mobile application, and related services (collectively, the "Service"). By accessing or using SmartSpender, you agree to be bound by these Terms.
+                </p>
+
+                <!-- Important Disclaimer Banner -->
+                <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-xl p-6 mb-10" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-amber-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400 mb-2">Important Financial Disclaimer</h3>
+                            <p class="text-gray-300 mb-3"><strong>SMARTSPENDER IS NOT A FINANCIAL ADVISOR.</strong> The Service provides informational tools and AI-generated insights for educational and personal use only.</p>
+                            <ul class="text-gray-400 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-times text-red-400 mr-2 mt-1"></i>Does not constitute financial, investment, tax, or legal advice</li>
+                                <li class="flex items-start"><i class="fas fa-times text-red-400 mr-2 mt-1"></i>Should not be relied upon as a substitute for professional financial advice</li>
+                                <li class="flex items-start"><i class="fas fa-times text-red-400 mr-2 mt-1"></i>May not account for your complete financial situation</li>
+                                <li class="flex items-start"><i class="fas fa-times text-red-400 mr-2 mt-1"></i>Is based on data you provide and may contain errors</li>
+                            </ul>
+                            <p class="text-gray-400 mt-3 text-sm">You should consult with qualified financial, tax, and legal professionals before making any financial decisions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">1</span>
+                        Acceptance of Terms
+                    </h2>
+                    <p class="text-gray-400 ml-11">By accessing or using SmartSpender, you confirm that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into these Terms. If you do not agree to these Terms, you may not use the Service.</p>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">2</span>
+                        Description of Service
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">SmartSpender is a personal finance management tool that provides:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Transaction tracking and categorization</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Budget management and spending analysis</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>AI-powered financial insights and recommendations</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Natural language query interface for financial questions</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Data visualization and reporting</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Import functionality for bank and credit card statements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">3</span>
+                        User Accounts
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">To use certain features of SmartSpender, you may need to create an account. When you create an account, you agree to:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Provide accurate, current, and complete information</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Maintain and promptly update your account information</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Keep your password secure and confidential</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Accept responsibility for all activities under your account</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Notify us immediately of any unauthorized use</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">4</span>
+                        Your Financial Data
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">When you upload financial data to SmartSpender:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>You retain full ownership of your financial data</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>You grant us a limited license to process and analyze your data solely to provide the Service</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>You represent that you have the right to upload and share such data</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>You are responsible for the accuracy and completeness of the data you provide</li>
+                        </ul>
+                        <p class="text-gray-500 text-sm mt-3">We will handle your financial data in accordance with our <a href="/smartspender/privacy" class="text-primary hover:underline">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">5</span>
+                        AI-Powered Features
+                    </h2>
+                    <div class="ml-11 glass rounded-xl p-5">
+                        <p class="text-gray-400 mb-3">SmartSpender uses artificial intelligence to analyze your financial data. You acknowledge that:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-robot text-purple-400 mr-2 mt-1"></i>AI-generated responses may not always be accurate or complete</li>
+                            <li class="flex items-start"><i class="fas fa-robot text-purple-400 mr-2 mt-1"></i>The AI may misinterpret questions or provide unexpected responses</li>
+                            <li class="flex items-start"><i class="fas fa-robot text-purple-400 mr-2 mt-1"></i>Transaction categorization is automated and may require manual correction</li>
+                            <li class="flex items-start"><i class="fas fa-robot text-purple-400 mr-2 mt-1"></i>AI recommendations are suggestions only and should be verified independently</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">6</span>
+                        Acceptable Use
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">You agree not to use SmartSpender to:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Upload false, fraudulent, or misleading financial information</li>
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Violate any applicable laws, regulations, or third-party rights</li>
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Attempt to gain unauthorized access to our systems</li>
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Interfere with or disrupt the Service</li>
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Use automated means to access the Service without permission</li>
+                            <li class="flex items-start"><i class="fas fa-ban text-red-400 mr-2 mt-1"></i>Reverse engineer or extract the source code</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sections 7-12 -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">7</span>
+                            Data Accuracy and Limitations
+                        </h2>
+                        <p class="text-gray-400 ml-11">SmartSpender relies on data you provide and third-party services. We do not guarantee the accuracy of imported transaction data, the correctness of automatic categorization, the accuracy of budget calculations or projections, or the availability of third-party integrations. You are responsible for reviewing and verifying all financial information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">8</span>
+                            Intellectual Property
+                        </h2>
+                        <p class="text-gray-400 ml-11">All content, features, and functionality of SmartSpender are the exclusive property of ACL Solutions LLC or its licensors and are protected by intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the Service without our written permission.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">9</span>
+                            Third-Party Services
+                        </h2>
+                        <p class="text-gray-400 ml-11">SmartSpender integrates with third-party services including Amazon Web Services, authentication providers, and AI services. We are not responsible for the availability, accuracy, or practices of these third-party services.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">10</span>
+                            Service Availability
+                        </h2>
+                        <p class="text-gray-400 ml-11">We strive to maintain high availability but do not guarantee uninterrupted access. The Service may be unavailable due to scheduled maintenance, system updates, technical issues, or circumstances beyond our control.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">11</span>
+                            Termination
+                        </h2>
+                        <p class="text-gray-400 ml-11">We may terminate or suspend your access immediately, without prior notice, for any reason, including if you breach these Terms. Upon termination, your right to use the Service will immediately cease. You may request deletion of your data in accordance with our Privacy Policy.</p>
+                    </div>
+
+                    <!-- Disclaimers Section -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">12</span>
+                            Disclaimers
+                        </h2>
+                        <div class="ml-11 glass rounded-xl p-5 bg-slate-800/50">
+                            <p class="text-gray-400 uppercase text-sm">SMARTSPENDER IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                        </div>
+                    </div>
+
+                    <!-- Limitation of Liability -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">13</span>
+                            Limitation of Liability
+                        </h2>
+                        <div class="ml-11 glass rounded-xl p-5 bg-slate-800/50">
+                            <p class="text-gray-400 uppercase text-sm mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW, ACL SOLUTIONS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING:</p>
+                            <ul class="text-gray-400 uppercase text-sm space-y-1">
+                                <li>• Loss of profits, revenue, or financial opportunities</li>
+                                <li>• Loss of data or data corruption</li>
+                                <li>• Financial losses resulting from reliance on the Service</li>
+                                <li>• Damages arising from unauthorized access to your account</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">14</span>
+                            Indemnification
+                        </h2>
+                        <p class="text-gray-400 ml-11">You agree to defend, indemnify, and hold harmless ACL Solutions LLC from any claims arising out of your access to or use of the Service, your financial data, your violation of these Terms, or your violation of any third-party rights.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">15</span>
+                            Governing Law
+                        </h2>
+                        <p class="text-gray-400 ml-11">These Terms shall be governed by the laws of the State of Wyoming, United States, without regard to conflict of law provisions. Any disputes shall be resolved in the state or federal courts located in Wyoming.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">16</span>
+                            Changes to Terms
+                        </h2>
+                        <p class="text-gray-400 ml-11">We reserve the right to modify these Terms at any time. If we make material changes, we will provide notice through the Service or by other means. Your continued use of SmartSpender after any changes constitutes acceptance of the new Terms.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center">
+                            <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">17</span>
+                            Entire Agreement
+                        </h2>
+                        <p class="text-gray-400 ml-11">These Terms, together with our <a href="/smartspender/privacy" class="text-primary hover:underline">Privacy Policy</a>, constitute the entire agreement between you and ACL Solutions LLC regarding your use of SmartSpender.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mt-10">
+                    <h2 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-sm">18</span>
+                        Contact Us
+                    </h2>
+                    <div class="ml-11 glass rounded-xl p-6">
+                        <p class="text-gray-400 mb-4">If you have questions about these Terms, please contact us at:</p>
+                        <div class="bg-slate-800/50 rounded-lg p-6">
+                            <p class="font-semibold text-lg mb-2">ACL Solutions LLC</p>
+                            <p class="text-gray-400">30 N Gould St Ste N</p>
+                            <p class="text-gray-400">Sheridan, WY 82801</p>
+                            <p class="text-gray-400 mb-3">United States</p>
+                            <a href="mailto:legal@aclsolutions.io" class="inline-flex items-center text-primary hover:text-secondary transition">
+                                <i class="fas fa-envelope mr-2"></i>
+                                legal@aclsolutions.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-cube text-primary text-2xl"></i>
+                    <span class="font-bold text-xl">ACL Solutions</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="/smartspender" class="hover:text-white transition">SmartSpender</a>
+                    <a href="/smartspender/privacy" class="hover:text-white transition">Privacy</a>
+                    <a href="/smartspender/support" class="hover:text-white transition">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 ACL Solutions LLC. All rights reserved. A Wyoming Limited Liability Company.</p>
             </div>
         </div>
     </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>

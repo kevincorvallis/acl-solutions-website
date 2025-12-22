@@ -4,193 +4,384 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartSpender - AI-Powered Personal Finance</title>
-    <link rel="stylesheet" href="../style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        .app-hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
         }
-        .app-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .app-hero .tagline {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .feature-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .feature-card h3 {
-            color: #0f3460;
-            margin-bottom: 1rem;
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
         }
-        .app-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
         }
-        .app-links a {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #e94560;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.2s;
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
         }
-        .app-links a:hover {
-            background: #c73e54;
+        .floating {
+            animation: floating 3s ease-in-out infinite;
         }
-        .app-links a.secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-        .app-links a.secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        .how-it-works {
-            background: #f8f9fa;
-            padding: 60px 20px;
-        }
-        .how-it-works h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .step-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #0f3460;
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .step-item h3 {
-            color: #0f3460;
-            margin-bottom: 0.5rem;
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/" class="logo">ACL Solutions</a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/smartspender/privacy.html">Privacy</a></li>
-                <li><a href="/smartspender/support.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="app-hero">
-            <h1>SmartSpender</h1>
-            <p class="tagline">AI-Powered Personal Finance for Smarter Decisions</p>
-            <p style="max-width: 600px; margin: 0 auto 2rem;">Track expenses, analyze spending patterns, and get personalized financial insights using natural language. Just ask a question and get answers.</p>
-            <div class="app-links">
-                <a href="https://smartspender.vercel.app">Launch Web App</a>
-                <a href="#" class="secondary">iOS App Coming Soon</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>Natural Language Interface</h3>
-                <p>Ask questions in plain English like "Am I spending too much on dining?" and get instant, actionable insights.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Smart Categorization</h3>
-                <p>Upload your bank statements and watch as transactions are automatically categorized into dining, groceries, entertainment, and more.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Real-Time Analytics</h3>
-                <p>Interactive charts and visualizations show your spending patterns, trends, and budget progress at a glance.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Budget Tracking</h3>
-                <p>Set budgets by category and get alerts when you're approaching limits. Stay on track with visual progress indicators.</p>
-            </div>
-            <div class="feature-card">
-                <h3>AI-Powered Insights</h3>
-                <p>Get personalized recommendations based on your spending habits. Our AI helps you find ways to save and spend smarter.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Excel & CSV Import</h3>
-                <p>Easily import your credit card statements from any bank. Supports Excel (.xlsx) and CSV formats.</p>
-            </div>
-        </section>
-
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>Upload Your Data</h3>
-                    <p>Import your bank or credit card statement. We support Excel and CSV files from all major banks.</p>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <i class="fas fa-cube text-primary text-2xl"></i>
+                    <span class="font-bold text-xl">ACL Solutions</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="/smartspender/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="/smartspender/terms" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="/smartspender/support" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Launch App
+                    </a>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>Ask Questions</h3>
-                    <p>Use natural language to ask about your finances. "What am I spending the most on?" or "Help me save for a car."</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>Get Insights</h3>
-                    <p>Receive AI-powered analysis with charts, recommendations, and actionable advice tailored to your spending.</p>
-                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-        </section>
-    </main>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/" class="block text-gray-300 hover:text-white">Home</a>
+                <a href="/smartspender/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="/smartspender/terms" class="block text-gray-300 hover:text-white">Terms</a>
+                <a href="/smartspender/support" class="block text-gray-300 hover:text-white">Support</a>
+                <a href="https://smartspender.vercel.app" class="block bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <div class="inline-flex items-center glass px-4 py-2 rounded-full mb-8">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm text-gray-300">AI-Powered Financial Intelligence</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                    <span class="gradient-text">SmartSpender</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Take control of your finances with AI. Track expenses, analyze spending patterns,
+                    and get personalized insights using natural language.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://smartspender.vercel.app" class="group bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition flex items-center pulse-glow">
+                        <span>Launch Web App</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#features" class="glass px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition flex items-center">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">100%</div>
+                        <div class="text-gray-400 text-sm">Free to Use</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">8+</div>
+                        <div class="text-gray-400 text-sm">Categories</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">AI</div>
+                        <div class="text-gray-400 text-sm">Powered</div>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="/smartspender/privacy.html">Privacy Policy</a>
-                <a href="/smartspender/terms.html">Terms of Service</a>
-                <a href="/smartspender/support.html">Support</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 floating">
+            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Powerful <span class="gradient-text">Features</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Everything you need to understand and optimize your spending habits
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Natural Language Interface</h3>
+                    <p class="text-gray-400">Ask questions in plain English like "Am I spending too much on dining?" and get instant, actionable insights.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tags text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Categorization</h3>
+                    <p class="text-gray-400">Upload your bank statements and watch as transactions are automatically categorized into dining, groceries, entertainment, and more.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-Time Analytics</h3>
+                    <p class="text-gray-400">Interactive charts and visualizations show your spending patterns, trends, and budget progress at a glance.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-piggy-bank text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Budget Tracking</h3>
+                    <p class="text-gray-400">Set budgets by category and get alerts when you're approaching limits. Stay on track with visual progress indicators.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Insights</h3>
+                    <p class="text-gray-400">Get personalized recommendations based on your spending habits. Our AI helps you find ways to save and spend smarter.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-file-import text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Excel & CSV Import</h3>
+                    <p class="text-gray-400">Easily import your credit card statements from any bank. Supports Excel (.xlsx) and CSV formats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-24 bg-slate-800/50 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    How It <span class="gradient-text">Works</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Get started in three simple steps
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="0">
+                    <div class="glass rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Upload Your Data</h3>
+                        <p class="text-gray-400">Import your bank or credit card statement. We support Excel and CSV files from all major banks.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <i class="fas fa-arrow-right text-2xl text-primary"></i>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Ask Questions</h3>
+                        <p class="text-gray-400">Use natural language to ask about your finances. "What am I spending the most on?" or "Help me save for a car."</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <i class="fas fa-arrow-right text-2xl text-secondary"></i>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Get Insights</h3>
+                        <p class="text-gray-400">Receive AI-powered analysis with charts, recommendations, and actionable advice tailored to your spending.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Ready to Take Control of Your <span class="gradient-text">Finances</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Start analyzing your spending today. It's free, secure, and powered by AI.
+            </p>
+            <a href="https://smartspender.vercel.app" class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition">
+                <span>Get Started Free</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-cube text-primary text-2xl"></i>
+                        <span class="font-bold text-xl">ACL Solutions</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Building innovative software solutions for everyday challenges.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/smartspender" class="hover:text-white transition">SmartSpender</a></li>
+                        <li><a href="/shredders" class="hover:text-white transition">Shredders</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/smartspender/privacy" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="/smartspender/terms" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/smartspender/support" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="mailto:support@aclsolutions.io" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 ACL Solutions LLC. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    A Wyoming Limited Liability Company
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
