@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACL Solutions LLC</title>
+    <title>PookieB</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">ACL Solutions</div>
+            <div class="logo">PookieB</div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
@@ -23,40 +25,40 @@
 
     <main>
         <section class="hero">
-            <h1>ACL Solutions LLC</h1>
-            <p>Building innovative software solutions for everyday challenges</p>
+            <canvas id="granim-canvas"></canvas>
+            <div id="particles-js"></div>
+            <h1 data-aos="fade-up">PookieB</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Building innovative software solutions for everyday challenges</p>
         </section>
 
         <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>ACL Solutions LLC is a Wyoming-based technology company dedicated to creating intuitive, user-friendly applications that solve real-world problems. We focus on building products that make life simpler and more efficient.</p>
-            <p>Founded in 2025, we are committed to innovation, quality, and exceptional user experiences.</p>
+            <h2 data-aos="fade-up">About Us</h2>
+            <p data-aos="fade-up" data-aos-delay="100">PookieB is dedicated to creating intuitive, user-friendly applications that solve real-world problems. We focus on building products that make life simpler and more efficient.</p>
+            <p data-aos="fade-up" data-aos-delay="200">Founded in 2025, we are committed to innovation, quality, and exceptional user experiences.</p>
         </section>
 
         <section id="products" class="products">
-            <h2>Our Products</h2>
+            <h2 data-aos="fade-up">Our Products</h2>
             <div class="product-grid">
-                <div class="product-card">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="wallet" style="width: 48px; height: 48px; color: #667eea; margin-bottom: 1rem;"></i>
                     <h3>SmartSpender</h3>
                     <p>A personal finance app that helps you track expenses, split bills with friends, and manage your budget intelligently.</p>
-                    <a href="/smartspender" class="btn">Learn More</a>
+                    <a href="/smartspender" class="btn">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 4px;"></i></a>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="mountain-snow" style="width: 48px; height: 48px; color: #667eea; margin-bottom: 1rem;"></i>
                     <h3>Shredders</h3>
                     <p>AI-powered powder intelligence for skiers and snowboarders. Get real-time snow conditions, forecasts, and powder scores for Pacific Northwest mountains.</p>
-                    <a href="/shredders" class="btn">Learn More</a>
+                    <a href="/shredders" class="btn">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 4px;"></i></a>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <p><strong>ACL Solutions LLC</strong></p>
-                <p>30 N Gould St Ste N</p>
-                <p>Sheridan, WY 82801</p>
-                <p>United States</p>
-                <p class="email">Email: <a href="mailto:contact@aclsolutions.io">contact@aclsolutions.io</a></p>
+            <h2 data-aos="fade-up">Contact Us</h2>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                <p class="email">Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a></p>
             </div>
         </section>
     </main>
@@ -64,8 +66,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+                <p>&copy; 2025 PookieB. All rights reserved.</p>
+                <p class="llc-note">A product of ACL Solutions LLC, a Wyoming Limited Liability Company</p>
             </div>
             <div class="footer-links">
                 <a href="/terms.html">Terms of Service</a>
@@ -73,5 +75,55 @@
             </div>
         </div>
     </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Granim.js Animated Gradients -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        lucide.createIcons();
+
+        // Animated gradient for hero
+        new Granim({
+            element: '#granim-canvas',
+            direction: 'diagonal',
+            isPausedWhenNotInView: true,
+            states: {
+                'default-state': {
+                    gradients: [
+                        ['#667eea', '#764ba2'],
+                        ['#764ba2', '#6B8DD6'],
+                        ['#6B8DD6', '#8E37D7'],
+                        ['#8E37D7', '#667eea']
+                    ],
+                    transitionSpeed: 4000
+                }
+            }
+        });
+
+        // Particle effects
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: true, out_mode: 'out' }
+            },
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false } } },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
