@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayByDay Terms of Service | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1e1a 50%, #0c2318 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #34d399;
+        }
+        .legal-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #e2e8f0;
+        }
+        .legal-content p {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .legal-content ul {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        .legal-content ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .legal-content a {
+            color: #34d399;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .legal-content a:hover {
+            color: #10b981;
+        }
+        .legal-content strong {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../daybyday/" class="text-gray-300 hover:text-white transition">DayByDay</a>
+                    <a href="../daybyday/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../daybyday/support" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="../daybyday/" class="bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Start Journaling
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../daybyday/" class="block text-gray-300 hover:text-white">DayByDay</a>
+                <a href="../daybyday/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../daybyday/support" class="block text-gray-300 hover:text-white">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-emerald-400 mr-2 text-lg">gavel</span>
+                <span class="text-sm text-gray-300">Legal</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Terms of Service</span>
+            </h1>
+            <p class="text-gray-400 text-lg">DayByDay Social Journaling App</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <div class="legal-content">
+                    <p class="text-gray-500 text-sm mb-8">Last Updated: March 24, 2026</p>
+
+                    <p>Welcome to DayByDay, a social journaling application operated by ACL Solutions LLC ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your use of the DayByDay mobile application and related services (the "App"). By accessing or using the App, you agree to be bound by these Terms.</p>
+
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By creating an account or using DayByDay, you confirm that you are at least 13 years old and have the legal capacity to enter into these Terms. If you are between 13 and 18 years old, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf. If you do not agree to these Terms, do not use the App.</p>
+
+                    <h2>2. License to Use</h2>
+                    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial journaling purposes, subject to these Terms. This license does not include the right to:</p>
+                    <ul>
+                        <li>Modify, copy, or create derivative works based on the App</li>
+                        <li>Reverse engineer, decompile, or disassemble the App</li>
+                        <li>Rent, lease, sell, or sublicense the App to any third party</li>
+                        <li>Use the App for any commercial purpose without our written consent</li>
+                    </ul>
+
+                    <h2>3. User Accounts</h2>
+                    <p>To use DayByDay, you must create an account. You are responsible for:</p>
+                    <ul>
+                        <li>Providing accurate and current account information</li>
+                        <li>Maintaining the confidentiality of your login credentials</li>
+                        <li>All activity that occurs under your account</li>
+                        <li>Notifying us immediately of any unauthorized use of your account</li>
+                    </ul>
+                    <p>We reserve the right to suspend or terminate accounts that violate these Terms or are inactive for an extended period.</p>
+
+                    <h2>4. User-Generated Content</h2>
+
+                    <h3>Your Journal Data</h3>
+                    <p><strong>You own your journal entries, photos, and all content you create within DayByDay.</strong> We do not claim ownership over any content you write, upload, or create. Your journal data belongs to you.</p>
+
+                    <h3>Content License</h3>
+                    <p>By sharing content through DayByDay's social features, you grant us a limited, non-exclusive license to display, distribute, and transmit that content to the users you have chosen to share it with. This license exists solely to enable the social features of the App and terminates when you delete the content or revoke sharing access.</p>
+
+                    <h3>Content Responsibility</h3>
+                    <p>You are solely responsible for the content you create and share. You represent that your content does not:</p>
+                    <ul>
+                        <li>Infringe on the intellectual property rights of others</li>
+                        <li>Contain unlawful, defamatory, or harassing material</li>
+                        <li>Include content that exploits minors</li>
+                        <li>Violate any applicable law or regulation</li>
+                    </ul>
+
+                    <h2>5. Social Features</h2>
+                    <p>DayByDay includes social features that allow you to connect with other users, share journal entries, and interact through reactions and comments. By using these features, you agree to:</p>
+                    <ul>
+                        <li>Treat other users with respect and kindness</li>
+                        <li>Not use social features to bully, harass, or intimidate others</li>
+                        <li>Not share another user's content without their permission</li>
+                        <li>Not use social features to spam, advertise, or distribute unsolicited content</li>
+                        <li>Report any content or behavior that violates these Terms</li>
+                    </ul>
+                    <p>We reserve the right to remove content and restrict access to social features for users who violate these guidelines.</p>
+
+                    <h2>6. Data Ownership and Portability</h2>
+                    <p><strong>Your data is yours.</strong> At any time, you can:</p>
+                    <ul>
+                        <li>Export all of your journal entries, photos, and metadata in standard formats (JSON, PDF)</li>
+                        <li>Delete individual entries or your entire account</li>
+                        <li>Revoke sharing access on any previously shared content</li>
+                    </ul>
+                    <p>When you delete your account, we will permanently delete all of your personal data and journal content within 30 days, except where retention is required by law.</p>
+
+                    <h2>7. Acceptable Use</h2>
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>Use the App for any unlawful purpose</li>
+                        <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+                        <li>Interfere with or disrupt the App's functionality or servers</li>
+                        <li>Use automated means (bots, scrapers) to access the App without permission</li>
+                        <li>Upload malicious code, viruses, or harmful files</li>
+                        <li>Impersonate another person or misrepresent your identity</li>
+                        <li>Collect or harvest other users' personal information</li>
+                        <li>Use the App to distribute spam or unsolicited messages</li>
+                    </ul>
+
+                    <h2>8. Intellectual Property</h2>
+                    <p>The DayByDay App, including its design, code, branding, icons, and features, is owned by ACL Solutions LLC and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the App without our written permission. "DayByDay" and the DayByDay logo are trademarks of ACL Solutions LLC.</p>
+
+                    <h2>9. Disclaimer of Warranties</h2>
+                    <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS. WE DO NOT GUARANTEE THAT YOUR DATA WILL NEVER BE LOST, ALTHOUGH WE TAKE REASONABLE MEASURES TO PREVENT DATA LOSS.</p>
+
+                    <h2>10. Limitation of Liability</h2>
+                    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, ACL SOLUTIONS LLC AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+                    <ul>
+                        <li>Loss of data, journal entries, or photos</li>
+                        <li>Unauthorized access to or alteration of your content</li>
+                        <li>Emotional distress arising from social interactions within the App</li>
+                        <li>Service interruptions or unavailability</li>
+                        <li>Any losses arising from reliance on content shared by other users</li>
+                    </ul>
+                    <p>IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE TWELVE MONTHS PRECEDING THE CLAIM (IF ANY).</p>
+
+                    <h2>11. Governing Law</h2>
+                    <p>These Terms shall be governed by the laws of the State of Wyoming, United States, without regard to conflict of law provisions. Any disputes shall be resolved in the courts of Wyoming.</p>
+
+                    <h2>12. Changes to Terms</h2>
+                    <p>We may update these Terms at any time. We will notify you of material changes by updating the "Last Updated" date and, where appropriate, through in-app notifications. Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
+
+                    <h2>13. Contact Us</h2>
+                    <p>If you have questions about these Terms, please contact us at:</p>
+                    <p>
+                        ACL Solutions LLC<br>
+                        30 N Gould St Ste N<br>
+                        Sheridan, WY 82801<br>
+                        United States<br>
+                        Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../daybyday/" class="hover:text-white transition">DayByDay</a>
+                    <a href="../daybyday/privacy" class="hover:text-white transition">Privacy</a>
+                    <a href="../daybyday/support" class="hover:text-white transition">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

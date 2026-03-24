@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Daily Privacy | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #451a03 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../news/" class="text-gray-300 hover:text-white transition">News Daily</a>
+                    <a href="../news/terms.html" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="../news/support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="#" class="bg-gradient-to-r from-amber-500 to-accent px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Read News
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../news/" class="block text-gray-300 hover:text-white">News Daily</a>
+                <a href="../news/terms.html" class="block text-gray-300 hover:text-white">Terms</a>
+                <a href="../news/support.html" class="block text-gray-300 hover:text-white">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-amber-400 mr-2">shield</span>
+                <span class="text-sm text-gray-300">Your Privacy Matters</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Privacy Policy</span>
+            </h1>
+            <p class="text-gray-400">Last Updated: March 24, 2026</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                    ACL Solutions LLC ("Company," "we," "us," or "our") operates Pookie B News Daily, including the web application, iOS application, Progressive Web App, and weekly podcast (collectively, the "Service"). This Privacy Policy explains how we collect, use, and protect your information when you use News Daily.
+                </p>
+
+                <!-- Section 1 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">1</span>
+                        Information We Collect
+                    </h2>
+
+                    <div class="space-y-6">
+                        <div class="glass-card rounded-xl p-6">
+                            <h3 class="text-lg font-semibold font-display mb-3 text-amber-400">
+                                <span class="material-symbols-outlined mr-2 align-middle">history</span>Reading History
+                            </h3>
+                            <p class="text-gray-400 mb-3">When you use the Service, we collect:</p>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Articles you have read and time spent reading</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Sources and topics you engage with most frequently</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Search queries within the Service</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-6">
+                            <h3 class="text-lg font-semibold font-display mb-3 text-amber-400">
+                                <span class="material-symbols-outlined mr-2 align-middle">bookmark</span>Watchlists & Preferences
+                            </h3>
+                            <p class="text-gray-400 mb-3">Your personalization data includes:</p>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Watchlist topics, keywords, and tracked entities</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Source preferences (enabled/disabled outlets)</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Notification preferences</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-6">
+                            <h3 class="text-lg font-semibold font-display mb-3 text-accent">
+                                <span class="material-symbols-outlined mr-2 align-middle">devices</span>Device Information
+                            </h3>
+                            <p class="text-gray-400 mb-3">We automatically collect:</p>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Device type, operating system, and browser information</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>IP address (for analytics and security purposes)</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>App version and platform (Web, iOS, PWA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">2</span>
+                        How We Use Your Information
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <ul class="text-gray-400 space-y-3">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">dynamic_feed</span>Personalize your news feed based on reading habits and preferences</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">notifications</span>Deliver watchlist notifications when matching stories appear</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">auto_awesome</span>Generate AI summaries of articles you view</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">bar_chart</span>Power the analytics dashboard with your reading statistics</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">tune</span>Improve the Service's performance, accuracy, and user experience</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">security</span>Detect and prevent abuse or unauthorized access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">3</span>
+                        AI Processing
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center mb-4 text-amber-400">
+                            <span class="material-symbols-outlined text-2xl mr-3">smart_toy</span>
+                            <span class="text-xl font-bold font-display">How AI Uses Your Data</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">News Daily uses OpenAI's GPT-4o-mini to generate article summaries, sentiment analysis, and podcast scripts. When we process articles through GPT-4o-mini:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Article content is sent to OpenAI's API for summarization</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Your personal data (reading history, watchlists) is not sent to OpenAI</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>AI-generated summaries are cached on our servers for performance</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Podcast audio is generated by ElevenLabs using AI-written scripts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">4</span>
+                        Data Storage and Security
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-300 mb-4">Your data is stored securely using industry-standard practices:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-green-400 mb-2">lock</span>
+                                <h4 class="font-semibold font-display mb-1">Encryption</h4>
+                                <p class="text-gray-400 text-sm">All data encrypted in transit (HTTPS/TLS) and at rest</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-orange-400 mb-2">cloud</span>
+                                <h4 class="font-semibold font-display mb-1">AWS Infrastructure</h4>
+                                <p class="text-gray-400 text-sm">Enterprise-grade security on Amazon Web Services</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-blue-400 mb-2">vpn_key</span>
+                                <h4 class="font-semibold font-display mb-1">Access Controls</h4>
+                                <p class="text-gray-400 text-sm">Strict authentication and authorization controls</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-purple-400 mb-2">stream</span>
+                                <h4 class="font-semibold font-display mb-1">SSE Security</h4>
+                                <p class="text-gray-400 text-sm">Authenticated connections for real-time streaming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">5</span>
+                        Third-Party Services
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="glass-card rounded-xl p-4 flex items-center">
+                            <span class="material-symbols-outlined text-3xl text-orange-400 mr-4">cloud</span>
+                            <div>
+                                <h4 class="font-semibold font-display">Amazon Web Services (AWS)</h4>
+                                <p class="text-gray-400 text-sm">Cloud infrastructure for hosting, storage, and compute</p>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 flex items-center">
+                            <span class="material-symbols-outlined text-3xl text-purple-400 mr-4">smart_toy</span>
+                            <div>
+                                <h4 class="font-semibold font-display">OpenAI (GPT-4o-mini)</h4>
+                                <p class="text-gray-400 text-sm">Powers AI article summaries and sentiment analysis. See <a href="https://openai.com/privacy" target="_blank" class="text-amber-400 hover:underline">OpenAI's Privacy Policy</a>.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 flex items-center">
+                            <span class="material-symbols-outlined text-3xl text-amber-400 mr-4">record_voice_over</span>
+                            <div>
+                                <h4 class="font-semibold font-display">ElevenLabs</h4>
+                                <p class="text-gray-400 text-sm">Text-to-Speech for the weekly AI podcast with custom PookieB voice. See <a href="https://elevenlabs.io/privacy" target="_blank" class="text-amber-400 hover:underline">ElevenLabs' Privacy Policy</a>.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 flex items-center">
+                            <span class="material-symbols-outlined text-3xl text-blue-400 mr-4">rss_feed</span>
+                            <div>
+                                <h4 class="font-semibold font-display">News Source APIs</h4>
+                                <p class="text-gray-400 text-sm">Various APIs for aggregating content from news outlets, Reddit, Hacker News, and social platforms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">6</span>
+                        Data Sharing
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center mb-4 text-green-400">
+                            <span class="material-symbols-outlined text-2xl mr-3">shield</span>
+                            <span class="text-xl font-bold font-display">We do not sell your data.</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">We do not share your reading history, watchlists, or personal information with third parties for marketing or advertising purposes.</p>
+                        <p class="text-gray-400 mb-2">We may share information only:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-gray-500 mr-2 text-base mt-0.5">check</span>With service providers who help operate the Service (as described above)</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-gray-500 mr-2 text-base mt-0.5">check</span>If required by law or legal process</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-gray-500 mr-2 text-base mt-0.5">check</span>To protect the rights, safety, or property of our users or others</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">7</span>
+                        Data Retention
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <ul class="text-gray-400 space-y-3">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">history</span><strong class="text-white mr-2">Reading History:</strong> Retained for 90 days for feed personalization, then anonymized</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">bookmark</span><strong class="text-white mr-2">Watchlists:</strong> Retained until you delete them or close your account</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">bar_chart</span><strong class="text-white mr-2">Analytics:</strong> Aggregated and anonymized data may be retained indefinitely</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-3 mt-0.5">podcasts</span><strong class="text-white mr-2">Podcast Episodes:</strong> Published episodes are retained indefinitely as public content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">8</span>
+                        Your Rights and Choices
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-300 mb-4">You have control over your data:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-blue-400 mb-2">visibility</span>
+                                <h4 class="font-semibold font-display mb-1">Access</h4>
+                                <p class="text-gray-400 text-sm">View your reading history, watchlists, and preferences in the app</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-red-400 mb-2">delete</span>
+                                <h4 class="font-semibold font-display mb-1">Delete</h4>
+                                <p class="text-gray-400 text-sm">Clear reading history, delete watchlists, or request full data deletion</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-green-400 mb-2">tune</span>
+                                <h4 class="font-semibold font-display mb-1">Customize</h4>
+                                <p class="text-gray-400 text-sm">Control which sources appear and what notifications you receive</p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <span class="material-symbols-outlined text-2xl text-orange-400 mb-2">download</span>
+                                <h4 class="font-semibold font-display mb-1">Export</h4>
+                                <p class="text-gray-400 text-sm">Download your watchlists and reading data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remaining Sections -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">9</span>
+                        Children's Privacy
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-400">News Daily is not intended for children under 13 years of age. We do not knowingly collect information from children under 13.</p>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">10</span>
+                        International Data Transfers
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-400">Your data may be processed in the United States where our servers and third-party service providers (AWS, OpenAI, ElevenLabs) are located. By using the Service, you consent to this transfer.</p>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">11</span>
+                        Changes to This Policy
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-400">We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date and, where appropriate, through the Service or email.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center font-display">
+                        <span class="w-10 h-10 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-lg">12</span>
+                        Contact Us
+                    </h2>
+                    <div class="glass-card rounded-xl p-6">
+                        <p class="text-gray-400 mb-4">If you have questions about this Privacy Policy or our data practices, please contact us at:</p>
+                        <div class="bg-slate-800/50 rounded-lg p-6">
+                            <p class="font-semibold font-display text-lg mb-2">ACL Solutions LLC</p>
+                            <p class="text-gray-400">30 N Gould St Ste N</p>
+                            <p class="text-gray-400">Sheridan, WY 82801</p>
+                            <p class="text-gray-400 mb-3">United States</p>
+                            <a href="mailto:contact@pookieb.com" class="inline-flex items-center text-amber-400 hover:text-amber-300 transition">
+                                <span class="material-symbols-outlined mr-2">mail</span>
+                                contact@pookieb.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../news/" class="hover:text-white transition">News Daily</a>
+                    <a href="../news/terms.html" class="hover:text-white transition">Terms</a>
+                    <a href="../news/support.html" class="hover:text-white transition">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

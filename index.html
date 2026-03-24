@@ -1,129 +1,424 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PookieB</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PookieB — AI-Powered Apps for Everyday Life</title>
+<meta name="description" content="PookieB builds AI-powered apps that make life better — from managing money to shredding powder.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    darkMode: "class",
+    theme: { extend: { colors: { primary: { DEFAULT: '#8b5cf6', dark: '#6d28d9' }, accent: { DEFAULT: '#ec4899' } }, fontFamily: { "headline": ["Inter", "sans-serif"], "body": ["Inter", "sans-serif"], "label": ["Space Grotesk", "sans-serif"] }, borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" } } }
+}
+</script>
+<style>
+.glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+.glass-card:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.15); }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.gradient-text { background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-btn { background: linear-gradient(135deg, #8b5cf6, #7c3aed, #6d28d9); transition: all 0.3s ease; }
+.gradient-btn:hover { background: linear-gradient(135deg, #a78bfa, #8b5cf6, #7c3aed); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3); }
+.product-card { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+.product-card:hover .card-arrow { transform: translateX(4px); }
+.card-arrow { transition: transform 0.3s ease; }
+.hero-blob { animation: blobFloat 20s ease-in-out infinite; }
+.hero-blob-2 { animation: blobFloat2 25s ease-in-out infinite; }
+.hero-blob-3 { animation: blobFloat3 18s ease-in-out infinite; }
+@keyframes blobFloat { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(40px, -30px) scale(1.05); } 66% { transform: translate(-20px, 20px) scale(0.95); } }
+@keyframes blobFloat2 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-30px, 40px) scale(1.08); } 66% { transform: translate(25px, -15px) scale(0.92); } }
+@keyframes blobFloat3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(20px, 30px) scale(1.03); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-in-delay-1 { animation: fadeInUp 0.8s ease-out 0.1s forwards; opacity: 0; }
+.animate-in-delay-2 { animation: fadeInUp 0.8s ease-out 0.2s forwards; opacity: 0; }
+.animate-in-delay-3 { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+.nav-blur { background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.stat-item { position: relative; }
+.stat-item::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 40px; width: 1px; background: rgba(255, 255, 255, 0.1); }
+.stat-item:last-child::after { display: none; }
+html { scroll-behavior: smooth; }
+</style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">PookieB</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-950 text-gray-100 font-body antialiased">
 
-    <main>
-        <section class="hero">
-            <canvas id="granim-canvas"></canvas>
-            <div id="particles-js"></div>
-            <h1 data-aos="fade-up">PookieB</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Building innovative software solutions for everyday challenges</p>
-        </section>
+<!-- ========== NAV ========== -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur" role="navigation" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2 group" aria-label="PookieB home">
+        <span class="text-2xl font-extrabold font-headline gradient-text tracking-tight">PookieB</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/products.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200">Products</a>
+        <a href="/about.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200">About</a>
+        <a href="/contact.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Open menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5">
+    <div class="px-4 py-4 space-y-2">
+      <a href="/products.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Products</a>
+      <a href="/about.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">About</a>
+      <a href="/contact.html" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
 
-        <section id="about" class="about">
-            <h2 data-aos="fade-up">About Us</h2>
-            <p data-aos="fade-up" data-aos-delay="100">PookieB is dedicated to creating intuitive, user-friendly applications that solve real-world problems. We focus on building products that make life simpler and more efficient.</p>
-            <p data-aos="fade-up" data-aos-delay="200">Founded in 2025, we are committed to innovation, quality, and exceptional user experiences.</p>
-        </section>
+<!-- ========== HERO ========== -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <!-- Background gradient blobs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="hero-blob absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-600 opacity-20 blur-[120px]"></div>
+    <div class="hero-blob-2 absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-pink-500 opacity-20 blur-[120px]"></div>
+    <div class="hero-blob-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-indigo-500 opacity-10 blur-[120px]"></div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+  </div>
 
-        <section id="products" class="products">
-            <h2 data-aos="fade-up">Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <i data-lucide="wallet" style="width: 48px; height: 48px; color: #667eea; margin-bottom: 1rem;"></i>
-                    <h3>SmartSpender</h3>
-                    <p>A personal finance app that helps you track expenses, split bills with friends, and manage your budget intelligently.</p>
-                    <a href="/smartspender" class="btn">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 4px;"></i></a>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <i data-lucide="mountain-snow" style="width: 48px; height: 48px; color: #667eea; margin-bottom: 1rem;"></i>
-                    <h3>Shredders</h3>
-                    <p>AI-powered powder intelligence for skiers and snowboarders. Get real-time snow conditions, forecasts, and powder scores for Pacific Northwest mountains.</p>
-                    <a href="/shredders" class="btn">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 4px;"></i></a>
-                </div>
-            </div>
-        </section>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="animate-in">
+      <p class="font-label text-sm font-medium uppercase tracking-[0.2em] text-purple-400 mb-6">AI-Powered Apps for Everyday Life</p>
+    </div>
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline leading-[0.95] tracking-tight mb-8 animate-in-delay-1">
+      Building Apps That<br/>Make <span class="gradient-text">Life Better</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed animate-in-delay-2">
+      PookieB creates AI-powered apps for everyday life — from managing money to shredding powder.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in-delay-3">
+      <a href="/products.html" class="gradient-btn inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg shadow-purple-500/20">
+        <span class="material-symbols-outlined text-xl">apps</span>
+        Explore Products
+      </a>
+      <a href="/about.html" class="glass-card inline-flex items-center gap-2 px-8 py-4 rounded-xl text-gray-200 font-semibold text-base hover:text-white transition-all duration-300">
+        <span class="material-symbols-outlined text-xl">info</span>
+        About Us
+      </a>
+    </div>
+  </div>
 
-        <section id="contact" class="contact">
-            <h2 data-aos="fade-up">Contact Us</h2>
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
-                <p class="email">Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a></p>
-            </div>
-        </section>
-    </main>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+    <span class="material-symbols-outlined text-gray-500 text-3xl">expand_more</span>
+  </div>
+</section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 PookieB. All rights reserved.</p>
-                <p class="llc-note">A product of ACL Solutions LLC, a Wyoming Limited Liability Company</p>
-            </div>
-            <div class="footer-links">
-                <a href="/terms.html">Terms of Service</a>
-                <a href="/privacy.html">Privacy Policy</a>
-            </div>
+<!-- ========== PRODUCTS SHOWCASE ========== -->
+<section class="relative py-24 lg:py-32" id="products">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-4">Our Products</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6"></div>
+      <p class="text-gray-400 text-lg max-w-xl mx-auto">Six apps built to solve real problems with intelligent, thoughtful design.</p>
+    </div>
+
+    <!-- Product grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- SmartSpender -->
+      <a href="/smartspender/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 group-hover:bg-indigo-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-indigo-400 text-3xl">account_balance</span>
         </div>
-    </footer>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">SmartSpender</h3>
+        <p class="text-sm font-label text-indigo-400 font-medium mb-3">AI Financial Decisions</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Track expenses, split bills, and get AI-powered budget advice to take control of your finances.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
 
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Granim.js Animated Gradients -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-        lucide.createIcons();
+      <!-- Shredders -->
+      <a href="/shredders/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:bg-blue-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-blue-400 text-3xl">ac_unit</span>
+        </div>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">Shredders</h3>
+        <p class="text-sm font-label text-blue-400 font-medium mb-3">AI Powder Intelligence</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Real-time snow conditions and powder scores for 53 resorts across the western United States.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
 
-        // Animated gradient for hero
-        new Granim({
-            element: '#granim-canvas',
-            direction: 'diagonal',
-            isPausedWhenNotInView: true,
-            states: {
-                'default-state': {
-                    gradients: [
-                        ['#667eea', '#764ba2'],
-                        ['#764ba2', '#6B8DD6'],
-                        ['#6B8DD6', '#8E37D7'],
-                        ['#8E37D7', '#667eea']
-                    ],
-                    transitionSpeed: 4000
-                }
-            }
-        });
+      <!-- News Daily -->
+      <a href="/news/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-amber-400 text-3xl">newspaper</span>
+        </div>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">News Daily</h3>
+        <p class="text-sm font-label text-amber-400 font-medium mb-3">AI News Companion</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Multi-source news aggregation with AI summaries and a weekly AI-generated podcast.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
 
-        // Particle effects
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 40, density: { enable: true, value_area: 800 } },
-                color: { value: '#ffffff' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.3, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.2, width: 1 },
-                move: { enable: true, speed: 1, direction: 'none', random: true, out_mode: 'out' }
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false } } },
-            retina_detect: true
-        });
-    </script>
+      <!-- DayByDay -->
+      <a href="/daybyday/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6 group-hover:bg-emerald-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-emerald-400 text-3xl">edit_note</span>
+        </div>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">DayByDay</h3>
+        <p class="text-sm font-label text-emerald-400 font-medium mb-3">Social Journaling</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Rich journaling with social features and gamification to build a meaningful daily habit.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
+
+      <!-- Harmony Tracker -->
+      <a href="/harmony/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center mb-6 group-hover:bg-rose-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-rose-400 text-3xl">favorite</span>
+        </div>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">Harmony Tracker</h3>
+        <p class="text-sm font-label text-rose-400 font-medium mb-3">AI Relationship Coach</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">AI coach Nova helps you build stronger relationships with personalized guidance and insights.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
+
+      <!-- Wilco -->
+      <a href="/wilco/" class="glass-card product-card rounded-xl p-8 group block">
+        <div class="w-14 h-14 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-6 group-hover:bg-sky-500/30 transition-colors duration-300">
+          <span class="material-symbols-outlined text-sky-400 text-3xl">flight</span>
+        </div>
+        <h3 class="text-xl font-bold font-headline text-white mb-1">Wilco</h3>
+        <p class="text-sm font-label text-sky-400 font-medium mb-3">Aviation Radio Trainer</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">AI-powered ATC simulator for student pilots to practice radio communication confidently.</p>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+          Learn More <span class="card-arrow">&rarr;</span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT SECTION ========== -->
+<section class="relative py-24 lg:py-32 bg-white/[0.02]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-6">
+          Small team.<br/><span class="gradient-text">Big ideas.</span>
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+          PookieB is a product studio by ACL Solutions LLC. We believe the best apps come from genuine need — tools we wanted to exist, so we built them. Every product starts as a problem we personally face, and we ship solutions with care, craft, and a relentless focus on user experience.
+        </p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-10">
+          From AI-powered finance to snow conditions to relationship coaching, we explore the full range of what intelligent software can do for everyday people.
+        </p>
+        <a href="/about.html" class="gradient-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold text-base shadow-lg shadow-purple-500/20">
+          Our Story
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
+      <div class="relative">
+        <div class="glass-card rounded-2xl p-10">
+          <div class="space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-purple-400">psychology</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">AI-First Approach</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Every product leverages AI to deliver intelligent, adaptive experiences that get better over time.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-pink-400">design_services</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Thoughtful Design</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">We sweat the details because good design is the difference between software people tolerate and software people love.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-amber-400">rocket_launch</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Ship Fast, Iterate</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">We believe in getting products into real hands quickly, then refining based on real-world feedback.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-purple-500/10 blur-2xl" aria-hidden="true"></div>
+        <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-pink-500/10 blur-2xl" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<section class="relative py-20 bg-gradient-to-r from-purple-900/20 via-gray-950 to-pink-900/20 overflow-hidden">
+  <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px]" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div class="stat-item text-center px-4">
+        <p class="text-4xl md:text-5xl font-extrabold font-headline gradient-text mb-2">6</p>
+        <p class="text-sm text-gray-400 font-label font-medium uppercase tracking-wider">Products</p>
+      </div>
+      <div class="stat-item text-center px-4">
+        <p class="text-4xl md:text-5xl font-extrabold font-headline gradient-text mb-2">200+</p>
+        <p class="text-sm text-gray-400 font-label font-medium uppercase tracking-wider">API Endpoints</p>
+      </div>
+      <div class="stat-item text-center px-4">
+        <p class="text-4xl md:text-5xl font-extrabold font-headline gradient-text mb-2">53</p>
+        <p class="text-sm text-gray-400 font-label font-medium uppercase tracking-wider">Ski Resorts</p>
+      </div>
+      <div class="stat-item text-center px-4">
+        <p class="text-4xl md:text-5xl font-extrabold font-headline gradient-text mb-2">iOS+</p>
+        <p class="text-sm text-gray-400 font-label font-medium uppercase tracking-wider">iOS &amp; Web</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section class="relative py-24 lg:py-32">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-card rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+      <!-- Background accents -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-pink-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="relative z-10">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-purple-400 text-3xl">mail</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline mb-4">Get in Touch</h2>
+        <p class="text-gray-400 text-lg mb-8 max-w-lg mx-auto">Have a question, suggestion, or just want to say hello? We would love to hear from you.</p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-purple-400">email</span>
+            <a href="mailto:contact@pookieb.com" class="text-gray-200 hover:text-white font-medium transition-colors">contact@pookieb.com</a>
+          </div>
+          <div class="hidden sm:block w-px h-6 bg-white/10" aria-hidden="true"></div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-purple-400">location_on</span>
+            <span class="text-gray-400">Portland, Oregon</span>
+          </div>
+        </div>
+
+        <a href="/contact.html" class="gradient-btn inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg shadow-purple-500/20">
+          Contact Us
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="border-t border-white/5 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-block mb-4">
+          <span class="text-xl font-extrabold font-headline gradient-text">PookieB</span>
+        </a>
+        <p class="text-sm text-gray-500 leading-relaxed">AI-powered apps for everyday life, built by ACL Solutions LLC.</p>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h4 class="text-sm font-semibold font-label text-gray-300 uppercase tracking-wider mb-4">Products</h4>
+        <ul class="space-y-3">
+          <li><a href="/smartspender/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">SmartSpender</a></li>
+          <li><a href="/shredders/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Shredders</a></li>
+          <li><a href="/news/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">News Daily</a></li>
+          <li><a href="/daybyday/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">DayByDay</a></li>
+          <li><a href="/harmony/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Harmony Tracker</a></li>
+          <li><a href="/wilco/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Wilco</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-sm font-semibold font-label text-gray-300 uppercase tracking-wider mb-4">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/about.html" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">About</a></li>
+          <li><a href="/contact.html" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-sm font-semibold font-label text-gray-300 uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-3">
+          <li><a href="/privacy.html" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-600">&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+      <p class="text-xs text-gray-600">Built with care in Portland, OR</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => {
+  const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+  menuBtn.setAttribute('aria-expanded', !expanded);
+  mobileMenu.classList.toggle('hidden');
+  const icon = menuBtn.querySelector('.material-symbols-outlined');
+  icon.textContent = expanded ? 'menu' : 'close';
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.product-card').forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+  observer.observe(card);
+});
+
+// Navbar shadow on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+}, { passive: true });
+</script>
+
 </body>
 </html>

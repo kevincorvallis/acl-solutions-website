@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilco Support | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1a2e 50%, #0c2340 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../wilco/" class="text-gray-300 hover:text-white transition">Wilco</a>
+                    <a href="../wilco/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../wilco/terms" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="../wilco/" class="bg-gradient-to-r from-sky-500 to-sky-600 px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Start Training
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../wilco/" class="block text-gray-300 hover:text-white">Wilco</a>
+                <a href="../wilco/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../wilco/terms" class="block text-gray-300 hover:text-white">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-sky-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-sky-400 mr-2 text-lg">support_agent</span>
+                <span class="text-sm text-gray-300">We're Here to Help</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Wilco Support</span>
+            </h1>
+            <p class="text-gray-400 text-lg">Get help with the Wilco aviation radio trainer</p>
+        </div>
+    </section>
+
+    <!-- Quick Help Links -->
+    <section class="py-12 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+                <a href="#getting-started" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">rocket_launch</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Getting Started</h3>
+                    <p class="text-gray-400 text-sm">Learn the basics of Wilco</p>
+                </a>
+                <a href="#scenarios" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">flight_takeoff</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Training Scenarios</h3>
+                    <p class="text-gray-400 text-sm">Understand the 20 available scenarios</p>
+                </a>
+                <a href="#voice" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-sky-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">mic</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Voice & Audio</h3>
+                    <p class="text-gray-400 text-sm">Set up microphone and audio</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-sky-400 mr-3 align-middle text-3xl">rocket_launch</span>
+                Getting Started
+            </h2>
+
+            <div class="space-y-6">
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">play_circle</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">How do I start my first training session?</h3>
+                            <p class="text-gray-400">Select a scenario from the scenario list, choose your difficulty level (Student is recommended for beginners), and click "Start." Allow microphone access when prompted to enable voice input.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">trending_up</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Which difficulty level should I choose?</h3>
+                            <p class="text-gray-400 mb-3">Choose based on your experience:</p>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><span class="material-symbols-outlined text-green-400 mr-2 text-lg">check_circle</span><strong class="text-white mr-2">Student:</strong> Guided prompts, slower pace, basic phraseology</li>
+                                <li class="flex items-center"><span class="material-symbols-outlined text-sky-400 mr-2 text-lg">check_circle</span><strong class="text-white mr-2">Private Pilot:</strong> Standard pace, full ICAO phraseology required</li>
+                                <li class="flex items-center"><span class="material-symbols-outlined text-accent mr-2 text-lg">check_circle</span><strong class="text-white mr-2">Advanced:</strong> Fast-paced, complex scenarios, minimal guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-sky-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">spellcheck</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">How does phraseology validation work?</h3>
+                            <p class="text-gray-400">Wilco analyzes your radio calls against ICAO standard phraseology in real-time. You receive instant feedback highlighting correct usage, common mistakes, and suggestions for improvement. The AI ATC also responds realistically based on what you say.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Scenarios Section -->
+    <section id="scenarios" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-sky-400 mr-3 align-middle text-3xl">flight_takeoff</span>
+                Training Scenarios
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-sky-400 mr-3">view_list</span>
+                            How are the 20 scenarios organized?
+                        </h3>
+                        <p class="text-gray-400">Scenarios are grouped into four categories: Taxi (ground movement, ATIS, clearance delivery), Departure (takeoff clearance, initial climb), En-Route (frequency changes, position reports, flight following), and Approach (pattern entry, landing clearance, go-arounds). Each category has 5 scenarios of increasing complexity.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-cyan-400 mr-3">shuffle</span>
+                            Can I choose which scenario to practice?
+                        </h3>
+                        <p class="text-gray-400">Yes. You can select any scenario at any time regardless of your progress. However, we recommend starting with the Taxi category at Student difficulty and progressing through Departure, En-Route, and Approach as your confidence builds.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">replay</span>
+                            Can I repeat a scenario?
+                        </h3>
+                        <p class="text-gray-400">Absolutely. Scenarios can be repeated as many times as you like. Each session uses live METAR/TAF data, so conditions and ATC responses vary naturally between sessions even on the same scenario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice & Audio Section -->
+    <section id="voice" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-primary mr-3 align-middle text-3xl">mic</span>
+                Voice & Audio
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-sky-400 mr-3">settings_voice</span>
+                            How do I set up my microphone?
+                        </h3>
+                        <p class="text-gray-400">When you start your first session, your browser will ask for microphone permission. Grant access and select your preferred microphone from the audio settings. Use a headset for the most realistic experience.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-cyan-400 mr-3">volume_up</span>
+                            What powers the ATC voice?
+                        </h3>
+                        <p class="text-gray-400">ATC responses are generated using ElevenLabs text-to-speech for realistic, natural-sounding ATC voices. Your voice input is processed using the Web Speech API for real-time speech recognition.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">keyboard</span>
+                            Can I type instead of using voice?
+                        </h3>
+                        <p class="text-gray-400">Yes. Every scenario supports text input as an alternative to voice. You can type your radio calls and the AI ATC will respond the same way. Voice mode is recommended for the most realistic practice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-sky-400 mr-3 align-middle text-3xl">help</span>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-sky-400 mr-3">laptop_chromebook</span>
+                            Which browsers are supported?
+                        </h3>
+                        <p class="text-gray-400">Wilco works best on Chrome and Edge, which have the most robust Web Speech API support. Safari and Firefox are supported for text input mode but may have limited voice recognition capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-cyan-400 mr-3">spellcheck</span>
+                            How strict is the ICAO validation?
+                        </h3>
+                        <p class="text-gray-400">Validation strictness scales with difficulty level. At Student level, the system accepts common variations and provides gentle corrections. At Private Pilot level, standard ICAO phraseology is expected. At Advanced level, precise phraseology, correct readback, and proper call sign usage are required.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">cloud</span>
+                            Does Wilco use real weather data?
+                        </h3>
+                        <p class="text-gray-400">Yes. Wilco pulls live METAR (current conditions) and TAF (forecasts) data for the airports used in each scenario. This means every training session reflects actual weather conditions, making practice more realistic and varied.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-sky-400 mr-3">monitoring</span>
+                            How does progress tracking work?
+                        </h3>
+                        <p class="text-gray-400">Wilco tracks your accuracy, response time, and phraseology scores for each scenario and difficulty level. Performance charts show your improvement trends over time so you can see which areas need more practice.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-cyan-400 mr-3">view_list</span>
+                            How do I choose which scenario to practice?
+                        </h3>
+                        <p class="text-gray-400">From the main screen, browse scenarios by category (Taxi, Departure, En-Route, Approach) or difficulty level. Each scenario card shows a description, estimated duration, and your best score if you have completed it before.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-accent mr-3">payments</span>
+                            Is Wilco free?
+                        </h3>
+                        <p class="text-gray-400">Yes. Wilco is free to use with all 20 scenarios and all difficulty levels available at no cost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-accent mr-3 align-middle text-3xl">mail</span>
+                Contact Us
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sky-500 to-sky-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">mail</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email Support</h3>
+                        <p class="text-gray-400 mb-4">For support requests, bug reports, or feature suggestions</p>
+                        <a href="mailto:contact@pookieb.com" class="inline-flex items-center bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+                            <span class="material-symbols-outlined mr-2 text-lg">send</span>
+                            contact@pookieb.com
+                        </a>
+                        <p class="text-gray-500 text-sm mt-4">We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">apartment</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Company Address</h3>
+                        <p class="text-gray-400 mb-4">ACL Solutions LLC</p>
+                        <div class="text-gray-300">
+                            <p>30 N Gould St Ste N</p>
+                            <p>Sheridan, WY 82801</p>
+                            <p>United States</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../wilco/" class="hover:text-white transition">Wilco</a>
+                    <a href="../wilco/privacy" class="hover:text-white transition">Privacy</a>
+                    <a href="../wilco/terms" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

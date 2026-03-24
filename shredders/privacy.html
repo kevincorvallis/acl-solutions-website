@@ -1,149 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Shredders</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Shredders Privacy | PookieB</title>
+    <meta name="description" content="Privacy Policy for Shredders by PookieB. Learn how we handle your data.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/" class="logo">ACL Solutions</a>
-            <ul>
-                <li><a href="/shredders/">Shredders</a></li>
-                <li><a href="/shredders/support.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased">
 
-    <main class="legal-page">
-        <div class="legal-content">
-            <h1>Shredders Privacy Policy</h1>
-            <p class="last-updated">Last Updated: December 20, 2025</p>
-
-            <p>ACL Solutions LLC ("Company," "we," "us," or "our") operates the Shredders mobile application and web application (collectively, the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use Shredders.</p>
-
-            <h2>1. Information We Collect</h2>
-
-            <h3>Location Data</h3>
-            <p>With your permission, Shredders may access your device's location to:</p>
-            <ul>
-                <li>Calculate distances to ski resorts and mountains</li>
-                <li>Provide relevant road condition and trip planning information</li>
-                <li>Show nearby mountains and conditions</li>
-            </ul>
-            <p>Location data is processed locally on your device and is not stored on our servers. You can disable location access at any time through your device settings.</p>
-
-            <h3>Usage Data</h3>
-            <p>We may automatically collect basic usage information, including:</p>
-            <ul>
-                <li>App features accessed</li>
-                <li>Mountains viewed</li>
-                <li>General interaction patterns</li>
-            </ul>
-            <p>This data helps us improve the App and is not linked to your personal identity.</p>
-
-            <h3>Chat Conversations</h3>
-            <p>When you use the AI chat feature, your messages are processed to generate responses. Chat conversations are not permanently stored and are not used to train AI models.</p>
-
-            <h2>2. Information We Do NOT Collect</h2>
-            <p>Shredders does not collect:</p>
-            <ul>
-                <li>Personal identification information (name, email, phone number)</li>
-                <li>Account credentials or passwords</li>
-                <li>Payment or financial information</li>
-                <li>Precise location history or tracking data</li>
-                <li>Contacts or address book information</li>
-                <li>Photos, camera, or microphone data</li>
-            </ul>
-
-            <h2>3. How We Use Your Information</h2>
-            <p>We use collected information solely to:</p>
-            <ul>
-                <li>Provide snow conditions, weather forecasts, and powder scores</li>
-                <li>Calculate distances and provide trip planning features</li>
-                <li>Improve App performance and user experience</li>
-                <li>Fix bugs and technical issues</li>
-            </ul>
-
-            <h2>4. Data Sources</h2>
-            <p>Shredders aggregates data from public sources to provide conditions information:</p>
-            <ul>
-                <li><strong>SNOTEL:</strong> Snow depth and precipitation data from USDA monitoring stations</li>
-                <li><strong>NOAA:</strong> Weather forecasts from the National Weather Service</li>
-                <li><strong>Open-Meteo:</strong> Additional weather data</li>
-            </ul>
-            <p>We do not control these third-party data sources and are not responsible for their accuracy.</p>
-
-            <h2>5. Third-Party Services</h2>
-            <p>The App uses the following third-party services:</p>
-            <ul>
-                <li><strong>OpenAI:</strong> Powers the AI chat assistant. Chat messages are processed by OpenAI's API. See <a href="https://openai.com/privacy" target="_blank">OpenAI's Privacy Policy</a>.</li>
-                <li><strong>Vercel:</strong> Hosts our API infrastructure. See <a href="https://vercel.com/legal/privacy-policy" target="_blank">Vercel's Privacy Policy</a>.</li>
-                <li><strong>Apple:</strong> The iOS app is distributed through the App Store. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
-            </ul>
-
-            <h2>6. Data Sharing</h2>
-            <p><strong>We do not sell your data.</strong> We do not share your information with third parties for marketing or advertising purposes.</p>
-            <p>We may share information only:</p>
-            <ul>
-                <li>With service providers who help operate the App (as described above)</li>
-                <li>If required by law or legal process</li>
-                <li>To protect the rights, safety, or property of our users or others</li>
-            </ul>
-
-            <h2>7. Data Security</h2>
-            <p>We implement appropriate technical measures to protect your information:</p>
-            <ul>
-                <li>All API communications use HTTPS encryption</li>
-                <li>No personal data is stored on our servers</li>
-                <li>Location data is processed locally on your device</li>
-            </ul>
-
-            <h2>8. Data Retention</h2>
-            <p>Since we do not collect personal information or create user accounts, there is no personal data retained on our servers. Usage analytics are aggregated and anonymized.</p>
-
-            <h2>9. Your Choices</h2>
-            <p>You have control over your data:</p>
-            <ul>
-                <li><strong>Location:</strong> You can enable or disable location access in your device settings at any time</li>
-                <li><strong>App Data:</strong> You can delete all local app data by uninstalling the App</li>
-            </ul>
-
-            <h2>10. Children's Privacy</h2>
-            <p>Shredders is not intended for children under 13 years of age. We do not knowingly collect information from children under 13.</p>
-
-            <h2>11. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date and, where appropriate, through the App.</p>
-
-            <h2>12. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy or our data practices, please contact us at:</p>
-            <p>
-                ACL Solutions LLC<br>
-                30 N Gould St Ste N<br>
-                Sheridan, WY 82801<br>
-                United States<br>
-                Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a>
-            </p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-t-0 border-x-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../" class="font-display font-bold text-xl text-white hover:text-primary transition-colors">PookieB</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="./" class="text-sm text-gray-400 hover:text-white transition-colors">Shredders</a>
+                    <a href="support.html" class="text-sm text-gray-400 hover:text-white transition-colors">Support</a>
+                    <a href="terms.html" class="text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white" aria-label="Toggle navigation menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-            <div class="footer-links">
-                <a href="/shredders/">Shredders Home</a>
-                <a href="/shredders/support.html">Support</a>
-                <a href="/shredders/terms.html">Terms of Service</a>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+            <a href="../" class="block text-sm text-gray-400 hover:text-white py-2">Home</a>
+            <a href="./" class="block text-sm text-gray-400 hover:text-white py-2">Shredders</a>
+            <a href="support.html" class="block text-sm text-gray-400 hover:text-white py-2">Support</a>
+            <a href="terms.html" class="block text-sm text-gray-400 hover:text-white py-2">Terms</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="relative pt-32 pb-12">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4">
+                Privacy <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Policy</span>
+            </h1>
+            <p class="text-gray-400">Last updated: March 24, 2026</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 space-y-10">
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">1. Introduction</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">PookieB ("we," "us," or "our") operates Shredders, a snow conditions and ski trip planning application. This Privacy Policy describes how we collect, use, and protect your personal information when you use our iOS app and web application. By using Shredders, you agree to the practices described in this policy.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">2. Information We Collect</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/[0.03] rounded-xl p-5">
+                            <h3 class="font-semibold text-sm text-gray-200 mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">location_on</span>
+                                Location Data
+                            </h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">With your permission, we collect your device's location to show nearby resorts, provide relevant road conditions, and enable resort check-ins. Location data is used in real-time and is not stored beyond your active session unless you check in at a resort.</p>
+                        </div>
+                        <div class="bg-white/[0.03] rounded-xl p-5">
+                            <h3 class="font-semibold text-sm text-gray-200 mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">favorite</span>
+                                Resort Preferences
+                            </h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">We store your favorite resorts, powder alert thresholds, and notification preferences to personalize your experience and deliver relevant alerts.</p>
+                        </div>
+                        <div class="bg-white/[0.03] rounded-xl p-5">
+                            <h3 class="font-semibold text-sm text-gray-200 mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">group</span>
+                                Social Data
+                            </h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">When you use social features, we collect your check-ins, photos, comments, likes, trip events, RSVP responses, and carpool participation. Your social profile and activity may be visible to other users.</p>
+                        </div>
+                        <div class="bg-white/[0.03] rounded-xl p-5">
+                            <h3 class="font-semibold text-sm text-gray-200 mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">smart_toy</span>
+                                AI Chat Data
+                            </h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Conversations with the AI chat feature are sent to our AI providers for processing. Chat history may be stored to provide context for follow-up questions and to improve the service. You can delete your chat history at any time in the app settings.</p>
+                        </div>
+                        <div class="bg-white/[0.03] rounded-xl p-5">
+                            <h3 class="font-semibold text-sm text-gray-200 mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">person</span>
+                                Account Information
+                            </h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">When you create an account, we collect your name, email address, and profile photo. If you sign in via Apple or Google, we receive the information you authorize those providers to share.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">3. How We Use Your Information</h2>
+                    <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>Provide and personalize the Shredders experience</li>
+                        <li>Send powder alerts and weather notifications</li>
+                        <li>Enable social features including check-ins, events, and carpools</li>
+                        <li>Process AI chat requests and provide intelligent recommendations</li>
+                        <li>Improve our algorithms and powder scoring models</li>
+                        <li>Analyze usage patterns to improve the App</li>
+                        <li>Communicate with you about service updates and support</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">4. Third-Party Services</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-4">We use the following third-party services to operate Shredders:</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-white/10">
+                                    <th class="text-left py-3 pr-4 text-gray-300 font-semibold">Provider</th>
+                                    <th class="text-left py-3 pr-4 text-gray-300 font-semibold">Purpose</th>
+                                    <th class="text-left py-3 text-gray-300 font-semibold">Data Shared</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-400">
+                                <tr class="border-b border-white/5">
+                                    <td class="py-3 pr-4">Supabase</td>
+                                    <td class="py-3 pr-4">Authentication, database, storage</td>
+                                    <td class="py-3">Account info, preferences, social data</td>
+                                </tr>
+                                <tr class="border-b border-white/5">
+                                    <td class="py-3 pr-4">Claude (Anthropic)</td>
+                                    <td class="py-3 pr-4">AI chat and recommendations</td>
+                                    <td class="py-3">Chat messages, resort context</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 pr-4">GPT-4 (OpenAI)</td>
+                                    <td class="py-3 pr-4">AI analysis and summaries</td>
+                                    <td class="py-3">Snow data, user queries</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed mt-4">Each third-party service is governed by its own privacy policy. We only share the minimum data necessary for each service to function.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">5. Data Security</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">We implement industry-standard security measures to protect your data, including encryption in transit (TLS 1.3) and at rest, secure authentication via Supabase Auth, and regular security reviews. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">6. Data Retention</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">We retain your data for as long as your account is active. Check-in history and social content are retained until you delete them. AI chat history can be cleared at any time. When you delete your account, we remove your personal data within 30 days, except where retention is required by law.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">7. Your Rights</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-3">Depending on your jurisdiction, you may have the right to:</p>
+                    <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside leading-relaxed">
+                        <li><strong class="text-gray-300">Access</strong> the personal data we hold about you</li>
+                        <li><strong class="text-gray-300">Correct</strong> inaccurate or incomplete data</li>
+                        <li><strong class="text-gray-300">Delete</strong> your account and associated data</li>
+                        <li><strong class="text-gray-300">Export</strong> your data in a portable format</li>
+                        <li><strong class="text-gray-300">Opt out</strong> of non-essential data processing</li>
+                        <li><strong class="text-gray-300">Withdraw consent</strong> for location tracking or notifications at any time</li>
+                    </ul>
+                    <p class="text-sm text-gray-400 leading-relaxed mt-3">To exercise any of these rights, contact us at the email below or use the in-app settings.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">8. Children's Privacy</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">Shredders is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it promptly.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">9. Changes to This Policy</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">We may update this Privacy Policy from time to time. We will notify you of significant changes through the App or via email. Continued use of Shredders after changes constitutes acceptance of the updated policy.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-xl font-semibold text-blue-400 mb-4">10. Contact Us</h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">If you have questions about this Privacy Policy or wish to exercise your data rights, contact us at:</p>
+                    <div class="mt-4 bg-white/[0.03] rounded-xl p-5">
+                        <p class="text-sm text-gray-300 font-semibold">PookieB</p>
+                        <a href="mailto:contact@pookieb.com" class="text-sm text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors">contact@pookieb.com</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a href="../" class="font-display font-bold text-lg text-white">PookieB</a>
+                <div class="flex items-center gap-6">
+                    <a href="./" class="text-sm text-gray-500 hover:text-blue-400 transition-colors">Shredders</a>
+                    <a href="support.html" class="text-sm text-gray-500 hover:text-blue-400 transition-colors">Support</a>
+                    <a href="terms.html" class="text-sm text-gray-500 hover:text-blue-400 transition-colors">Terms</a>
+                </div>
+                <p class="text-sm text-gray-600">&copy; 2026 PookieB</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
 </body>
 </html>

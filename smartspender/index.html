@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartSpender - AI-Powered Personal Finance</title>
+    <title>SmartSpender — AI Financial Decisions | PookieB</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,46 +12,50 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6366f1',
-                        secondary: '#8b5cf6',
+                        primary: '#8b5cf6',
                         accent: '#ec4899',
                         dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
-        * { font-family: 'Inter', sans-serif; }
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', system-ui, sans-serif; }
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
         }
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .glass {
+        .glass-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .glass-dark {
             background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .hover-lift {
@@ -75,6 +79,9 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -82,32 +89,32 @@
     <nav class="fixed w-full z-50 glass-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center space-x-2">
-                    <i class="fas fa-cube text-primary text-2xl"></i>
-                    <span class="font-bold text-xl">ACL Solutions</span>
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">deployed_code</span>
+                    <span class="font-bold text-xl" style="font-family: 'Space Grotesk', system-ui, sans-serif;">PookieB</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-gray-300 hover:text-white transition">Home</a>
-                    <a href="/smartspender/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
-                    <a href="/smartspender/terms" class="text-gray-300 hover:text-white transition">Terms</a>
-                    <a href="/smartspender/support" class="text-gray-300 hover:text-white transition">Support</a>
-                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    <a href="../" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="../products.html" class="text-gray-300 hover:text-white transition">Products</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-white transition">About</a>
+                    <a href="support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-indigo-500 to-primary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
                         Launch App
                     </a>
                 </div>
                 <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <i class="fas fa-bars"></i>
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
             <div class="px-4 py-4 space-y-3">
-                <a href="/" class="block text-gray-300 hover:text-white">Home</a>
-                <a href="/smartspender/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
-                <a href="/smartspender/terms" class="block text-gray-300 hover:text-white">Terms</a>
-                <a href="/smartspender/support" class="block text-gray-300 hover:text-white">Support</a>
-                <a href="https://smartspender.vercel.app" class="block bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold text-center">
+                <a href="../" class="block text-gray-300 hover:text-white">Home</a>
+                <a href="../products.html" class="block text-gray-300 hover:text-white">Products</a>
+                <a href="../about.html" class="block text-gray-300 hover:text-white">About</a>
+                <a href="support.html" class="block text-gray-300 hover:text-white">Support</a>
+                <a href="https://smartspender.vercel.app" class="block bg-gradient-to-r from-indigo-500 to-primary px-5 py-2 rounded-full font-semibold text-center">
                     Launch App
                 </a>
             </div>
@@ -116,52 +123,51 @@
 
     <!-- Hero Section -->
     <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
-        <!-- Background Elements -->
+        <!-- Background Blurs -->
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
             <div class="text-center" data-aos="fade-up">
-                <div class="inline-flex items-center glass px-4 py-2 rounded-full mb-8">
+                <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-8">
                     <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                     <span class="text-sm text-gray-300">AI-Powered Financial Intelligence</span>
                 </div>
 
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-                    <span class="gradient-text">SmartSpender</span>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    Your AI <span class="gradient-text">Financial</span><br>Decision Engine
                 </h1>
 
-                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                    Take control of your finances with AI. Track expenses, analyze spending patterns,
-                    and get personalized insights using natural language.
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Ask questions in plain English. Get instant financial clarity.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://smartspender.vercel.app" class="group bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition flex items-center pulse-glow">
-                        <span>Launch Web App</span>
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    <a href="https://smartspender.vercel.app" class="group bg-gradient-to-r from-indigo-500 to-primary px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition flex items-center pulse-glow">
+                        <span>Try SmartSpender Free</span>
+                        <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
-                    <a href="#features" class="glass px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition flex items-center">
-                        <i class="fas fa-play-circle mr-2"></i>
-                        <span>See How It Works</span>
+                    <a href="#features" class="glass-card px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition flex items-center">
+                        <span class="material-symbols-outlined mr-2">info</span>
+                        <span>Learn More</span>
                     </a>
                 </div>
 
                 <!-- Stats -->
                 <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold gradient-text">100%</div>
+                        <div class="text-3xl md:text-4xl font-bold gradient-text" style="font-family: 'Space Grotesk', system-ui, sans-serif;">100%</div>
                         <div class="text-gray-400 text-sm">Free to Use</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold gradient-text">8+</div>
-                        <div class="text-gray-400 text-sm">Categories</div>
+                        <div class="text-3xl md:text-4xl font-bold gradient-text" style="font-family: 'Space Grotesk', system-ui, sans-serif;">100+</div>
+                        <div class="text-gray-400 text-sm">Merchant Patterns</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold gradient-text">AI</div>
+                        <div class="text-3xl md:text-4xl font-bold gradient-text" style="font-family: 'Space Grotesk', system-ui, sans-serif;">AI</div>
                         <div class="text-gray-400 text-sm">Powered</div>
                     </div>
                 </div>
@@ -170,7 +176,7 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 floating">
-            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+            <span class="material-symbols-outlined text-3xl text-gray-400">expand_more</span>
         </div>
     </section>
 
@@ -178,7 +184,7 @@
     <section id="features" class="py-24 bg-slate-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
                     Powerful <span class="gradient-text">Features</span>
                 </h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -187,58 +193,58 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-comments text-2xl"></i>
+                <!-- Feature 1: Natural Language Queries -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-400 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">chat</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Natural Language Interface</h3>
-                    <p class="text-gray-400">Ask questions in plain English like "Am I spending too much on dining?" and get instant, actionable insights.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Natural Language Queries</h3>
+                    <p class="text-gray-400">Ask &ldquo;Can I afford a vacation?&rdquo; and get instant AI-powered financial analysis with actionable recommendations.</p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-tags text-2xl"></i>
+                <!-- Feature 2: Smart Categorization -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">category</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Smart Categorization</h3>
-                    <p class="text-gray-400">Upload your bank statements and watch as transactions are automatically categorized into dining, groceries, entertainment, and more.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Smart Categorization</h3>
+                    <p class="text-gray-400">Auto-categorize 100+ merchant patterns from CSV and Excel imports. Dining, groceries, entertainment, and more&mdash;instantly sorted.</p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-pink-500 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-2xl"></i>
+                <!-- Feature 3: Budget Tracking -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-accent rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">savings</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Real-Time Analytics</h3>
-                    <p class="text-gray-400">Interactive charts and visualizations show your spending patterns, trends, and budget progress at a glance.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Budget Tracking</h3>
+                    <p class="text-gray-400">Set category-based budgets with auto-profiling. Get alerts when you&rsquo;re approaching limits and stay on track effortlessly.</p>
                 </div>
 
-                <!-- Feature 4 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <!-- Feature 4: Receipt Vision -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-piggy-bank text-2xl"></i>
+                        <span class="material-symbols-outlined text-2xl">receipt_long</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Budget Tracking</h3>
-                    <p class="text-gray-400">Set budgets by category and get alerts when you're approaching limits. Stay on track with visual progress indicators.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Receipt Vision</h3>
+                    <p class="text-gray-400">Snap a photo of any receipt and GPT-4o Vision extracts merchant, amount, date, and line items automatically.</p>
                 </div>
 
-                <!-- Feature 5 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                <!-- Feature 5: Bill Splitting -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl"></i>
+                        <span class="material-symbols-outlined text-2xl">group</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AI-Powered Insights</h3>
-                    <p class="text-gray-400">Get personalized recommendations based on your spending habits. Our AI helps you find ways to save and spend smarter.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Bill Splitting</h3>
+                    <p class="text-gray-400">Split expenses with friends and groups. Track who owes what and settle up with a clear breakdown of shared costs.</p>
                 </div>
 
-                <!-- Feature 6 -->
-                <div class="glass rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="500">
+                <!-- Feature 6: Visual Insights -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-file-import text-2xl"></i>
+                        <span class="material-symbols-outlined text-2xl">bar_chart</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Excel & CSV Import</h3>
-                    <p class="text-gray-400">Easily import your credit card statements from any bank. Supports Excel (.xlsx) and CSV formats.</p>
+                    <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Visual Insights</h3>
+                    <p class="text-gray-400">Interactive charts showing spending trends, category breakdowns, and monthly comparisons to visualize your financial health.</p>
                 </div>
             </div>
         </div>
@@ -247,13 +253,13 @@
     <!-- How It Works Section -->
     <section class="py-24 bg-slate-800/50 relative overflow-hidden">
         <div class="absolute inset-0">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
                     How It <span class="gradient-text">Works</span>
                 </h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -264,39 +270,39 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
                 <div class="relative" data-aos="fade-up" data-aos-delay="0">
-                    <div class="glass rounded-2xl p-8 text-center h-full">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                            1
+                    <div class="glass-card rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold" style="font-family: 'Space Grotesk', system-ui, sans-serif;">1</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Upload Your Data</h3>
-                        <p class="text-gray-400">Import your bank or credit card statement. We support Excel and CSV files from all major banks.</p>
+                        <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Import Your Data</h3>
+                        <p class="text-gray-400">Upload your bank or credit card statement. We support Excel and CSV files from all major banks.</p>
                     </div>
                     <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                        <i class="fas fa-arrow-right text-2xl text-primary"></i>
+                        <span class="material-symbols-outlined text-2xl text-indigo-500">arrow_forward</span>
                     </div>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass rounded-2xl p-8 text-center h-full">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                            2
+                    <div class="glass-card rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold" style="font-family: 'Space Grotesk', system-ui, sans-serif;">2</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Ask Questions</h3>
-                        <p class="text-gray-400">Use natural language to ask about your finances. "What am I spending the most on?" or "Help me save for a car."</p>
+                        <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Ask Questions</h3>
+                        <p class="text-gray-400">Use natural language to ask about your finances. &ldquo;What am I spending the most on?&rdquo; or &ldquo;Can I afford a new car?&rdquo;</p>
                     </div>
                     <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                        <i class="fas fa-arrow-right text-2xl text-secondary"></i>
+                        <span class="material-symbols-outlined text-2xl text-primary">arrow_forward</span>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass rounded-2xl p-8 text-center h-full">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                            3
+                    <div class="glass-card rounded-2xl p-8 text-center h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold" style="font-family: 'Space Grotesk', system-ui, sans-serif;">3</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Get Insights</h3>
+                        <h3 class="text-xl font-bold mb-3" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Get AI Insights</h3>
                         <p class="text-gray-400">Receive AI-powered analysis with charts, recommendations, and actionable advice tailored to your spending.</p>
                     </div>
                 </div>
@@ -304,22 +310,75 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="py-24 bg-slate-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                Simple <span class="gradient-text">Pricing</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+                No subscriptions. No hidden fees. Just financial clarity.
+            </p>
+
+            <div class="glass-card rounded-3xl p-10 max-w-md mx-auto border-indigo-500/30 hover-lift">
+                <div class="inline-flex items-center bg-indigo-500/20 px-4 py-1 rounded-full mb-6">
+                    <span class="text-indigo-400 text-sm font-semibold">FOREVER FREE</span>
+                </div>
+                <div class="text-6xl font-bold mb-2" style="font-family: 'Space Grotesk', system-ui, sans-serif;">$0</div>
+                <p class="text-gray-400 mb-8">Free to use. No hidden fees.</p>
+                <ul class="text-left space-y-4 mb-10">
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">Unlimited natural language queries</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">CSV &amp; Excel import</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">AI-powered categorization</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">Budget tracking &amp; alerts</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">Receipt scanning</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">Bill splitting</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-symbols-outlined text-green-400 mr-3">check_circle</span>
+                        <span class="text-gray-300">Visual spending insights</span>
+                    </li>
+                </ul>
+                <a href="https://smartspender.vercel.app" class="block w-full bg-gradient-to-r from-indigo-500 to-primary py-4 rounded-full font-bold text-lg hover:opacity-90 transition text-center">
+                    Get Started Free
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-24 gradient-bg relative overflow-hidden">
         <div class="absolute inset-0">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/20 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
                 Ready to Take Control of Your <span class="gradient-text">Finances</span>?
             </h2>
             <p class="text-xl text-gray-300 mb-8">
-                Start analyzing your spending today. It's free, secure, and powered by AI.
+                Start analyzing your spending today. It&rsquo;s free, secure, and powered by AI.
             </p>
             <a href="https://smartspender.vercel.app" class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition">
                 <span>Get Started Free</span>
-                <i class="fas fa-arrow-right ml-2"></i>
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
             </a>
         </div>
     </section>
@@ -330,8 +389,8 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-cube text-primary text-2xl"></i>
-                        <span class="font-bold text-xl">ACL Solutions</span>
+                        <span class="material-symbols-outlined text-primary text-3xl">deployed_code</span>
+                        <span class="font-bold text-xl" style="font-family: 'Space Grotesk', system-ui, sans-serif;">PookieB</span>
                     </div>
                     <p class="text-gray-400 text-sm">
                         Building innovative software solutions for everyday challenges.
@@ -339,25 +398,25 @@
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">Product</h4>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Product</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="/smartspender" class="hover:text-white transition">SmartSpender</a></li>
-                        <li><a href="/shredders" class="hover:text-white transition">Shredders</a></li>
+                        <li><a href="./" class="hover:text-white transition">SmartSpender</a></li>
+                        <li><a href="../shredders/" class="hover:text-white transition">Shredders</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Legal</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="/smartspender/privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="/smartspender/terms" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Support</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="/smartspender/support" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="support.html" class="hover:text-white transition">Help Center</a></li>
                         <li><a href="mailto:contact@pookieb.com" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
@@ -365,10 +424,10 @@
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm">
-                    &copy; 2025 ACL Solutions LLC. All rights reserved.
+                    &copy; 2025 PookieB. All rights reserved.
                 </p>
                 <p class="text-gray-500 text-sm">
-                    A Wyoming Limited Liability Company
+                    A product of ACL Solutions LLC, a Wyoming Limited Liability Company
                 </p>
             </div>
         </div>

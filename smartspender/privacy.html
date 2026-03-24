@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SmartSpender</title>
+    <title>SmartSpender Privacy | PookieB</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,47 +12,54 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6366f1',
-                        secondary: '#8b5cf6',
+                        primary: '#8b5cf6',
                         accent: '#ec4899',
                         dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
-        * { font-family: 'Inter', sans-serif; }
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', system-ui, sans-serif; }
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
         }
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .glass {
+        .glass-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .glass-dark {
             background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
@@ -61,28 +68,33 @@
     <nav class="fixed w-full z-50 glass-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center space-x-2">
-                    <i class="fas fa-cube text-primary text-2xl"></i>
-                    <span class="font-bold text-xl">ACL Solutions</span>
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">deployed_code</span>
+                    <span class="font-bold text-xl" style="font-family: 'Space Grotesk', system-ui, sans-serif;">PookieB</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/smartspender" class="text-gray-300 hover:text-white transition">SmartSpender</a>
-                    <a href="/smartspender/terms" class="text-gray-300 hover:text-white transition">Terms</a>
-                    <a href="/smartspender/support" class="text-gray-300 hover:text-white transition">Support</a>
-                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-primary to-secondary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    <a href="../" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="../products.html" class="text-gray-300 hover:text-white transition">Products</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-white transition">About</a>
+                    <a href="./" class="text-gray-300 hover:text-white transition">SmartSpender</a>
+                    <a href="https://smartspender.vercel.app" class="bg-gradient-to-r from-indigo-500 to-primary px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
                         Launch App
                     </a>
                 </div>
                 <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <i class="fas fa-bars"></i>
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
             <div class="px-4 py-4 space-y-3">
-                <a href="/smartspender" class="block text-gray-300 hover:text-white">SmartSpender</a>
-                <a href="/smartspender/terms" class="block text-gray-300 hover:text-white">Terms</a>
-                <a href="/smartspender/support" class="block text-gray-300 hover:text-white">Support</a>
+                <a href="../" class="block text-gray-300 hover:text-white">Home</a>
+                <a href="../products.html" class="block text-gray-300 hover:text-white">Products</a>
+                <a href="../about.html" class="block text-gray-300 hover:text-white">About</a>
+                <a href="./" class="block text-gray-300 hover:text-white">SmartSpender</a>
+                <a href="https://smartspender.vercel.app" class="block bg-gradient-to-r from-indigo-500 to-primary px-5 py-2 rounded-full font-semibold text-center">
+                    Launch App
+                </a>
             </div>
         </div>
     </nav>
@@ -90,299 +102,274 @@
     <!-- Hero Section -->
     <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
         </div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
-            <div class="inline-flex items-center glass px-4 py-2 rounded-full mb-6">
-                <i class="fas fa-shield-halved text-primary mr-2"></i>
-                <span class="text-sm text-gray-300">Your Privacy Matters</span>
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-indigo-400 mr-2">shield</span>
+                <span class="text-sm text-gray-300">Your Data, Protected</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                <span class="gradient-text">Privacy Policy</span>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                Privacy <span class="gradient-text">Policy</span>
             </h1>
-            <p class="text-gray-400">Last Updated: December 21, 2025</p>
+            <p class="text-xl text-gray-300">
+                Last updated: March 24, 2026
+            </p>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="py-16 bg-slate-900">
+    <!-- Privacy Content -->
+    <section class="py-20 bg-slate-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass rounded-2xl p-8 md:p-12" data-aos="fade-up">
-                <p class="text-gray-300 mb-8 text-lg leading-relaxed">
-                    ACL Solutions LLC ("Company," "we," "us," or "our") operates the SmartSpender web application and mobile application (collectively, the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use SmartSpender.
+
+            <!-- Intro -->
+            <div class="mb-10" data-aos="fade-up">
+                <p class="text-gray-400 text-lg">
+                    ACL Solutions LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates SmartSpender. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service. Please read this policy carefully.
                 </p>
+            </div>
 
-                <!-- Section 1 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">1</span>
-                        Information We Collect
-                    </h2>
+            <!-- Section 1 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">database</span>
+                    1. Information We Collect
+                </h2>
+                <div class="text-gray-400 space-y-4 pl-10">
+                    <p>We may collect the following types of information:</p>
 
-                    <div class="ml-13 space-y-6">
-                        <div class="glass rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-3 text-primary"><i class="fas fa-user-circle mr-2"></i>Account Information</h3>
-                            <p class="text-gray-400 mb-3">When you create an account or sign in, we may collect:</p>
-                            <ul class="text-gray-400 space-y-2">
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Email address (for authentication)</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Display name (optional)</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Authentication tokens from third-party providers (Google Sign-In)</li>
-                            </ul>
+                    <h3 class="text-lg font-semibold text-white" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Financial Data</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Transaction records uploaded via CSV or Excel files (dates, amounts, merchant names, descriptions)</li>
+                        <li>Budget configurations and spending categories you create</li>
+                        <li>Bill splitting records and shared expense data</li>
+                    </ul>
+
+                    <h3 class="text-lg font-semibold text-white" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Receipt Data</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Receipt images uploaded for scanning</li>
+                        <li>Extracted receipt data (merchant name, date, line items, amounts, totals)</li>
+                    </ul>
+
+                    <h3 class="text-lg font-semibold text-white" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Usage Data</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Natural language queries you submit to the AI</li>
+                        <li>Browser type, device information, and IP address</li>
+                        <li>Pages visited and features used within the Service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">psychology</span>
+                    2. AI Processing
+                </h2>
+                <div class="text-gray-400 space-y-4 pl-10">
+                    <p>SmartSpender uses third-party AI services to provide its core features:</p>
+
+                    <div class="glass-card rounded-xl p-6 space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Anthropic (Claude 3.5 Sonnet)</h3>
+                            <p>Used for natural language query processing, transaction categorization, spending analysis, and generating financial insights. Your transaction data and queries are sent to Anthropic&rsquo;s API for processing.</p>
                         </div>
-
-                        <div class="glass rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-3 text-secondary"><i class="fas fa-file-invoice-dollar mr-2"></i>Financial Data You Upload</h3>
-                            <p class="text-gray-400 mb-3">When you upload bank or credit card statements, we process:</p>
-                            <ul class="text-gray-400 space-y-2">
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Transaction dates, amounts, and descriptions</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Merchant names extracted from transaction descriptions</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Category assignments (automatically generated)</li>
-                            </ul>
-                            <p class="text-gray-500 text-sm mt-3 italic">This data is stored securely and associated with your user account. You can delete your data at any time.</p>
-                        </div>
-
-                        <div class="glass rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-3 text-accent"><i class="fas fa-chart-bar mr-2"></i>Usage Data</h3>
-                            <p class="text-gray-400 mb-3">We automatically collect:</p>
-                            <ul class="text-gray-400 space-y-2">
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Questions and queries you submit to the AI assistant</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>App features accessed and interaction patterns</li>
-                                <li class="flex items-start"><i class="fas fa-check text-green-400 mr-2 mt-1"></i>Device type and browser information</li>
-                            </ul>
+                        <div class="border-t border-white/10 pt-4">
+                            <h3 class="text-lg font-semibold text-white" style="font-family: 'Space Grotesk', system-ui, sans-serif;">OpenAI (GPT-4o Vision)</h3>
+                            <p>Used for receipt scanning and image parsing. Receipt images are sent to OpenAI&rsquo;s API for optical character recognition and data extraction.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Section 2 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">2</span>
-                        How We Use Your Information
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <ul class="text-gray-400 space-y-3">
-                            <li class="flex items-start"><i class="fas fa-cog text-primary mr-3 mt-1"></i>Provide personalized financial analysis and insights</li>
-                            <li class="flex items-start"><i class="fas fa-tags text-secondary mr-3 mt-1"></i>Categorize transactions and track spending patterns</li>
-                            <li class="flex items-start"><i class="fas fa-brain text-accent mr-3 mt-1"></i>Generate AI-powered recommendations and answers to your questions</li>
-                            <li class="flex items-start"><i class="fas fa-calculator text-green-400 mr-3 mt-1"></i>Calculate budgets and spending trends</li>
-                            <li class="flex items-start"><i class="fas fa-rocket text-blue-400 mr-3 mt-1"></i>Improve App performance and user experience</li>
-                            <li class="flex items-start"><i class="fas fa-bug text-orange-400 mr-3 mt-1"></i>Fix bugs and technical issues</li>
-                        </ul>
-                    </div>
+                    <p>Both providers process data under their respective data processing agreements. Your data is not used by these providers to train their AI models.</p>
                 </div>
+            </div>
 
-                <!-- Section 3 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">3</span>
-                        Data Storage and Security
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-300 mb-4">Your data is stored securely using industry-standard practices:</p>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-lock text-2xl text-green-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Encryption</h4>
-                                <p class="text-gray-400 text-sm">All data encrypted in transit (HTTPS) and at rest</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fab fa-aws text-2xl text-orange-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">AWS Infrastructure</h4>
-                                <p class="text-gray-400 text-sm">Enterprise-grade security on Amazon Web Services</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-key text-2xl text-blue-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Access Controls</h4>
-                                <p class="text-gray-400 text-sm">Strict controls ensure only authorized access</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-user-shield text-2xl text-purple-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Data Isolation</h4>
-                                <p class="text-gray-400 text-sm">Each user's data is isolated and private</p>
-                            </div>
+            <!-- Section 3 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">share</span>
+                    3. Third-Party Services
+                </h2>
+                <div class="text-gray-400 space-y-4 pl-10">
+                    <p>We use the following third-party services to operate SmartSpender:</p>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="glass-card rounded-xl p-5 text-center">
+                            <h3 class="font-semibold text-white mb-2" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Amazon Web Services</h3>
+                            <p class="text-sm">Cloud infrastructure, hosting, and data storage</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5 text-center">
+                            <h3 class="font-semibold text-white mb-2" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Anthropic</h3>
+                            <p class="text-sm">AI-powered text analysis and natural language processing</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5 text-center">
+                            <h3 class="font-semibold text-white mb-2" style="font-family: 'Space Grotesk', system-ui, sans-serif;">OpenAI</h3>
+                            <p class="text-sm">Computer vision for receipt scanning and image parsing</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Section 4 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">4</span>
-                        Third-Party Services
-                    </h2>
-                    <div class="space-y-3">
-                        <div class="glass rounded-xl p-4 flex items-center">
-                            <i class="fab fa-aws text-3xl text-orange-400 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold">Amazon Web Services (AWS)</h4>
-                                <p class="text-gray-400 text-sm">Cloud infrastructure including Lambda, DynamoDB, and S3</p>
-                            </div>
-                        </div>
-                        <div class="glass rounded-xl p-4 flex items-center">
-                            <i class="fas fa-robot text-3xl text-purple-400 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold">Amazon Bedrock (Claude AI)</h4>
-                                <p class="text-gray-400 text-sm">Powers AI assistant - queries processed but not used for training</p>
-                            </div>
-                        </div>
-                        <div class="glass rounded-xl p-4 flex items-center">
-                            <i class="fas fa-triangle text-3xl text-white mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold">Vercel</h4>
-                                <p class="text-gray-400 text-sm">Hosts the web application frontend</p>
-                            </div>
-                        </div>
-                        <div class="glass rounded-xl p-4 flex items-center">
-                            <i class="fab fa-google text-3xl text-blue-400 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold">Google Sign-In</h4>
-                                <p class="text-gray-400 text-sm">Optional authentication provider</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>We do not sell, rent, or share your personal or financial data with third parties for marketing purposes.</p>
                 </div>
+            </div>
 
-                <!-- Section 5 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">5</span>
-                        Data Sharing
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <div class="flex items-center mb-4 text-green-400">
-                            <i class="fas fa-shield-halved text-2xl mr-3"></i>
-                            <span class="text-xl font-bold">We do not sell your data.</span>
-                        </div>
-                        <p class="text-gray-400 mb-4">We do not share your financial information with third parties for marketing or advertising purposes.</p>
-                        <p class="text-gray-400 mb-2">We may share information only:</p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li class="flex items-start"><i class="fas fa-check text-gray-500 mr-2 mt-1"></i>With service providers who help operate the App (as described above)</li>
-                            <li class="flex items-start"><i class="fas fa-check text-gray-500 mr-2 mt-1"></i>If required by law or legal process</li>
-                            <li class="flex items-start"><i class="fas fa-check text-gray-500 mr-2 mt-1"></i>To protect the rights, safety, or property of our users or others</li>
-                        </ul>
-                    </div>
+            <!-- Section 4 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">lock</span>
+                    4. Data Security
+                </h2>
+                <div class="text-gray-400 space-y-4 pl-10">
+                    <p>We implement industry-standard security measures to protect your data:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-green-400 mr-3 mt-0.5">check_circle</span>
+                            <span><strong class="text-white">Encryption in Transit:</strong> All data transmitted between your browser and our servers is encrypted using TLS/SSL (HTTPS).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-green-400 mr-3 mt-0.5">check_circle</span>
+                            <span><strong class="text-white">Encryption at Rest:</strong> Financial data stored on our servers is encrypted using AES-256 encryption.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-green-400 mr-3 mt-0.5">check_circle</span>
+                            <span><strong class="text-white">Secure API Communication:</strong> All communication with third-party AI providers uses authenticated, encrypted API connections.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-green-400 mr-3 mt-0.5">check_circle</span>
+                            <span><strong class="text-white">Access Controls:</strong> Access to user data is restricted to authorized personnel only on a need-to-know basis.</span>
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Section 6 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">6</span>
-                        Data Retention
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <ul class="text-gray-400 space-y-3">
-                            <li class="flex items-start"><i class="fas fa-database text-primary mr-3 mt-1"></i><strong class="text-white mr-2">Transaction Data:</strong> Retained until you delete it or close your account</li>
-                            <li class="flex items-start"><i class="fas fa-history text-secondary mr-3 mt-1"></i><strong class="text-white mr-2">Query History:</strong> Retained for 90 days to enable query history features</li>
-                            <li class="flex items-start"><i class="fas fa-chart-pie text-accent mr-3 mt-1"></i><strong class="text-white mr-2">Usage Analytics:</strong> Aggregated and anonymized data may be retained indefinitely</li>
-                        </ul>
-                    </div>
+            <!-- Section 5 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">how_to_reg</span>
+                    5. Your Rights
+                </h2>
+                <div class="text-gray-400 space-y-4 pl-10">
+                    <p>You have the following rights regarding your data:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-indigo-400 mr-3 mt-0.5">visibility</span>
+                            <span><strong class="text-white">Access:</strong> You may request a copy of the personal data we hold about you.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-indigo-400 mr-3 mt-0.5">edit</span>
+                            <span><strong class="text-white">Correction:</strong> You may request correction of inaccurate or incomplete data.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-indigo-400 mr-3 mt-0.5">delete</span>
+                            <span><strong class="text-white">Deletion:</strong> You may request deletion of your personal data. We will comply unless retention is required by law.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-indigo-400 mr-3 mt-0.5">download</span>
+                            <span><strong class="text-white">Portability:</strong> You may request your data in a portable, machine-readable format.</span>
+                        </li>
+                    </ul>
+                    <p>To exercise any of these rights, contact us at <a href="mailto:contact@pookieb.com" class="text-indigo-400 hover:text-indigo-300 transition">contact@pookieb.com</a>.</p>
                 </div>
+            </div>
 
-                <!-- Section 7 -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">7</span>
-                        Your Rights and Choices
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-300 mb-4">You have control over your data:</p>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-eye text-2xl text-blue-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Access</h4>
-                                <p class="text-gray-400 text-sm">View all your transaction data and query history in the App</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-trash-alt text-2xl text-red-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Delete</h4>
-                                <p class="text-gray-400 text-sm">Delete individual transactions or all your data</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-file-export text-2xl text-green-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Export</h4>
-                                <p class="text-gray-400 text-sm">Export your data in standard formats</p>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <i class="fas fa-user-times text-2xl text-orange-400 mb-2"></i>
-                                <h4 class="font-semibold mb-1">Account Deletion</h4>
-                                <p class="text-gray-400 text-sm">Request complete account deletion by contacting support</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Section 6 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">cookie</span>
+                    6. Cookies and Tracking
+                </h2>
+                <div class="text-gray-400 space-y-3 pl-10">
+                    <p>SmartSpender may use cookies and similar technologies to enhance your experience, remember preferences, and analyze usage patterns. You can control cookie settings through your browser preferences.</p>
                 </div>
+            </div>
 
-                <!-- Remaining Sections -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">8</span>
-                        Children's Privacy
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-400">SmartSpender is not intended for children under 13 years of age. We do not knowingly collect information from children under 13.</p>
-                    </div>
+            <!-- Section 7 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">child_care</span>
+                    7. Children&rsquo;s Privacy
+                </h2>
+                <div class="text-gray-400 space-y-3 pl-10">
+                    <p>SmartSpender is not intended for use by individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will take steps to delete that information.</p>
                 </div>
+            </div>
 
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">9</span>
-                        International Data Transfers
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-400">Your data may be processed in the United States where our servers are located. By using the App, you consent to this transfer.</p>
-                    </div>
+            <!-- Section 8 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">update</span>
+                    8. Changes to This Policy
+                </h2>
+                <div class="text-gray-400 space-y-3 pl-10">
+                    <p>We may update this Privacy Policy from time to time. We will notify users of material changes by updating the &ldquo;Last updated&rdquo; date at the top of this page. We encourage you to review this policy periodically.</p>
                 </div>
+            </div>
 
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">10</span>
-                        Changes to This Policy
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-400">We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date and, where appropriate, through the App or email.</p>
-                    </div>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3 text-lg">11</span>
-                        Contact Us
-                    </h2>
-                    <div class="glass rounded-xl p-6">
-                        <p class="text-gray-400 mb-4">If you have questions about this Privacy Policy or our data practices, please contact us at:</p>
-                        <div class="bg-slate-800/50 rounded-lg p-6">
-                            <p class="font-semibold text-lg mb-2">ACL Solutions LLC</p>
-                            <p class="text-gray-400">30 N Gould St Ste N</p>
-                            <p class="text-gray-400">Sheridan, WY 82801</p>
-                            <p class="text-gray-400 mb-3">United States</p>
-                            <a href="mailto:contact@pookieb.com" class="inline-flex items-center text-primary hover:text-secondary transition">
-                                <i class="fas fa-envelope mr-2"></i>
-                                contact@pookieb.com
-                            </a>
-                        </div>
+            <!-- Section 9 -->
+            <div class="mb-10" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-4 flex items-center" style="font-family: 'Space Grotesk', system-ui, sans-serif;">
+                    <span class="material-symbols-outlined text-indigo-400 mr-3">mail</span>
+                    9. Contact Us
+                </h2>
+                <div class="text-gray-400 space-y-3 pl-10">
+                    <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+                    <div class="glass-card rounded-xl p-6 mt-4">
+                        <p class="font-semibold text-white">ACL Solutions LLC</p>
+                        <p>Email: <a href="mailto:contact@pookieb.com" class="text-indigo-400 hover:text-indigo-300 transition">contact@pookieb.com</a></p>
+                        <p>Wyoming, United States</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-slate-900 border-t border-white/10 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <i class="fas fa-cube text-primary text-2xl"></i>
-                    <span class="font-bold text-xl">ACL Solutions</span>
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">deployed_code</span>
+                        <span class="font-bold text-xl" style="font-family: 'Space Grotesk', system-ui, sans-serif;">PookieB</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Building innovative software solutions for everyday challenges.
+                    </p>
                 </div>
-                <div class="flex flex-wrap gap-6 text-gray-400">
-                    <a href="/smartspender" class="hover:text-white transition">SmartSpender</a>
-                    <a href="/smartspender/terms" class="hover:text-white transition">Terms</a>
-                    <a href="/smartspender/support" class="hover:text-white transition">Support</a>
+
+                <div>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="./" class="hover:text-white transition">SmartSpender</a></li>
+                        <li><a href="../shredders/" class="hover:text-white transition">Shredders</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4" style="font-family: 'Space Grotesk', system-ui, sans-serif;">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="support.html" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="mailto:contact@pookieb.com" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved. A Wyoming Limited Liability Company.</p>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 PookieB. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    A product of ACL Solutions LLC, a Wyoming Limited Liability Company
+                </p>
             </div>
         </div>
     </footer>

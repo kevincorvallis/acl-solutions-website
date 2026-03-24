@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilco Privacy | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1a2e 50%, #0c2340 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+        .legal-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #e2e8f0;
+        }
+        .legal-content p {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .legal-content ul {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        .legal-content ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .legal-content a {
+            color: #38bdf8;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .legal-content a:hover {
+            color: #0ea5e9;
+        }
+        .legal-content strong {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../wilco/" class="text-gray-300 hover:text-white transition">Wilco</a>
+                    <a href="../wilco/terms" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="../wilco/support" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="../wilco/" class="bg-gradient-to-r from-sky-500 to-sky-600 px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Start Training
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../wilco/" class="block text-gray-300 hover:text-white">Wilco</a>
+                <a href="../wilco/terms" class="block text-gray-300 hover:text-white">Terms</a>
+                <a href="../wilco/support" class="block text-gray-300 hover:text-white">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-sky-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-sky-400 mr-2 text-lg">shield</span>
+                <span class="text-sm text-gray-300">Your Privacy Matters</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Privacy Policy</span>
+            </h1>
+            <p class="text-gray-400 text-lg">Wilco Aviation Radio Trainer</p>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <div class="legal-content">
+                    <p class="text-gray-500 text-sm mb-8">Last Updated: March 24, 2026</p>
+
+                    <p>ACL Solutions LLC ("Company," "we," "us," or "our") operates the Wilco web application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use Wilco.</p>
+
+                    <h2>1. Information We Collect</h2>
+
+                    <h3>Training Session Data</h3>
+                    <p>When you use Wilco, we collect data related to your training sessions, including:</p>
+                    <ul>
+                        <li>Scenario selections and completion status</li>
+                        <li>Difficulty level choices</li>
+                        <li>Phraseology accuracy scores and response times</li>
+                        <li>Session duration and frequency</li>
+                        <li>Performance metrics and improvement trends</li>
+                    </ul>
+                    <p>This data is stored locally in your browser and used to power performance tracking charts and analytics within the App.</p>
+
+                    <h3>Voice Recordings</h3>
+                    <p><strong>Voice input is processed in real-time and is not permanently stored.</strong> When you use voice mode:</p>
+                    <ul>
+                        <li>Your speech is captured by the Web Speech API built into your browser</li>
+                        <li>Speech is converted to text locally by your browser's speech recognition engine</li>
+                        <li>The resulting text is sent to our AI for phraseology validation and ATC response generation</li>
+                        <li>Raw audio recordings are never transmitted to or stored on our servers</li>
+                    </ul>
+
+                    <h3>Performance Metrics</h3>
+                    <p>We collect aggregated, anonymized performance metrics to improve the App, including:</p>
+                    <ul>
+                        <li>Most and least practiced scenarios</li>
+                        <li>Common phraseology errors (anonymized)</li>
+                        <li>Average session duration and completion rates</li>
+                        <li>Difficulty level distribution</li>
+                    </ul>
+
+                    <h3>Usage Data</h3>
+                    <p>We may automatically collect basic usage information, including:</p>
+                    <ul>
+                        <li>Browser type and version</li>
+                        <li>Device type and operating system</li>
+                        <li>Pages and features accessed</li>
+                        <li>General interaction patterns</li>
+                    </ul>
+
+                    <h2>2. Information We Do NOT Collect</h2>
+                    <p>Wilco does not collect:</p>
+                    <ul>
+                        <li>Personal identification information (name, email, phone number)</li>
+                        <li>Account credentials or passwords (no account required)</li>
+                        <li>Payment or financial information</li>
+                        <li>Location data</li>
+                        <li>Contacts or address book information</li>
+                        <li>Persistent voice recordings or audio files</li>
+                    </ul>
+
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use collected information solely to:</p>
+                    <ul>
+                        <li>Provide AI-powered ATC training responses and phraseology feedback</li>
+                        <li>Display performance tracking charts and improvement analytics</li>
+                        <li>Improve scenario design and training content</li>
+                        <li>Fix bugs and optimize App performance</li>
+                        <li>Understand usage patterns to improve the training experience</li>
+                    </ul>
+
+                    <h2>4. Third-Party Services</h2>
+                    <p>The App uses the following third-party services that may process data:</p>
+                    <ul>
+                        <li><strong>Amazon Web Services (AWS):</strong> Hosts our application infrastructure. See <a href="https://aws.amazon.com/privacy/" target="_blank">AWS Privacy Policy</a>.</li>
+                        <li><strong>OpenAI:</strong> Powers AI ATC responses and phraseology validation. Text transcriptions of your radio calls are processed by OpenAI's API to generate responses. See <a href="https://openai.com/privacy" target="_blank">OpenAI's Privacy Policy</a>.</li>
+                        <li><strong>ElevenLabs:</strong> Provides text-to-speech for ATC voice output. ATC response text is sent to ElevenLabs to generate audio. See <a href="https://elevenlabs.io/privacy" target="_blank">ElevenLabs Privacy Policy</a>.</li>
+                    </ul>
+                    <p>We do not share your data with these providers beyond what is necessary to deliver the App's functionality. None of these providers receive raw audio recordings from your microphone.</p>
+
+                    <h2>5. Data Sharing</h2>
+                    <p><strong>We do not sell your data.</strong> We do not share your information with third parties for marketing or advertising purposes.</p>
+                    <p>We may share information only:</p>
+                    <ul>
+                        <li>With service providers who help operate the App (as described above)</li>
+                        <li>If required by law or legal process</li>
+                        <li>To protect the rights, safety, or property of our users or others</li>
+                    </ul>
+
+                    <h2>6. Data Security</h2>
+                    <p>We implement appropriate technical measures to protect your information:</p>
+                    <ul>
+                        <li>All API communications use HTTPS encryption</li>
+                        <li>Voice data is processed in real-time and not permanently stored</li>
+                        <li>Training session data is stored locally in your browser</li>
+                        <li>No personal identification data is collected or stored on our servers</li>
+                    </ul>
+
+                    <h2>7. Data Retention</h2>
+                    <p>Training session data and performance metrics are stored locally in your browser's storage. You can clear this data at any time by clearing your browser data or using the App's reset function. Anonymized, aggregated usage analytics may be retained indefinitely to improve the App.</p>
+
+                    <h2>8. Your Choices</h2>
+                    <p>You have control over your data:</p>
+                    <ul>
+                        <li><strong>Voice Input:</strong> You can choose to use text input instead of voice at any time</li>
+                        <li><strong>Microphone Access:</strong> You can enable or disable microphone access in your browser settings</li>
+                        <li><strong>Local Data:</strong> You can clear all training data by clearing your browser storage</li>
+                        <li><strong>Cookies:</strong> You can manage cookie preferences in your browser settings</li>
+                    </ul>
+
+                    <h2>9. Children's Privacy</h2>
+                    <p>Wilco is not intended for children under 13 years of age. We do not knowingly collect information from children under 13.</p>
+
+                    <h2>10. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date. Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+                    <h2>11. Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy or our data practices, please contact us at:</p>
+                    <p>
+                        ACL Solutions LLC<br>
+                        30 N Gould St Ste N<br>
+                        Sheridan, WY 82801<br>
+                        United States<br>
+                        Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../wilco/" class="hover:text-white transition">Wilco</a>
+                    <a href="../wilco/terms" class="hover:text-white transition">Terms</a>
+                    <a href="../wilco/support" class="hover:text-white transition">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

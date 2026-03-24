@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Daily Terms | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #451a03 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../news/" class="text-gray-300 hover:text-white transition">News Daily</a>
+                    <a href="../news/privacy.html" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../news/support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="#" class="bg-gradient-to-r from-amber-500 to-accent px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Read News
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../news/" class="block text-gray-300 hover:text-white">News Daily</a>
+                <a href="../news/privacy.html" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../news/support.html" class="block text-gray-300 hover:text-white">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-amber-400 mr-2">gavel</span>
+                <span class="text-sm text-gray-300">Legal Agreement</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Terms of Service</span>
+            </h1>
+            <p class="text-gray-400">Last Updated: March 24, 2026</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                    Welcome to Pookie B News Daily, a news aggregation and AI summarization service operated by ACL Solutions LLC ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of the News Daily web application, iOS application, Progressive Web App, podcast, and related services (collectively, the "Service"). By accessing or using News Daily, you agree to be bound by these Terms.
+                </p>
+
+                <!-- AI Content Disclaimer Banner -->
+                <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-xl p-6 mb-10" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <span class="material-symbols-outlined text-amber-400 text-2xl mr-4 mt-1">warning</span>
+                        <div>
+                            <h3 class="text-xl font-bold font-display text-amber-400 mb-2">AI Content Disclaimer</h3>
+                            <p class="text-gray-300 mb-3"><strong>NEWS DAILY USES AI TO GENERATE SUMMARIES, ANALYSIS, AND PODCAST CONTENT.</strong> AI-generated content may contain inaccuracies, biases, or errors.</p>
+                            <ul class="text-gray-400 space-y-2 text-sm">
+                                <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">close</span>AI summaries may not fully represent the original article's content or intent</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">close</span>Sentiment analysis is automated and may misinterpret tone or context</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">close</span>The AI podcast voice is synthetically generated and does not represent a real person</li>
+                                <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">close</span>Always refer to original sources for critical decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">1</span>
+                        Acceptance of Terms
+                    </h2>
+                    <p class="text-gray-400 ml-11">By accessing or using News Daily, you confirm that you are at least 13 years old and have the legal capacity to enter into these Terms. If you do not agree to these Terms, you may not use the Service.</p>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">2</span>
+                        Description of Service
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">News Daily is a news aggregation and AI summarization platform that provides:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Multi-source news aggregation from 20+ outlets, Reddit, Hacker News, Bluesky, Mastodon, GitHub, and ISW</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>AI-generated article summaries and sentiment analysis powered by GPT-4o-mini</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>A weekly AI-generated podcast using ElevenLabs Text-to-Speech</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Personalized watchlists and topic tracking</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Real-time news streaming via Server-Sent Events (SSE)</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-green-400 mr-2 text-base mt-0.5">check</span>Analytics dashboard with D3.js visualizations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">3</span>
+                        Content Aggregation Policy
+                    </h2>
+                    <div class="ml-11 glass-card rounded-xl p-5">
+                        <p class="text-gray-400 mb-3">News Daily aggregates content from third-party sources. You acknowledge that:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-2 text-base mt-0.5">info</span>We do not own or create the original news content displayed in the Service</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-2 text-base mt-0.5">info</span>All articles link back to their original sources</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-2 text-base mt-0.5">info</span>Source availability and content accuracy are controlled by third parties</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-2 text-base mt-0.5">info</span>We are not responsible for the accuracy, completeness, or timeliness of third-party content</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-amber-400 mr-2 text-base mt-0.5">info</span>Content may be removed if requested by original publishers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">4</span>
+                        AI-Generated Content
+                    </h2>
+                    <div class="ml-11 glass-card rounded-xl p-5">
+                        <p class="text-gray-400 mb-3">News Daily uses artificial intelligence to generate summaries, analysis, and podcast audio. You acknowledge that:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-purple-400 mr-2 text-base mt-0.5">smart_toy</span>AI-generated summaries may not accurately represent the original article</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-purple-400 mr-2 text-base mt-0.5">smart_toy</span>Sentiment analysis is automated and may contain errors</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-purple-400 mr-2 text-base mt-0.5">smart_toy</span>The podcast is AI-generated audio and does not represent human editorial judgment</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-purple-400 mr-2 text-base mt-0.5">smart_toy</span>You should always refer to original sources for important decisions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">5</span>
+                        Acceptable Use
+                    </h2>
+                    <div class="ml-11">
+                        <p class="text-gray-400 mb-3">You agree not to:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Use the Service for any unlawful purpose</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Attempt to gain unauthorized access to our systems</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Scrape, crawl, or use automated means to access the Service without permission</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Redistribute or resell aggregated content or AI summaries</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Reverse engineer or extract the source code</li>
+                            <li class="flex items-start"><span class="material-symbols-outlined text-red-400 mr-2 text-base mt-0.5">block</span>Interfere with or disrupt the Service's functionality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sections 6-12 -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">6</span>
+                            Intellectual Property
+                        </h2>
+                        <p class="text-gray-400 ml-11">The Service's original features, functionality, design, and AI-generated content formats are the exclusive property of ACL Solutions LLC. Original news content remains the property of its respective publishers. You may not copy, modify, distribute, sell, or lease any part of the Service without our written permission.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">7</span>
+                            Third-Party Services
+                        </h2>
+                        <p class="text-gray-400 ml-11">News Daily integrates with third-party services including Amazon Web Services, OpenAI (GPT-4o-mini), ElevenLabs (TTS), and various news APIs. We are not responsible for the availability, accuracy, or practices of these third-party services.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">8</span>
+                            Service Availability
+                        </h2>
+                        <p class="text-gray-400 ml-11">We strive to maintain high availability but do not guarantee uninterrupted access. The Service may be unavailable due to scheduled maintenance, system updates, third-party source outages, or circumstances beyond our control. We reserve the right to modify, suspend, or discontinue the Service at any time without notice.</p>
+                    </div>
+
+                    <!-- Disclaimers Section -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">9</span>
+                            Disclaimer of Warranties
+                        </h2>
+                        <div class="ml-11 glass-card rounded-xl p-5 bg-slate-800/50">
+                            <p class="text-gray-400 uppercase text-sm">THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT AI-GENERATED CONTENT WILL BE ACCURATE, COMPLETE, OR FREE OF ERRORS.</p>
+                        </div>
+                    </div>
+
+                    <!-- Limitation of Liability -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">10</span>
+                            Limitation of Liability
+                        </h2>
+                        <div class="ml-11 glass-card rounded-xl p-5 bg-slate-800/50">
+                            <p class="text-gray-400 uppercase text-sm mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW, ACL SOLUTIONS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING:</p>
+                            <ul class="text-gray-400 uppercase text-sm space-y-1">
+                                <li>- Decisions made based on AI-generated summaries or analysis</li>
+                                <li>- Inaccurate, incomplete, or misleading content from third-party sources</li>
+                                <li>- Errors in AI-generated podcast audio</li>
+                                <li>- Service interruptions or data loss</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">11</span>
+                            Indemnification
+                        </h2>
+                        <p class="text-gray-400 ml-11">You agree to defend, indemnify, and hold harmless ACL Solutions LLC from any claims arising out of your access to or use of the Service, your violation of these Terms, or your violation of any third-party rights.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">12</span>
+                            Governing Law
+                        </h2>
+                        <p class="text-gray-400 ml-11">These Terms shall be governed by the laws of the State of Wyoming, United States, without regard to conflict of law provisions. Any disputes shall be resolved in the state or federal courts located in Wyoming.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">13</span>
+                            Changes to Terms
+                        </h2>
+                        <p class="text-gray-400 ml-11">We reserve the right to modify these Terms at any time. If we make material changes, we will provide notice through the Service or by other means. Your continued use of News Daily after any changes constitutes acceptance of the new Terms.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">14</span>
+                            Severability
+                        </h2>
+                        <p class="text-gray-400 ml-11">If any provision of these Terms is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                            <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">15</span>
+                            Entire Agreement
+                        </h2>
+                        <p class="text-gray-400 ml-11">These Terms, together with our <a href="../news/privacy.html" class="text-amber-400 hover:underline">Privacy Policy</a>, constitute the entire agreement between you and ACL Solutions LLC regarding your use of News Daily.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mt-10">
+                    <h2 class="text-xl font-bold mb-3 flex items-center font-display">
+                        <span class="w-8 h-8 bg-gradient-to-br from-amber-500 to-accent rounded-lg flex items-center justify-center mr-3 text-sm">16</span>
+                        Contact Us
+                    </h2>
+                    <div class="ml-11 glass-card rounded-xl p-6">
+                        <p class="text-gray-400 mb-4">If you have questions about these Terms, please contact us at:</p>
+                        <div class="bg-slate-800/50 rounded-lg p-6">
+                            <p class="font-semibold font-display text-lg mb-2">ACL Solutions LLC</p>
+                            <p class="text-gray-400">30 N Gould St Ste N</p>
+                            <p class="text-gray-400">Sheridan, WY 82801</p>
+                            <p class="text-gray-400 mb-3">United States</p>
+                            <a href="mailto:contact@pookieb.com" class="inline-flex items-center text-amber-400 hover:text-amber-300 transition">
+                                <span class="material-symbols-outlined mr-2">mail</span>
+                                contact@pookieb.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../news/" class="hover:text-white transition">News Daily</a>
+                    <a href="../news/privacy.html" class="hover:text-white transition">Privacy</a>
+                    <a href="../news/support.html" class="hover:text-white transition">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

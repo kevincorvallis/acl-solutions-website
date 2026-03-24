@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pookie B News Daily — AI News Companion | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #451a03 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6); }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .source-badge {
+            transition: all 0.3s ease;
+        }
+        .source-badge:hover {
+            transform: scale(1.05);
+            border-color: rgba(245, 158, 11, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="../news/privacy.html" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../news/terms.html" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="../news/support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                    <a href="#" class="bg-gradient-to-r from-amber-500 to-accent px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Read Today's News
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../" class="block text-gray-300 hover:text-white">Home</a>
+                <a href="../news/privacy.html" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../news/terms.html" class="block text-gray-300 hover:text-white">Terms</a>
+                <a href="../news/support.html" class="block text-gray-300 hover:text-white">Support</a>
+                <a href="#" class="block bg-gradient-to-r from-amber-500 to-accent px-5 py-2 rounded-full font-semibold text-center">
+                    Read Today's News
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Blurs -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-8">
+                    <span class="w-2 h-2 bg-amber-400 rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm text-gray-300">AI-Powered News Intelligence</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 font-display">
+                    News, Curated by AI.<br>
+                    <span class="gradient-text">Delivered Daily.</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Multi-source aggregation from 20+ outlets, Reddit, Hacker News, GitHub, and more. Plus a weekly AI-generated podcast.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#" class="group bg-gradient-to-r from-amber-500 to-accent px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition flex items-center pulse-glow">
+                        <span>Read Today's News</span>
+                        <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                    <a href="#podcast" class="glass-card px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition flex items-center">
+                        <span class="material-symbols-outlined mr-2">headphones</span>
+                        <span>Listen to Podcast</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold font-display gradient-text">20+</div>
+                        <div class="text-gray-400 text-sm">News Sources</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold font-display gradient-text">AI</div>
+                        <div class="text-gray-400 text-sm">Summarized</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold font-display gradient-text">24/7</div>
+                        <div class="text-gray-400 text-sm">Real-Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 floating">
+            <span class="material-symbols-outlined text-2xl text-gray-400">expand_more</span>
+        </div>
+    </section>
+
+    <!-- Sources Showcase -->
+    <section class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                    Every Source. <span class="gradient-text">One Feed.</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    We aggregate from the platforms that matter most, so you never miss a story.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">terminal</span>
+                    <h3 class="font-bold font-display">Hacker News</h3>
+                    <p class="text-gray-500 text-sm">Tech & Startups</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">newspaper</span>
+                    <h3 class="font-bold font-display">20+ Outlets</h3>
+                    <p class="text-gray-500 text-sm">Major Publications</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">forum</span>
+                    <h3 class="font-bold font-display">Reddit</h3>
+                    <p class="text-gray-500 text-sm">Community Discourse</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">cloud</span>
+                    <h3 class="font-bold font-display">Bluesky</h3>
+                    <p class="text-gray-500 text-sm">Social Signals</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">public</span>
+                    <h3 class="font-bold font-display">Mastodon</h3>
+                    <p class="text-gray-500 text-sm">Fediverse</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">code</span>
+                    <h3 class="font-bold font-display">GitHub</h3>
+                    <p class="text-gray-500 text-sm">Trending Repos</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">shield</span>
+                    <h3 class="font-bold font-display">ISW</h3>
+                    <p class="text-gray-500 text-sm">Geopolitics</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center source-badge">
+                    <span class="material-symbols-outlined text-4xl text-amber-400 mb-3">add_circle</span>
+                    <h3 class="font-bold font-display">And More</h3>
+                    <p class="text-gray-500 text-sm">Growing Daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-800/30 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                    Powerful <span class="gradient-text">Features</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Everything you need to stay informed, powered by AI
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">dynamic_feed</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Multi-Source Aggregation</h3>
+                    <p class="text-gray-400">Pull stories from 20+ news outlets, Reddit, Hacker News, Bluesky, Mastodon, GitHub, and ISW into a single curated feed.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-accent rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">auto_awesome</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">AI Summaries & Analysis</h3>
+                    <p class="text-gray-400">GPT-4o-mini distills every article into concise summaries with key takeaways, sentiment analysis, and context you can read in seconds.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">podcasts</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Weekly AI Podcast</h3>
+                    <p class="text-gray-400">ElevenLabs TTS generates a weekly audio briefing with a custom PookieB voice, covering the biggest stories you may have missed.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">bookmark</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Personalized Watchlists</h3>
+                    <p class="text-gray-400">Track topics, keywords, companies, or repos that matter to you. Get notified the instant something relevant drops.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">stream</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Real-Time Streaming</h3>
+                    <p class="text-gray-400">Server-Sent Events (SSE) push breaking stories to your feed instantly -- no refreshing required.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-card rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">bar_chart</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Analytics Dashboard</h3>
+                    <p class="text-gray-400">D3.js-powered visualizations show trending topics, sentiment over time, and reading habit insights at a glance.</p>
+                </div>
+
+                <!-- Feature 7 (spans full width on lg) -->
+                <div class="glass-card rounded-2xl p-8 hover-lift lg:col-span-3" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-2xl">devices</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 font-display">Cross-Platform</h3>
+                            <p class="text-gray-400">Available on Web, iOS, and as a PWA. Read your news anywhere -- your watchlists, preferences, and reading history sync seamlessly across all your devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section id="podcast" class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/15 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-8">
+                <span class="material-symbols-outlined text-amber-400 mr-2">headphones</span>
+                <span class="text-sm text-gray-300">New Episodes Every Week</span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display">
+                Listen to the <span class="gradient-text">PookieB Weekly</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                A weekly AI-generated podcast that recaps the most important stories. Custom PookieB voice powered by ElevenLabs -- your personal news anchor.
+            </p>
+
+            <div class="glass-card rounded-2xl p-8 max-w-lg mx-auto mb-8">
+                <div class="flex items-center gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-accent rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-bold font-display text-lg">PookieB Weekly</h3>
+                        <p class="text-gray-400 text-sm">AI-curated news briefing</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="flex gap-[2px]">
+                                <div class="w-1 h-3 bg-amber-500 rounded-full animate-pulse"></div>
+                                <div class="w-1 h-5 bg-amber-400 rounded-full animate-pulse" style="animation-delay: 0.15s"></div>
+                                <div class="w-1 h-4 bg-amber-500 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+                                <div class="w-1 h-6 bg-amber-400 rounded-full animate-pulse" style="animation-delay: 0.45s"></div>
+                                <div class="w-1 h-3 bg-amber-500 rounded-full animate-pulse" style="animation-delay: 0.6s"></div>
+                                <div class="w-1 h-5 bg-amber-400 rounded-full animate-pulse" style="animation-delay: 0.75s"></div>
+                                <div class="w-1 h-4 bg-amber-500 rounded-full animate-pulse" style="animation-delay: 0.9s"></div>
+                            </div>
+                            <span class="text-gray-500 text-xs">~15 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition">
+                <span>Listen Now</span>
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display">
+                Ready to Stay <span class="gradient-text">Informed</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Start reading smarter today. AI-curated news, personalized for you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#" class="inline-flex items-center bg-gradient-to-r from-amber-500 to-accent px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition">
+                    <span>Read Today's News</span>
+                    <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                </a>
+                <a href="#podcast" class="inline-flex items-center glass-card px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition">
+                    <span class="material-symbols-outlined mr-2">headphones</span>
+                    <span>Listen to Podcast</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                        <span class="font-display font-bold text-xl">PookieB</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Building innovative software solutions for everyday challenges.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../news/" class="hover:text-white transition">News Daily</a></li>
+                        <li><a href="../smartspender/" class="hover:text-white transition">SmartSpender</a></li>
+                        <li><a href="../shredders/" class="hover:text-white transition">Shredders</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../news/privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="../news/terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../news/support.html" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="mailto:contact@pookieb.com" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 PookieB. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    A product of ACL Solutions LLC, a Wyoming Limited Liability Company
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

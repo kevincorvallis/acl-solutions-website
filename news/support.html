@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Daily Support | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #451a03 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../news/" class="text-gray-300 hover:text-white transition">News Daily</a>
+                    <a href="../news/privacy.html" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../news/terms.html" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="#" class="bg-gradient-to-r from-amber-500 to-accent px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Read News
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../news/" class="block text-gray-300 hover:text-white">News Daily</a>
+                <a href="../news/privacy.html" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../news/terms.html" class="block text-gray-300 hover:text-white">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-amber-400 mr-2">support_agent</span>
+                <span class="text-sm text-gray-300">We're Here to Help</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">Support Center</span>
+            </h1>
+            <p class="text-gray-400 text-lg">Get help with Pookie B News Daily</p>
+        </div>
+    </section>
+
+    <!-- Quick Help Links -->
+    <section class="py-12 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+                <a href="#getting-started" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">rocket_launch</span>
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-2">Getting Started</h3>
+                    <p class="text-gray-400 text-sm">Learn how to use News Daily</p>
+                </a>
+                <a href="#podcast-help" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">podcasts</span>
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-2">Podcast</h3>
+                    <p class="text-gray-400 text-sm">Help with the weekly podcast</p>
+                </a>
+                <a href="#technical" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">build</span>
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-2">Technical</h3>
+                    <p class="text-gray-400 text-sm">Troubleshooting & technical help</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-amber-400 mr-3 align-middle">rocket_launch</span>
+                Getting Started
+            </h2>
+
+            <div class="space-y-6">
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">dynamic_feed</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold font-display text-lg mb-2">How do I read the daily news feed?</h3>
+                            <p class="text-gray-400">Open the News Daily app from the web, iOS, or PWA. Your personalized feed loads automatically with the latest stories from all aggregated sources. Scroll to browse, or use the search and filter options to find specific topics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-accent rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">bookmark</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold font-display text-lg mb-2">How do I create a watchlist?</h3>
+                            <p class="text-gray-400">Navigate to the Watchlists tab and tap "Create Watchlist." Add keywords, topics, companies, or GitHub repos you want to track. You will be notified whenever a new story matches your watchlist criteria.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-accent to-pink-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">install_mobile</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold font-display text-lg mb-2">How do I install the PWA?</h3>
+                            <p class="text-gray-400">Visit News Daily in your mobile browser. On iOS, tap the Share button and then "Add to Home Screen." On Android/Chrome, tap the install banner or the three-dot menu and select "Install app."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Help Section -->
+    <section id="podcast-help" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-amber-400 mr-3 align-middle">podcasts</span>
+                Podcast Help
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">schedule</span>
+                            How often is the podcast released?
+                        </h3>
+                        <p class="text-gray-400">The PookieB Weekly podcast is released every week. Each episode is approximately 15 minutes and covers the most significant stories from the past seven days.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">record_voice_over</span>
+                            Who is the podcast voice?
+                        </h3>
+                        <p class="text-gray-400">The podcast uses a custom AI-generated voice powered by ElevenLabs Text-to-Speech technology. It is the PookieB voice, designed to be clear, engaging, and professional.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">download</span>
+                            Can I download episodes offline?
+                        </h3>
+                        <p class="text-gray-400">Yes. When using the PWA or iOS app, you can download podcast episodes for offline listening. Tap the download icon next to any episode.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical / FAQ Section -->
+    <section id="technical" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-amber-400 mr-3 align-middle">help</span>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">auto_awesome</span>
+                            How does the AI summarization work?
+                        </h3>
+                        <p class="text-gray-400">We use OpenAI's GPT-4o-mini model to generate concise summaries of each article. The AI reads the full article content and produces a brief summary with key takeaways, sentiment analysis, and contextual background.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">tune</span>
+                            Can I customize which sources appear in my feed?
+                        </h3>
+                        <p class="text-gray-400">Yes. Go to Settings and select "Sources" to enable or disable individual news outlets, social platforms, and community sources. Your preferences sync across all devices.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">lock</span>
+                            How is my data kept private?
+                        </h3>
+                        <p class="text-gray-400">We collect minimal data -- your reading history and watchlists are stored securely and never shared with third parties for advertising. See our <a href="../news/privacy.html" class="text-amber-400 hover:underline">Privacy Policy</a> for full details.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">phone_iphone</span>
+                            Is there an iOS app?
+                        </h3>
+                        <p class="text-gray-400">Yes, News Daily is available as a native iOS app and as a Progressive Web App (PWA). You can also access the full experience through any modern web browser.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <h3 class="font-bold font-display text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-amber-400 mr-3">stream</span>
+                            What is real-time streaming (SSE)?
+                        </h3>
+                        <p class="text-gray-400">Server-Sent Events (SSE) allow breaking stories to appear in your feed the moment they are published, without needing to refresh the page. If you experience connection issues, try refreshing the page or checking your network connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-accent mr-3 align-middle">mail</span>
+                Contact Us
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">mail</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-display mb-2">Email Support</h3>
+                        <p class="text-gray-400 mb-4">For support requests, bug reports, or feature suggestions</p>
+                        <a href="mailto:contact@pookieb.com" class="inline-flex items-center bg-gradient-to-r from-amber-500 to-accent px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+                            <span class="material-symbols-outlined mr-2">send</span>
+                            contact@pookieb.com
+                        </a>
+                        <p class="text-gray-500 text-sm mt-4">We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-accent to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">business</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-display mb-2">Company Address</h3>
+                        <p class="text-gray-400 mb-4">ACL Solutions LLC</p>
+                        <div class="text-gray-300">
+                            <p>30 N Gould St Ste N</p>
+                            <p>Sheridan, WY 82801</p>
+                            <p>United States</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/15 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display">
+                Ready to Stay Informed?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                AI-curated news from every source that matters
+            </p>
+            <a href="#" class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition">
+                <span>Read Today's News</span>
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../news/" class="hover:text-white transition">News Daily</a>
+                    <a href="../news/privacy.html" class="hover:text-white transition">Privacy</a>
+                    <a href="../news/terms.html" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

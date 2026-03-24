@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayByDay Support | PookieB</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1e1a 50%, #0c2318 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../" class="flex items-center space-x-2">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../daybyday/" class="text-gray-300 hover:text-white transition">DayByDay</a>
+                    <a href="../daybyday/privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                    <a href="../daybyday/terms" class="text-gray-300 hover:text-white transition">Terms</a>
+                    <a href="../daybyday/" class="bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                        Start Journaling
+                    </a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../daybyday/" class="block text-gray-300 hover:text-white">DayByDay</a>
+                <a href="../daybyday/privacy" class="block text-gray-300 hover:text-white">Privacy</a>
+                <a href="../daybyday/terms" class="block text-gray-300 hover:text-white">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center glass-card px-4 py-2 rounded-full mb-6">
+                <span class="material-symbols-outlined text-emerald-400 mr-2 text-lg">support_agent</span>
+                <span class="text-sm text-gray-300">We're Here to Help</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">
+                <span class="gradient-text">DayByDay Support</span>
+            </h1>
+            <p class="text-gray-400 text-lg">Get help with your journaling journey</p>
+        </div>
+    </section>
+
+    <!-- Quick Help Links -->
+    <section class="py-12 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+                <a href="#getting-started" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">rocket_launch</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Getting Started</h3>
+                    <p class="text-gray-400 text-sm">Learn the basics of DayByDay</p>
+                </a>
+                <a href="#social" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">group</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Social Features</h3>
+                    <p class="text-gray-400 text-sm">Connect and share with friends</p>
+                </a>
+                <a href="#gamification" class="glass-card rounded-2xl p-6 text-center hover:bg-white/10 transition group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">emoji_events</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Streaks & Gamification</h3>
+                    <p class="text-gray-400 text-sm">Build habits and stay motivated</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-emerald-400 mr-3 align-middle text-3xl">rocket_launch</span>
+                Getting Started
+            </h2>
+
+            <div class="space-y-6">
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">play_circle</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">How do I create my first journal entry?</h3>
+                            <p class="text-gray-400">After signing up, tap the "+" button on the home screen. You'll be taken to the rich text editor powered by Quill. Write your thoughts, add images, tag your location, and select a mood. Tap "Save" when you're done. Your entry defaults to private.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">photo_camera</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Can I add photos and media to entries?</h3>
+                            <p class="text-gray-400">Yes. The rich editor supports inline images from your camera roll or camera. You can also add location tags from your current position or search for a place. Each entry supports multiple photos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-emerald-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl">mood</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">What is mood tracking?</h3>
+                            <p class="text-gray-400">Each journal entry lets you select a mood from a set of options. Over time, DayByDay builds a mood timeline so you can see patterns in how you feel and what influences your wellbeing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Features Section -->
+    <section id="social" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-emerald-400 mr-3 align-middle text-3xl">group</span>
+                Social Features
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-emerald-400 mr-3">person_add</span>
+                            How do I connect with friends?
+                        </h3>
+                        <p class="text-gray-400">Go to the Social tab and search for friends by username. Send a connection request and once they accept, you'll see their shared entries in your social feed. You can also share your invite link directly.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-teal-400 mr-3">share</span>
+                            How do I share a journal entry?
+                        </h3>
+                        <p class="text-gray-400">Open any entry and tap the share icon. You can share with all your connections, select specific friends, or generate a public link. Entries are always private by default until you explicitly choose to share them.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">favorite</span>
+                            Can I react to and comment on entries?
+                        </h3>
+                        <p class="text-gray-400">Yes. When viewing a friend's shared entry, you can add reactions (emoji-based) and leave text comments. This creates a supportive environment that encourages consistent journaling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Streaks & Gamification Section -->
+    <section id="gamification" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-emerald-400 mr-3 align-middle text-3xl">emoji_events</span>
+                Streaks & Gamification
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-emerald-400 mr-3">local_fire_department</span>
+                            How do streaks work?
+                        </h3>
+                        <p class="text-gray-400">Write at least one journal entry per day to build your streak. Your streak count is displayed on your profile and in the leaderboard. Miss a day and your streak resets to zero, so stay consistent.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-teal-400 mr-3">leaderboard</span>
+                            What are leaderboards?
+                        </h3>
+                        <p class="text-gray-400">Leaderboards rank you and your connections by current streak length and total entries. It's a friendly way to stay motivated and celebrate each other's consistency.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">handshake</span>
+                            What are accountability partners?
+                        </h3>
+                        <p class="text-gray-400">You can pair up with a friend as accountability partners. You'll both receive reminders to journal and notifications when the other person writes an entry. It helps keep both of you on track.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-emerald-400 mr-3 align-middle text-3xl">help</span>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-emerald-400 mr-3">edit_note</span>
+                            How do I create a journal entry?
+                        </h3>
+                        <p class="text-gray-400">Tap the "+" button on the home screen to open the rich text editor. Write your thoughts, add images from your camera or photo library, tag your location, and select your mood. Hit "Save" when you're finished. You can edit entries later at any time.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-teal-400 mr-3">map</span>
+                            How does trip organization work?
+                        </h3>
+                        <p class="text-gray-400">Go to the Trips tab and tap "New Trip." Give your trip a name, date range, and optional cover photo. Then assign journal entries to the trip. Entries are plotted on an interactive MapKit-powered map so you can relive your journey visually.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-emerald-400 mr-3">local_fire_department</span>
+                            How do streaks work?
+                        </h3>
+                        <p class="text-gray-400">Write at least one journal entry per day to build your streak. Your current streak and longest streak are displayed on your profile. Daily prompts and notifications help you remember to write before the day ends.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-primary mr-3">lock</span>
+                            How do privacy controls work?
+                        </h3>
+                        <p class="text-gray-400">Every entry defaults to private. When sharing, you choose the audience: all connections, select friends, or public link. You can revoke sharing at any time. Your private entries are encrypted and never visible to other users.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-teal-400 mr-3">person_add</span>
+                            How do I connect with friends?
+                        </h3>
+                        <p class="text-gray-400">In the Social tab, search by username or share your invite link. Once a friend accepts your connection request, you'll see their shared entries in your feed and can react or comment on them.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 flex items-center">
+                            <span class="material-symbols-outlined text-emerald-400 mr-3">download</span>
+                            Can I export my journal data?
+                        </h3>
+                        <p class="text-gray-400">Yes. Go to Settings and tap "Export Data." You can download all your journal entries as a JSON or PDF file, including images and metadata. Your data belongs to you and you can take it with you at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center font-display" data-aos="fade-up">
+                <span class="material-symbols-outlined text-accent mr-3 align-middle text-3xl">mail</span>
+                Contact Us
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">mail</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email Support</h3>
+                        <p class="text-gray-400 mb-4">For support requests, bug reports, or feature suggestions</p>
+                        <a href="mailto:contact@pookieb.com" class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+                            <span class="material-symbols-outlined mr-2 text-lg">send</span>
+                            contact@pookieb.com
+                        </a>
+                        <p class="text-gray-500 text-sm mt-4">We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-3xl">apartment</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Company Address</h3>
+                        <p class="text-gray-400 mb-4">ACL Solutions LLC</p>
+                        <div class="text-gray-300">
+                            <p>30 N Gould St Ste N</p>
+                            <p>Sheridan, WY 82801</p>
+                            <p>United States</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="font-display font-bold text-xl">PookieB</span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-gray-400">
+                    <a href="../daybyday/" class="hover:text-white transition">DayByDay</a>
+                    <a href="../daybyday/privacy" class="hover:text-white transition">Privacy</a>
+                    <a href="../daybyday/terms" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 PookieB. All rights reserved. A product of ACL Solutions LLC, a Wyoming Limited Liability Company.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

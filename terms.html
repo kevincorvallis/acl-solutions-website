@@ -1,127 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - ACL Solutions LLC</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Terms of Service | PookieB</title>
+    <meta name="description" content="Terms of Service for PookieB products and services by ACL Solutions LLC.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-glow {
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+        }
+        .legal-section h2 {
+            color: #e5e7eb;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .legal-section h3 {
+            color: #d1d5db;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .legal-section p {
+            color: #9ca3af;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .legal-section ul {
+            color: #9ca3af;
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .legal-section ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+        .legal-section a {
+            color: #8b5cf6;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .legal-section a:hover {
+            color: #a78bfa;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/" class="logo">ACL Solutions</a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-950 text-white font-sans antialiased">
 
-    <main class="legal-page">
-        <div class="legal-content">
-            <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: December 20, 2025</p>
-
-            <p>Welcome to ACL Solutions LLC ("Company," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of our websites, applications, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
-
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using our Services, you confirm that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into these Terms. If you are using our Services on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
-
-            <h2>2. Description of Services</h2>
-            <p>ACL Solutions LLC develops and operates various software applications and services, including but not limited to personal finance management tools, productivity applications, and other digital products. The specific features and functionality of each service are described within the respective application or on our website.</p>
-
-            <h2>3. User Accounts</h2>
-            <p>Some of our Services may require you to create an account. When you create an account, you agree to:</p>
-            <ul>
-                <li>Provide accurate, current, and complete information</li>
-                <li>Maintain and promptly update your account information</li>
-                <li>Keep your password secure and confidential</li>
-                <li>Accept responsibility for all activities that occur under your account</li>
-                <li>Notify us immediately of any unauthorized use of your account</li>
-            </ul>
-
-            <h2>4. Acceptable Use</h2>
-            <p>You agree not to use our Services to:</p>
-            <ul>
-                <li>Violate any applicable laws, regulations, or third-party rights</li>
-                <li>Upload, transmit, or distribute any harmful, threatening, abusive, or unlawful content</li>
-                <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
-                <li>Interfere with or disrupt the integrity or performance of our Services</li>
-                <li>Use automated means to access our Services without our express permission</li>
-                <li>Engage in any activity that could damage, disable, or impair our Services</li>
-                <li>Collect or harvest any information from our Services without authorization</li>
-            </ul>
-
-            <h2>5. Intellectual Property</h2>
-            <p>All content, features, and functionality of our Services, including but not limited to text, graphics, logos, icons, images, audio clips, software, and the compilation thereof, are the exclusive property of ACL Solutions LLC or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
-            <p>You may not copy, modify, distribute, sell, or lease any part of our Services or included software, nor may you reverse engineer or attempt to extract the source code of that software, unless laws prohibit those restrictions or you have our written permission.</p>
-
-            <h2>6. User Content</h2>
-            <p>Some of our Services allow you to upload, submit, store, send, or receive content ("User Content"). You retain ownership of any intellectual property rights that you hold in that User Content.</p>
-            <p>By submitting User Content to our Services, you grant us a worldwide, non-exclusive, royalty-free license to use, host, store, reproduce, modify, and distribute such content solely for the purpose of operating and improving our Services.</p>
-
-            <h2>7. Third-Party Services</h2>
-            <p>Our Services may contain links to third-party websites or services that are not owned or controlled by ACL Solutions LLC. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
-
-            <h2>8. Payment Terms</h2>
-            <p>Certain Services may require payment. If you purchase a paid Service, you agree to pay all fees and applicable taxes. Fees are non-refundable except as required by law or as explicitly stated in these Terms. We reserve the right to change our fees at any time, with notice provided before the changes take effect for existing subscribers.</p>
-
-            <h2>9. Termination</h2>
-            <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms. Upon termination, your right to use the Services will immediately cease.</p>
-
-            <h2>10. Disclaimers</h2>
-            <p>OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE.</p>
-
-            <h2>11. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL ACL SOLUTIONS LLC, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
-            <ul>
-                <li>Your access to or use of or inability to access or use the Services</li>
-                <li>Any conduct or content of any third party on the Services</li>
-                <li>Any content obtained from the Services</li>
-                <li>Unauthorized access, use, or alteration of your transmissions or content</li>
-            </ul>
-
-            <h2>12. Indemnification</h2>
-            <p>You agree to defend, indemnify, and hold harmless ACL Solutions LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with your access to or use of the Services, your User Content, or your violation of these Terms.</p>
-
-            <h2>13. Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the state or federal courts located in Wyoming.</p>
-
-            <h2>14. Changes to Terms</h2>
-            <p>We reserve the right to modify or replace these Terms at any time at our sole discretion. If we make material changes, we will provide notice through our Services or by other means. Your continued use of the Services after any such changes constitutes your acceptance of the new Terms.</p>
-
-            <h2>15. Severability</h2>
-            <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect.</p>
-
-            <h2>16. Entire Agreement</h2>
-            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and ACL Solutions LLC regarding your use of our Services and supersede any prior agreements.</p>
-
-            <h2>17. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at:</p>
-            <p>
-                ACL Solutions LLC<br>
-                30 N Gould St Ste N<br>
-                Sheridan, WY 82801<br>
-                United States<br>
-                Email: <a href="mailto:contact@pookieb.com">contact@pookieb.com</a>
-            </p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-l-0 border-r-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <span class="text-2xl font-display font-bold gradient-text">PookieB</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/products.html" class="text-gray-300 hover:text-white transition-colors text-sm">Products</a>
+                    <a href="/about.html" class="text-gray-300 hover:text-white transition-colors text-sm">About</a>
+                    <a href="/contact.html" class="text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white" aria-label="Open menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-            <div class="footer-links">
-                <a href="/terms.html">Terms of Service</a>
-                <a href="/privacy.html">Privacy Policy</a>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/products.html" class="block text-gray-300 hover:text-white transition-colors text-sm">Products</a>
+                <a href="/about.html" class="block text-gray-300 hover:text-white transition-colors text-sm">About</a>
+                <a href="/contact.html" class="block text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 hero-glow">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+                Terms of <span class="gradient-text">Service</span>
+            </h1>
+            <p class="text-gray-400">Last updated: March 2025</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 sm:p-12 legal-section">
+
+                <h2>1. Agreement to Terms</h2>
+                <p>
+                    By accessing or using any products, services, or websites (collectively, the "Services") provided by ACL Solutions LLC ("Company," "we," "us," or "our"), operating under the brand name PookieB, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not access or use our Services.
+                </p>
+                <p>
+                    These Terms apply to all visitors, users, and others who access or use our Services, including but not limited to SmartSpender, Shredders, News Daily, DayByDay, Harmony Tracker, and Wilco.
+                </p>
+
+                <h2>2. Use License</h2>
+                <p>
+                    Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use our Services for your personal, non-commercial use. This license does not include:
+                </p>
+                <ul>
+                    <li>Modifying, copying, or distributing any content from our Services</li>
+                    <li>Using our Services for any commercial purpose without prior written consent</li>
+                    <li>Attempting to reverse engineer, decompile, or disassemble any software used in our Services</li>
+                    <li>Removing any copyright, trademark, or other proprietary notices from our content</li>
+                    <li>Transferring your account or access rights to another person</li>
+                    <li>Using data mining, robots, or similar data gathering and extraction methods</li>
+                </ul>
+                <p>
+                    This license shall automatically terminate if you violate any of these restrictions and may be terminated by ACL Solutions LLC at any time.
+                </p>
+
+                <h2>3. User Accounts</h2>
+                <p>
+                    Some of our Services may require you to create an account. When you create an account, you agree to:
+                </p>
+                <ul>
+                    <li>Provide accurate, current, and complete information during registration</li>
+                    <li>Maintain and promptly update your account information to keep it accurate and complete</li>
+                    <li>Maintain the security and confidentiality of your login credentials</li>
+                    <li>Accept responsibility for all activities that occur under your account</li>
+                    <li>Notify us immediately of any unauthorized use of your account</li>
+                </ul>
+                <p>
+                    We reserve the right to suspend or terminate your account if any information provided is found to be inaccurate, false, or incomplete, or if you violate these Terms.
+                </p>
+
+                <h2>4. Acceptable Use</h2>
+                <p>
+                    You agree not to use our Services to:
+                </p>
+                <ul>
+                    <li>Violate any applicable laws, regulations, or third-party rights</li>
+                    <li>Transmit any viruses, malware, or other harmful code</li>
+                    <li>Engage in any activity that interferes with or disrupts our Services</li>
+                    <li>Harass, threaten, or intimidate other users</li>
+                    <li>Send unsolicited advertising, spam, or promotional materials</li>
+                    <li>Impersonate any person or entity or misrepresent your affiliation</li>
+                    <li>Collect or harvest any personally identifiable information from other users</li>
+                    <li>Use our Services to generate content that is illegal, harmful, or infringes on the rights of others</li>
+                    <li>Attempt to gain unauthorized access to our systems, servers, or networks</li>
+                </ul>
+
+                <h2>5. Intellectual Property</h2>
+                <p>
+                    The Services and all content, features, and functionality (including but not limited to text, graphics, logos, icons, images, audio, video, software, and the design, selection, and arrangement thereof) are owned by ACL Solutions LLC, its licensors, or other providers and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                </p>
+                <p>
+                    The PookieB name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of ACL Solutions LLC. You must not use such marks without our prior written permission.
+                </p>
+                <p>
+                    Any content you submit, post, or display through our Services remains yours. However, by submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and distribute that content in connection with providing and improving our Services.
+                </p>
+
+                <h2>6. Disclaimer of Warranties</h2>
+                <p>
+                    OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+                </p>
+                <p>
+                    We do not warrant that our Services will be uninterrupted, timely, secure, or error-free. We do not warrant the accuracy, reliability, or completeness of any information provided through our Services. AI-generated content, recommendations, and analysis provided by our Services are for informational purposes only and should not be relied upon as professional advice.
+                </p>
+                <p>
+                    SmartSpender does not provide financial advice. Shredders does not guarantee snow conditions or safety. News Daily summaries may not capture all nuances of original articles. Any reliance on our Services is at your own risk.
+                </p>
+
+                <h2>7. Limitation of Liability</h2>
+                <p>
+                    TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ACL SOLUTIONS LLC, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:
+                </p>
+                <ul>
+                    <li>Your access to or use of (or inability to access or use) our Services</li>
+                    <li>Any conduct or content of any third party on our Services</li>
+                    <li>Any content obtained from our Services</li>
+                    <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                </ul>
+                <p>
+                    Our total liability to you for all claims arising out of or relating to these Terms or your use of our Services shall not exceed the amount you have paid us in the twelve (12) months preceding the claim, or fifty dollars ($50), whichever is greater.
+                </p>
+
+                <h2>8. Privacy</h2>
+                <p>
+                    Your use of our Services is also governed by our <a href="/privacy.html">Privacy Policy</a>, which describes how we collect, use, and protect your personal information. By using our Services, you consent to the collection and use of your information as described in our Privacy Policy.
+                </p>
+
+                <h2>9. Termination</h2>
+                <p>
+                    We may terminate or suspend your account and access to our Services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms.
+                </p>
+                <p>
+                    Upon termination, your right to use our Services will immediately cease. If you wish to terminate your account, you may simply discontinue using our Services or contact us to request account deletion.
+                </p>
+                <p>
+                    All provisions of these Terms which by their nature should survive termination shall survive, including without limitation ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+                </p>
+
+                <h2>10. Governing Law</h2>
+                <p>
+                    These Terms shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law provisions.
+                </p>
+                <p>
+                    Any disputes arising out of or related to these Terms or our Services shall be resolved exclusively in the state or federal courts located in Sheridan County, Wyoming. You consent to the personal jurisdiction and venue in such courts.
+                </p>
+                <p>
+                    Our failure to enforce any right or provision of these Terms shall not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions shall remain in effect.
+                </p>
+
+                <h2>11. Changes to Terms</h2>
+                <p>
+                    We reserve the right to modify or replace these Terms at any time at our sole discretion. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+                </p>
+                <p>
+                    By continuing to access or use our Services after any revisions become effective, you agree to be bound by the revised terms.
+                </p>
+
+                <h2>12. Contact Information</h2>
+                <p>
+                    If you have any questions about these Terms of Service, please contact us:
+                </p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:contact@pookieb.com">contact@pookieb.com</a></li>
+                    <li><strong>Address:</strong> ACL Solutions LLC, 30 N Gould St Ste N, Sheridan, WY 82801</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="/" class="text-2xl font-display font-bold gradient-text">PookieB</a>
+                    <p class="text-gray-500 text-sm mt-3 leading-relaxed">AI-powered apps designed to make your life better, smarter, and more fun.</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/smartspender/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">SmartSpender</a></li>
+                        <li><a href="/shredders/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Shredders</a></li>
+                        <li><a href="/news/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">News Daily</a></li>
+                        <li><a href="/daybyday/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">DayByDay</a></li>
+                        <li><a href="/harmony/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Harmony Tracker</a></li>
+                        <li><a href="/wilco/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Wilco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Contact</a></li>
+                        <li><a href="/products.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Products</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-gray-600 text-sm">&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
 </body>
 </html>

@@ -1,178 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shredders - AI-Powered Powder Intelligence</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Shredders — AI Powder Intelligence | PookieB</title>
+    <meta name="description" content="Real-time snow conditions, AI powder scores, and trip planning for 53 resorts across 11 regions. Never miss a powder day.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
     <style>
-        .app-hero {
-            background: linear-gradient(135deg, #0D1A29 0%, #1A2E47 50%, #1F3F8B 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .app-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .app-hero .tagline {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .feature-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-        .feature-card h3 {
-            color: #1F3F8B;
-            margin-bottom: 1rem;
-        }
-        .app-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .app-links a {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #22C55E;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .app-links a:hover {
-            background: #16A34A;
-        }
-        .app-links a.secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-        .app-links a.secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        .mountains-list {
-            background: #f8f9fa;
-            padding: 60px 20px;
-        }
-        .mountains-list h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .mountains-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .mountain-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="/" class="logo">ACL Solutions</a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/shredders/privacy.html">Privacy</a></li>
-                <li><a href="/shredders/support.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased">
 
-    <main>
-        <section class="app-hero">
-            <h1>Shredders</h1>
-            <p class="tagline">AI-Powered Powder Intelligence for Skiers & Snowboarders</p>
-            <p style="max-width: 600px; margin: 0 auto 2rem;">Real-time snow conditions, weather forecasts, and powder scores for Pacific Northwest mountains. Know before you go.</p>
-            <div class="app-links">
-                <a href="https://shredders-bay.vercel.app">Web App</a>
-                <a href="#" class="secondary">iOS App Coming Soon</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-t-0 border-x-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../" class="font-display font-bold text-xl text-white hover:text-primary transition-colors">PookieB</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="../#products" class="text-sm text-gray-400 hover:text-white transition-colors">Products</a>
+                    <a href="#features" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">Features</a>
+                    <a href="support.html" class="text-sm text-gray-400 hover:text-white transition-colors">Support</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white" aria-label="Toggle navigation menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-        </section>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+            <a href="../" class="block text-sm text-gray-400 hover:text-white py-2">Home</a>
+            <a href="../#products" class="block text-sm text-gray-400 hover:text-white py-2">Products</a>
+            <a href="#features" class="block text-sm text-blue-400 hover:text-blue-300 py-2">Features</a>
+            <a href="support.html" class="block text-sm text-gray-400 hover:text-white py-2">Support</a>
+        </div>
+    </nav>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>Real-Time Conditions</h3>
-                <p>Live snow depth, 24-hour snowfall, and current weather conditions from SNOTEL stations across the region.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Powder Score</h3>
-                <p>Our AI analyzes multiple data sources to give you a 1-10 powder score, so you know exactly how good the skiing will be.</p>
-            </div>
-            <div class="feature-card">
-                <h3>7-Day Forecast</h3>
-                <p>Detailed weather forecasts including expected snowfall, temperatures, and wind conditions for each mountain.</p>
-            </div>
-            <div class="feature-card">
-                <h3>AI Chat Assistant</h3>
-                <p>Ask our AI assistant anything about conditions, compare mountains, or get personalized recommendations.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Trip Planning</h3>
-                <p>Road conditions, pass status, chain requirements, and drive time estimates to help you plan your trip.</p>
-            </div>
-            <div class="feature-card">
-                <h3>iOS Widget</h3>
-                <p>Glance at current conditions right from your home screen with our beautiful iOS widget.</p>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Background gradient blurs -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl"></div>
 
-        <section class="mountains-list">
-            <h2>Supported Mountains</h2>
-            <div class="mountains-grid">
-                <div class="mountain-item">Mt. Baker</div>
-                <div class="mountain-item">Stevens Pass</div>
-                <div class="mountain-item">Crystal Mountain</div>
-                <div class="mountain-item">Snoqualmie</div>
-                <div class="mountain-item">White Pass</div>
-                <div class="mountain-item">Mission Ridge</div>
-                <div class="mountain-item">49 Degrees North</div>
-                <div class="mountain-item">Schweitzer</div>
-                <div class="mountain-item">Lookout Pass</div>
-                <div class="mountain-item">Mt. Hood Meadows</div>
-                <div class="mountain-item">Timberline</div>
-                <div class="mountain-item">Mt. Bachelor</div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-blue-400 text-sm font-medium mb-8">
+                <span class="material-symbols-outlined text-lg">downhill_skiing</span>
+                AI Powder Intelligence
             </div>
-        </section>
-    </main>
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+                Never Miss a<br>
+                <span class="bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Powder Day</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Real-time snow conditions, AI powder scores, and trip planning for 53 resorts across 11 regions.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" class="group inline-flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                    <span class="material-symbols-outlined">phone_iphone</span>
+                    Download on App Store
+                </a>
+                <a href="#" class="group inline-flex items-center gap-3 glass-card text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                    <span class="material-symbols-outlined">language</span>
+                    Try Web App
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-                <p>A Wyoming Limited Liability Company</p>
+    <!-- Stats Bar -->
+    <section class="relative z-10 -mt-20 pb-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-display font-bold text-blue-400">53</div>
+                        <div class="text-sm text-gray-400 mt-1">Resorts</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-display font-bold text-blue-400">11</div>
+                        <div class="text-sm text-gray-400 mt-1">Regions</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-display font-bold text-blue-400">8-Factor</div>
+                        <div class="text-sm text-gray-400 mt-1">Powder Score</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-display font-bold text-blue-400">7-Day</div>
+                        <div class="text-sm text-gray-400 mt-1">Forecasts</div>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="/shredders/privacy.html">Privacy Policy</a>
-                <a href="/shredders/support.html">Support</a>
-                <a href="/shredders/terms.html">Terms of Service</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">
+                    Everything You Need to
+                    <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Chase Powder</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">AI-powered tools to plan your perfect ski day, from real-time conditions to carpool coordination.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Real-Time Conditions -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">ac_unit</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Real-Time Conditions</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Live snow data for 53 resorts across WA, OR, ID, BC, UT, CO, CA, WY, MT, VT, and NM. Updated throughout the day.</p>
+                </div>
+
+                <!-- 8-Factor Powder Score -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">speed</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">8-Factor Powder Score</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">A 0-100 score combining snowfall, temperature, wind, base depth, and four more factors to tell you exactly how good the snow will be.</p>
+                </div>
+
+                <!-- AI Chat -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">smart_toy</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">AI Chat</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Ask Claude about current conditions, get personalized resort recommendations, and plan your trip with conversational AI.</p>
+                </div>
+
+                <!-- Trip Planning -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">map</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Trip Planning</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Road conditions, pass status, and carpool coordination all in one place. Know before you go.</p>
+                </div>
+
+                <!-- Social -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">group</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Social</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Check in at resorts, share photos, like and comment on friends' days. Build your ski crew community.</p>
+                </div>
+
+                <!-- Ski Trip Events -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">event</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Ski Trip Events</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Create ski day events with RSVP tracking and carpool coordination. Get the crew together effortlessly.</p>
+                </div>
+
+                <!-- iOS App + Widgets -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">widgets</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">iOS App + Widgets</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Native iOS app with home screen widgets showing powder scores and conditions at a glance.</p>
+                </div>
+
+                <!-- Weather Alerts -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400">notifications_active</span>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold mb-2">Weather Alerts</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Push notifications when powder scores spike. Get alerted for big storms and optimal conditions at your favorite resorts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Ready to Chase Powder?</h2>
+            <p class="text-gray-400 mb-10 max-w-xl mx-auto">Download the iOS app or try the web version. Real-time conditions and AI powder scores are waiting.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" class="inline-flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                    <span class="material-symbols-outlined">phone_iphone</span>
+                    Download on App Store
+                </a>
+                <a href="#" class="inline-flex items-center gap-3 glass-card text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                    <span class="material-symbols-outlined">language</span>
+                    Try Web App
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <a href="../" class="font-display font-bold text-lg text-white">PookieB</a>
+                    <p class="text-sm text-gray-500 mt-2">AI-powered tools for the modern world.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm text-gray-300 mb-3">Shredders</h4>
+                    <div class="space-y-2">
+                        <a href="#features" class="block text-sm text-gray-500 hover:text-blue-400 transition-colors">Features</a>
+                        <a href="support.html" class="block text-sm text-gray-500 hover:text-blue-400 transition-colors">Support</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm text-gray-300 mb-3">Legal</h4>
+                    <div class="space-y-2">
+                        <a href="terms.html" class="block text-sm text-gray-500 hover:text-blue-400 transition-colors">Terms of Service</a>
+                        <a href="privacy.html" class="block text-sm text-gray-500 hover:text-blue-400 transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-sm text-gray-600">&copy; 2026 PookieB. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('#features .glass-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>

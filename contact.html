@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PookieB</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        accent: '#ec4899',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-x-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="font-display font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    PookieB
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/products.html" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Products</a>
+                    <a href="/about.html" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">About</a>
+                    <a href="/contact.html" class="text-white text-sm font-medium">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10">
+            <div class="px-4 py-3 space-y-2">
+                <a href="/products.html" class="block py-2 text-gray-300 hover:text-white transition-colors text-sm">Products</a>
+                <a href="/about.html" class="block py-2 text-gray-300 hover:text-white transition-colors text-sm">About</a>
+                <a href="/contact.html" class="block py-2 text-white text-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute top-20 left-1/3 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/3 w-80 h-80 bg-pink-600/15 rounded-full blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
+                Get in <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                We'd love to hear from you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Email -->
+                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined text-primary text-3xl">mail</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2">Email</h3>
+                    <a href="mailto:contact@pookieb.com" class="text-gray-400 hover:text-white transition-colors">
+                        contact@pookieb.com
+                    </a>
+                </div>
+                <!-- Address -->
+                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-500/20 flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined text-accent text-3xl">location_on</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2">Address</h3>
+                    <p class="text-gray-400">
+                        30 N Gould St Ste N<br>
+                        Sheridan, WY 82801
+                    </p>
+                </div>
+                <!-- Support -->
+                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined text-blue-400 text-3xl">headset_mic</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2">Support</h3>
+                    <p class="text-gray-400">Visit product support pages for app-specific help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+                <h2 class="font-display text-3xl font-bold mb-8 text-center">Send Us a Message</h2>
+                <form action="#" method="POST" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            placeholder="Your name"
+                        >
+                    </div>
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            placeholder="you@example.com"
+                        >
+                    </div>
+                    <!-- Subject -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        >
+                            <option value="" disabled selected class="bg-gray-900">Select a subject</option>
+                            <option value="general" class="bg-gray-900">General Inquiry</option>
+                            <option value="feedback" class="bg-gray-900">Feedback</option>
+                            <option value="support" class="bg-gray-900">Support</option>
+                            <option value="partnership" class="bg-gray-900">Partnership</option>
+                            <option value="other" class="bg-gray-900">Other</option>
+                        </select>
+                    </div>
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                            placeholder="Tell us what's on your mind..."
+                        ></textarea>
+                    </div>
+                    <!-- Submit -->
+                    <div class="text-center pt-2">
+                        <button
+                            type="submit"
+                            class="px-10 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-950"
+                        >
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Support Links -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-display text-3xl font-bold text-center mb-4">Product Support</h2>
+            <p class="text-gray-400 text-center mb-10 text-lg">Need help with a specific product? Visit its support page.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="/smartspender/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">account_balance_wallet</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">SmartSpender</span>
+                </a>
+                <a href="/shredders/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">downhill_skiing</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Shredders</span>
+                </a>
+                <a href="/news/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">newspaper</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">News</span>
+                </a>
+                <a href="/daybyday/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">calendar_month</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">DayByDay</span>
+                </a>
+                <a href="/harmony/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">music_note</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Harmony</span>
+                </a>
+                <a href="/wilco/support.html" class="glass-card rounded-xl p-4 text-center transition-all duration-300 group">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform">flight_takeoff</span>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Wilco</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-display text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="glass-card rounded-xl group" open>
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-display font-semibold text-lg">Are your apps free?</span>
+                        <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                        Many of our apps offer a free tier with core functionality. Some products have premium
+                        features available through subscriptions or one-time purchases. Check each product page
+                        for specific pricing details.
+                    </div>
+                </details>
+                <!-- FAQ 2 -->
+                <details class="glass-card rounded-xl group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-display font-semibold text-lg">Where are you based?</span>
+                        <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                        ACL Solutions LLC is registered in Sheridan, Wyoming. Our team works remotely across
+                        the United States, building and supporting our products from wherever we do our best work.
+                    </div>
+                </details>
+                <!-- FAQ 3 -->
+                <details class="glass-card rounded-xl group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="font-display font-semibold text-lg">How do I report a bug?</span>
+                        <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+                        You can report bugs by emailing <a href="mailto:contact@pookieb.com" class="text-primary hover:text-purple-300 transition-colors">contact@pookieb.com</a>
+                        with the subject line "Bug Report" and a description of the issue, or visit the support page
+                        for the specific product. Please include your device, OS version, and steps to reproduce the issue.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="/" class="font-display font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        PookieB
+                    </a>
+                    <p class="text-gray-500 text-sm mt-3">AI-powered apps for everyday life.</p>
+                </div>
+                <!-- Products -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Products</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/smartspender/" class="text-gray-400 hover:text-white transition-colors">SmartSpender</a></li>
+                        <li><a href="/shredders/" class="text-gray-400 hover:text-white transition-colors">Shredders</a></li>
+                        <li><a href="/news/" class="text-gray-400 hover:text-white transition-colors">News</a></li>
+                        <li><a href="/daybyday/" class="text-gray-400 hover:text-white transition-colors">DayByDay</a></li>
+                        <li><a href="/harmony/" class="text-gray-400 hover:text-white transition-colors">Harmony</a></li>
+                        <li><a href="/wilco/" class="text-gray-400 hover:text-white transition-colors">Wilco</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
