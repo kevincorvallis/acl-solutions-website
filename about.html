@@ -1,279 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About PookieB | ACL Solutions LLC</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#8b5cf6',
-                        accent: '#ec4899',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.12);
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | PookieB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: { primary: { DEFAULT: '#8b5cf6', dark: '#6d28d9' }, sunset: '#f97316', amber: '#fbbf24' },
+    fontFamily: { "headline": ["Sora","sans-serif"], "body": ["DM Sans","sans-serif"], "label": ["Space Grotesk","sans-serif"] },
+    borderRadius: { "DEFAULT":"0.5rem", "lg":"1rem", "xl":"1.5rem", "full":"9999px" }
+  }}
+}
+</script>
+<style>
+.glass-card { background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.sunset-text { background: linear-gradient(135deg, #8b5cf6, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grain { position: relative; }
+.grain::before { content:''; position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events:none; z-index:1; }
+</style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
+<body class="bg-zinc-950 text-zinc-100 font-body antialiased grain">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-x-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="font-display font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    PookieB
-                </a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="/products.html" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Products</a>
-                    <a href="/about.html" class="text-white text-sm font-medium">About</a>
-                    <a href="/contact.html" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10">
-            <div class="px-4 py-3 space-y-2">
-                <a href="/products.html" class="block py-2 text-gray-300 hover:text-white transition-colors text-sm">Products</a>
-                <a href="/about.html" class="block py-2 text-white text-sm">About</a>
-                <a href="/contact.html" class="block py-2 text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
-            </div>
-        </div>
-    </nav>
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<a href="/" class="text-2xl font-extrabold font-headline sunset-text tracking-tight">PookieB</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm text-zinc-400 hover:text-white transition-colors" href="/products.html">Products</a>
+<a class="text-sm text-white font-semibold" href="/about.html">About</a>
+<a class="text-sm text-zinc-400 hover:text-white transition-colors" href="/contact.html">Contact</a>
+</div>
+</div>
+</div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
-        <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-pink-600/15 rounded-full blur-3xl"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                About <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">PookieB</span>
-            </h1>
-            <p class="text-xl sm:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                Small team. Big ideas. AI-powered apps for everyday life.
-            </p>
-        </div>
-    </section>
+<main class="pt-32">
 
-    <!-- Our Story -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <div class="glass-card rounded-2xl p-8 sm:p-12">
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Our Story</h2>
-                    <div class="space-y-4 text-gray-400 text-lg leading-relaxed">
-                        <p>
-                            <span class="text-white font-semibold">PookieB</span> is the consumer brand of
-                            <span class="text-white font-semibold">ACL Solutions LLC</span>, a software company
-                            founded in <span class="text-white font-semibold">Wyoming in 2025</span>.
-                        </p>
-                        <p>
-                            We build AI-powered applications that simplify everyday tasks. From managing your finances
-                            to planning your next ski trip, our apps combine cutting-edge artificial intelligence with
-                            thoughtful design to create tools that genuinely help people in their daily lives.
-                        </p>
-                        <p>
-                            We believe the best technology is the kind you barely notice. It just works, quietly
-                            making things easier, faster, and more enjoyable.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="py-24 max-w-6xl mx-auto px-6 lg:px-8">
+<h1 class="text-7xl md:text-9xl font-extrabold font-headline tracking-tight leading-[0.9]">
+We're <span class="sunset-text">PookieB.</span>
+</h1>
+</section>
 
-    <!-- Values -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-display text-3xl sm:text-4xl font-bold text-center mb-12">Our Values</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- AI for Everyone -->
-                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold mb-3">AI for Everyone</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Artificial intelligence should be accessible, intuitive, and genuinely useful. We design
-                        our apps so anyone can benefit from AI without needing to understand how it works.
-                    </p>
-                </div>
-                <!-- Quality Over Quantity -->
-                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-pink-500/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="material-symbols-outlined text-accent text-3xl">diamond</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold mb-3">Quality Over Quantity</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        We would rather ship one exceptional product than ten mediocre ones. Every feature is
-                        carefully crafted, tested, and polished before it reaches your hands.
-                    </p>
-                </div>
-                <!-- Privacy First -->
-                <div class="glass-card rounded-2xl p-8 text-center transition-all duration-300">
-                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="material-symbols-outlined text-blue-400 text-3xl">shield_lock</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold mb-3">Privacy First</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Your data belongs to you. We collect only what we need, encrypt everything in transit
-                        and at rest, and never sell your information to third parties.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="py-20 max-w-4xl mx-auto px-6 lg:px-8">
+<p class="text-2xl md:text-3xl text-zinc-300 leading-relaxed font-light">
+We started building apps because we couldn't find the ones we wanted. A ski trip planner that actually tracked powder. A finance app that spoke plain English. A journaling app worth opening every day. So we built them.
+</p>
+<p class="text-2xl md:text-3xl text-zinc-300 leading-relaxed font-light mt-8">
+Six products later, we're still a small team in <span class="text-orange-400 font-medium">Los Angeles</span> shipping things we use ourselves.
+</p>
+</section>
 
-    <!-- Stats -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-2xl p-8 sm:p-12">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <div class="font-display text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">6</div>
-                        <div class="text-gray-400 text-sm sm:text-base">Products</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">200+</div>
-                        <div class="text-gray-400 text-sm sm:text-base">API Endpoints</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">53</div>
-                        <div class="text-gray-400 text-sm sm:text-base">Ski Resorts</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">iOS + Web</div>
-                        <div class="text-gray-400 text-sm sm:text-base">Platforms</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="py-24 border-y border-white/5">
+<div class="max-w-6xl mx-auto px-6 lg:px-8">
+<div class="grid md:grid-cols-3 gap-16">
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4">AI that doesn't suck.</h3>
+<p class="text-zinc-400 leading-relaxed">We use AI to make things genuinely better, not to slap a chatbot on everything. If AI doesn't improve the experience, we don't ship it.</p>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4">Design is the product.</h3>
+<p class="text-zinc-400 leading-relaxed">If it doesn't feel good to use, it doesn't ship. We sweat the details because that's the difference between software people tolerate and software people love.</p>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4">Your data, your call.</h3>
+<p class="text-zinc-400 leading-relaxed">We collect the minimum. We never sell it. Period. Every product is built with privacy as a constraint, not an afterthought.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Tech Stack -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Tech Stack</h2>
-            <p class="text-gray-400 mb-10 text-lg">The tools and technologies powering our products.</p>
-            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">AWS</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Python</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Swift</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Next.js</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">React</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Node.js</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Claude AI</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">GPT-4</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Supabase</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">DynamoDB</span>
-                <span class="px-4 py-2 rounded-full glass-card text-sm font-medium text-gray-300">Vercel</span>
-            </div>
-        </div>
-    </section>
+<section class="py-24 max-w-6xl mx-auto px-6 lg:px-8">
+<p class="text-sm font-label text-zinc-500 uppercase tracking-widest mb-8">What we build with</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">AWS</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Python</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Swift</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Next.js</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">React</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Node.js</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Claude</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">GPT-4</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Supabase</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">DynamoDB</span>
+<span class="px-4 py-2 bg-white/5 rounded-lg text-sm text-zinc-400 font-label border border-white/5">Vercel</span>
+</div>
+</section>
 
-    <!-- Contact Info -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-2xl p-8 sm:p-12 text-center max-w-2xl mx-auto">
-                <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Get in Touch</h2>
-                <div class="space-y-4 text-gray-400">
-                    <div class="flex items-center justify-center gap-3">
-                        <span class="material-symbols-outlined text-primary">mail</span>
-                        <a href="mailto:contact@pookieb.com" class="text-gray-300 hover:text-white transition-colors">contact@pookieb.com</a>
-                    </div>
-                    <div class="flex items-center justify-center gap-3">
-                        <span class="material-symbols-outlined text-primary">location_on</span>
-                        <span class="text-gray-300">30 N Gould St Ste N, Sheridan, WY 82801</span>
-                    </div>
-                </div>
-                <a href="/contact.html" class="inline-block mt-8 px-8 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold hover:opacity-90 transition-opacity">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="py-16 border-y border-white/5">
+<div class="max-w-6xl mx-auto px-6 lg:px-8">
+<p class="text-xl md:text-2xl text-zinc-500 font-light">
+<span class="text-zinc-200 font-medium">6 products.</span>
+<span class="text-zinc-200 font-medium">200+ API endpoints.</span>
+<span class="text-zinc-200 font-medium">53 ski resorts tracked.</span>
+All on iOS and web.
+</p>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div>
-                    <a href="/" class="font-display font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        PookieB
-                    </a>
-                    <p class="text-gray-500 text-sm mt-3">AI-powered apps for everyday life.</p>
-                </div>
-                <!-- Products -->
-                <div>
-                    <h4 class="font-display font-semibold text-white mb-4">Products</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/smartspender/" class="text-gray-400 hover:text-white transition-colors">SmartSpender</a></li>
-                        <li><a href="/shredders/" class="text-gray-400 hover:text-white transition-colors">Shredders</a></li>
-                        <li><a href="/news/" class="text-gray-400 hover:text-white transition-colors">News</a></li>
-                        <li><a href="/daybyday/" class="text-gray-400 hover:text-white transition-colors">DayByDay</a></li>
-                        <li><a href="/harmony/" class="text-gray-400 hover:text-white transition-colors">Harmony</a></li>
-                        <li><a href="/wilco/" class="text-gray-400 hover:text-white transition-colors">Wilco</a></li>
-                    </ul>
-                </div>
-                <!-- Company -->
-                <div>
-                    <h4 class="font-display font-semibold text-white mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Legal -->
-                <div>
-                    <h4 class="font-display font-semibold text-white mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/10 pt-8 text-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 ACL Solutions LLC. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<section class="py-32 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+<h2 class="text-4xl font-bold font-headline mb-8">Say hi.</h2>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+<a href="mailto:contact@pookieb.com" class="text-lg text-zinc-200 hover:text-orange-400 transition-colors">contact@pookieb.com</a>
+<span class="hidden sm:block text-zinc-700">|</span>
+<span class="text-lg text-zinc-500">Los Angeles, CA</span>
+</div>
+</section>
 
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+</main>
+
+<footer class="border-t border-white/5 bg-zinc-950">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+<div class="col-span-2 md:col-span-1">
+<span class="text-xl font-extrabold font-headline sunset-text">PookieB</span>
+<p class="text-sm text-zinc-600 mt-3">Built in Los Angeles.</p>
+</div>
+<div>
+<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Products</h4>
+<ul class="space-y-3">
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/smartspender/">SmartSpender</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/shredders/">Shredders</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/news/">News Daily</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/daybyday/">DayByDay</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/harmony/">Harmony Tracker</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/wilco/">Wilco</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/about.html">About</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/privacy.html">Privacy</a></li>
+<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 mt-12 pt-8 text-center text-xs text-zinc-700">&copy; 2025 ACL Solutions LLC</div>
+</div>
+</footer>
 
 </body>
 </html>
