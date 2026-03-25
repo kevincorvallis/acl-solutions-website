@@ -1,266 +1,235 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PookieB — Apps People Actually Love</title>
-<meta name="description" content="Six AI-powered products. Built in LA. Used everywhere.">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: { extend: {
-    colors: { primary: { DEFAULT: '#8b5cf6', dark: '#6d28d9' }, sunset: '#f97316', amber: '#fbbf24' },
-    fontFamily: { "headline": ["Sora","sans-serif"], "body": ["DM Sans","sans-serif"], "label": ["Space Grotesk","sans-serif"] },
-    borderRadius: { "DEFAULT":"0.5rem", "lg":"1rem", "xl":"1.5rem", "full":"9999px" }
-  }}
-}
-</script>
+<title>PookieB</title>
+<meta name="description" content="Six AI-powered products. Built in Los Angeles.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-.glass-card { background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
-.glass-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.14); }
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.sunset-text { background: linear-gradient(135deg, #8b5cf6, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.sunset-btn { background: linear-gradient(135deg, #8b5cf6, #7c3aed, #f97316); }
-.sunset-btn:hover { background: linear-gradient(135deg, #a78bfa, #8b5cf6, #fb923c); transform: translateY(-1px); box-shadow: 0 12px 40px rgba(249,115,22,0.2); }
-.grain { position: relative; }
-.grain::before { content:''; position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events:none; z-index:1; }
-.product-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
-.product-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
-.product-card:hover .card-arrow { transform: translateX(6px); }
-.card-arrow { transition: transform 0.3s ease; }
-@keyframes warmPulse { 0%,100% { opacity:0.15; transform:scale(1); } 50% { opacity:0.25; transform:scale(1.05); } }
-@keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
-.anim-1 { animation: fadeUp 0.9s ease-out forwards; }
-.anim-2 { animation: fadeUp 0.9s ease-out 0.15s forwards; opacity:0; }
-.anim-3 { animation: fadeUp 0.9s ease-out 0.3s forwards; opacity:0; }
-.anim-4 { animation: fadeUp 0.9s ease-out 0.45s forwards; opacity:0; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: #000; color: #fff; font-family: 'DM Sans', system-ui, sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; }
+.label { font-family: 'Space Grotesk', monospace; }
+
+/* Sunset gradient for brand */
+.sunset { background: linear-gradient(135deg, #8b5cf6, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Nav */
+nav { position: fixed; top: 0; width: 100%; z-index: 50; padding: 1.25rem 2rem; transition: background 0.3s; }
+nav.scrolled { background: rgba(0,0,0,0.85); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.06); }
+nav .inner { max-width: 80rem; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+nav a.logo { font-family: 'Sora'; font-weight: 800; font-size: 1.5rem; text-decoration: none; }
+nav .links { display: flex; gap: 2rem; align-items: center; }
+nav .links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+nav .links a:hover { color: #fff; }
+@media (max-width: 768px) { nav .links { display: none; } }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 2rem; }
+.hero h1 { font-size: clamp(3rem, 8vw, 8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 1.5rem; }
+.hero p { color: rgba(255,255,255,0.4); font-size: clamp(1rem, 2vw, 1.375rem); max-width: 32rem; line-height: 1.6; }
+.hero .buttons { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center; }
+.hero .buttons a { padding: 0.875rem 2rem; border-radius: 980px; font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+.hero .btn-primary { background: #fff; color: #000; }
+.hero .btn-primary:hover { background: rgba(255,255,255,0.85); }
+.hero .btn-secondary { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); }
+.hero .btn-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.15); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'Space Grotesk'; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+/* Product sections */
+.product { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2rem; position: relative; }
+.product .content { max-width: 80rem; margin: 0 auto; width: 100%; }
+.product h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 1.25rem; }
+.product .sub { color: rgba(255,255,255,0.4); font-size: clamp(1rem, 1.5vw, 1.25rem); max-width: 28rem; line-height: 1.6; margin-bottom: 2rem; }
+.product .pill { display: inline-block; padding: 0.375rem 1rem; border-radius: 980px; font-size: 0.75rem; font-family: 'Space Grotesk'; letter-spacing: 0.03em; margin-bottom: 2rem; }
+.product .cta { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.125rem; font-weight: 600; text-decoration: none; transition: gap 0.3s, opacity 0.2s; }
+.product .cta:hover { gap: 0.875rem; }
+.product .cta-row { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem; }
+.product .cta-small { font-size: 0.875rem; padding: 0.625rem 1.5rem; border-radius: 980px; text-decoration: none; font-weight: 500; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+.product .cta-small:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+.product.right .content { text-align: right; }
+.product.right .sub { margin-left: auto; }
+@media (max-width: 768px) { .product.right .content { text-align: left; } .product.right .sub { margin-left: 0; } }
+
+/* Glow edges */
+.glow-l::before, .glow-r::before { content: ''; position: absolute; top: 50%; width: 300px; height: 300px; border-radius: 50%; filter: blur(120px); opacity: 0.08; pointer-events: none; }
+.glow-l::before { left: -100px; transform: translateY(-50%); }
+.glow-r::before { right: -100px; transform: translateY(-50%); }
+.glow-indigo::before { background: #6366f1; }
+.glow-blue::before { background: #3b82f6; }
+.glow-amber::before { background: #f59e0b; }
+.glow-emerald::before { background: #10b981; }
+.glow-rose::before { background: #f43f5e; }
+.glow-sky::before { background: #0ea5e9; }
+
+/* Product accent colors */
+.text-indigo { color: #818cf8; } .pill-indigo { background: rgba(99,102,241,0.15); color: #818cf8; }
+.text-blue { color: #60a5fa; } .pill-blue { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.text-amber { color: #fbbf24; } .pill-amber { background: rgba(245,158,11,0.15); color: #fbbf24; }
+.text-emerald { color: #34d399; } .pill-emerald { background: rgba(16,185,129,0.15); color: #34d399; }
+.text-rose { color: #fb7185; } .pill-rose { background: rgba(244,63,94,0.15); color: #fb7185; }
+.text-sky { color: #38bdf8; } .pill-sky { background: rgba(14,165,233,0.15); color: #38bdf8; }
+
+/* Closer */
+.closer { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 2rem; }
+.closer h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2rem; }
+.closer a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 1.25rem; transition: color 0.2s; }
+.closer a:hover { color: #fff; }
+
+/* Divider */
+.divider { height: 1px; background: rgba(255,255,255,0.06); max-width: 80rem; margin: 0 auto; }
+
+/* Footer */
+footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+footer .inner { max-width: 80rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
+footer .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.8125rem; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+footer .copy { color: rgba(255,255,255,0.15); font-size: 0.75rem; }
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-body antialiased grain">
+<body>
 
-<!-- Nav -->
-<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl border-b border-white/5">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="flex items-center justify-between h-16">
-<a href="/" class="text-2xl font-extrabold font-headline sunset-text tracking-tight">PookieB</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-sm text-zinc-400 hover:text-white transition-colors" href="/products.html">Products</a>
-<a class="text-sm text-zinc-400 hover:text-white transition-colors" href="/about.html">About</a>
-<a class="text-sm text-zinc-400 hover:text-white transition-colors" href="/contact.html">Contact</a>
+<nav id="nav">
+<div class="inner">
+<a href="/" class="logo sunset">PookieB</a>
+<div class="links">
+<a href="/products.html">Products</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
 </div>
-<button id="mob-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" onclick="document.getElementById('mob-menu').classList.toggle('hidden');this.querySelector('span').textContent=this.querySelector('span').textContent==='menu'?'close':'menu'">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-<div id="mob-menu" class="hidden md:hidden border-t border-white/5 px-6 py-4 space-y-2">
-<a class="block py-2 text-sm text-zinc-300 hover:text-white" href="/products.html">Products</a>
-<a class="block py-2 text-sm text-zinc-300 hover:text-white" href="/about.html">About</a>
-<a class="block py-2 text-sm text-zinc-300 hover:text-white" href="/contact.html">Contact</a>
 </div>
 </nav>
 
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center overflow-hidden">
-<div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-<div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-purple-600/20 blur-[160px]" style="animation:warmPulse 12s ease-in-out infinite"></div>
-<div class="absolute bottom-1/4 right-1/5 w-[500px] h-[500px] rounded-full bg-orange-500/15 blur-[140px]" style="animation:warmPulse 16s ease-in-out infinite 3s"></div>
-<div class="absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full bg-amber-400/10 blur-[120px]" style="animation:warmPulse 20s ease-in-out infinite 6s"></div>
+<section class="hero">
+<h1 class="reveal">We make apps<br>people actually <span class="sunset">love.</span></h1>
+<p class="reveal reveal-delay-1">Six AI-powered products. Built in Los Angeles.</p>
+<div class="buttons reveal reveal-delay-2">
+<a href="#smartspender" class="btn-primary">See our work ↓</a>
+<a href="/about.html" class="btn-secondary">About us</a>
 </div>
-
-<div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pt-32 pb-24">
-<p class="font-label text-sm font-medium tracking-[0.25em] uppercase text-orange-400 mb-8 anim-1">Los Angeles, CA</p>
-<h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold font-headline leading-[0.9] tracking-tight mb-8 anim-2">
-We make apps<br>people actually<br><span class="sunset-text">love.</span>
-</h1>
-<p class="text-xl md:text-2xl text-zinc-400 max-w-xl leading-relaxed mb-12 anim-3">
-Six AI-powered products. Built in LA. Used everywhere.
-</p>
-<div class="flex flex-col sm:flex-row gap-4 anim-4">
-<a href="#products" class="sunset-btn inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold transition-all">
-See what we built <span class="material-symbols-outlined text-lg">south</span>
-</a>
-<a href="/about.html" class="glass-card inline-flex items-center gap-2 px-8 py-4 rounded-xl text-zinc-200 font-semibold transition-all">
-Who we are
-</a>
-</div>
-</div>
+<div class="scroll-hint">Scroll</div>
 </section>
 
-<!-- Products -->
-<section class="relative py-32" id="products">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="mb-20">
-<h2 class="text-5xl md:text-6xl font-extrabold font-headline mb-4">What we've built.</h2>
-<p class="text-zinc-500 text-lg">Six products, six real problems solved.</p>
+<!-- SmartSpender -->
+<div class="divider"></div>
+<section class="product glow-l glow-indigo" id="smartspender">
+<div class="content reveal">
+<span class="pill pill-indigo label">Finance · AI-Powered · Free</span>
+<h2>Your money,<br>decoded.</h2>
+<p class="sub">Ask questions in plain English. Get instant financial clarity. Track expenses, split bills, see where every dollar goes.</p>
+<a href="/smartspender/" class="cta text-indigo">Explore SmartSpender →</a>
 </div>
-
-<div class="grid md:grid-cols-2 gap-6">
-<!-- SmartSpender — wide -->
-<a href="/smartspender/" class="glass-card product-card rounded-2xl p-10 group block md:col-span-2">
-<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-<div class="flex-1">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">account_balance</span></div>
-<span class="text-xs font-label font-medium text-indigo-400 uppercase tracking-widest">Finance</span>
-</div>
-<h3 class="text-3xl font-bold font-headline mb-2">SmartSpender</h3>
-<p class="text-zinc-400 text-lg max-w-lg">Your money, decoded. Ask questions in plain English, track expenses, split bills — all powered by AI.</p>
-</div>
-<span class="text-zinc-500 group-hover:text-indigo-400 transition-colors"><span class="material-symbols-outlined text-4xl card-arrow">arrow_forward</span></span>
-</div>
-</a>
+</section>
 
 <!-- Shredders -->
-<a href="/shredders/" class="glass-card product-card rounded-2xl p-10 group block">
-<div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-blue-400">ac_unit</span></div>
-<span class="text-xs font-label font-medium text-blue-400 uppercase tracking-widest">Outdoors</span>
-<h3 class="text-2xl font-bold font-headline mt-3 mb-2">Shredders</h3>
-<p class="text-zinc-400">Never miss a powder day. 53 resorts, real-time conditions, AI chat.</p>
-<span class="inline-flex items-center gap-1 text-sm text-zinc-500 group-hover:text-blue-400 mt-6 transition-colors">Explore <span class="card-arrow">&rarr;</span></span>
-</a>
+<div class="divider"></div>
+<section class="product right glow-r glow-blue">
+<div class="content reveal">
+<span class="pill pill-blue label">Outdoors · iOS + Web</span>
+<h2>Never miss a<br>powder day.</h2>
+<p class="sub">Real-time conditions for 53 resorts. AI powder scores. Trip planning with your crew.</p>
+<a href="/shredders/" class="cta text-blue">Explore Shredders →</a>
+<div class="cta-row">
+<a href="https://apps.apple.com/app/powdertracker" target="_blank" rel="noopener" class="cta-small">App Store</a>
+<a href="https://shredders-bay.vercel.app" target="_blank" rel="noopener" class="cta-small">Web App</a>
+</div>
+</div>
+</section>
 
 <!-- News Daily -->
-<a href="/news/" class="glass-card product-card rounded-2xl p-10 group block">
-<div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-amber-400">newspaper</span></div>
-<span class="text-xs font-label font-medium text-amber-400 uppercase tracking-widest">Media</span>
-<h3 class="text-2xl font-bold font-headline mt-3 mb-2">News Daily</h3>
-<p class="text-zinc-400">News without the noise. 20+ sources, AI summaries, weekly podcast.</p>
-<span class="inline-flex items-center gap-1 text-sm text-zinc-500 group-hover:text-amber-400 mt-6 transition-colors">Explore <span class="card-arrow">&rarr;</span></span>
-</a>
+<div class="divider"></div>
+<section class="product glow-l glow-amber">
+<div class="content reveal">
+<span class="pill pill-amber label">Media · Cross-Platform</span>
+<h2>News without<br>the noise.</h2>
+<p class="sub">20+ sources. AI summaries. A weekly podcast generated entirely by AI.</p>
+<a href="/news/" class="cta text-amber">Explore News Daily →</a>
+</div>
+</section>
 
 <!-- DayByDay -->
-<a href="/daybyday/" class="glass-card product-card rounded-2xl p-10 group block">
-<div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-emerald-400">edit_note</span></div>
-<span class="text-xs font-label font-medium text-emerald-400 uppercase tracking-widest">Lifestyle</span>
-<h3 class="text-2xl font-bold font-headline mt-3 mb-2">DayByDay</h3>
-<p class="text-zinc-400">Write it down. Watch it grow. Social journaling with streaks and trips.</p>
-<span class="inline-flex items-center gap-1 text-sm text-zinc-500 group-hover:text-emerald-400 mt-6 transition-colors">Explore <span class="card-arrow">&rarr;</span></span>
-</a>
+<div class="divider"></div>
+<section class="product right glow-r glow-emerald">
+<div class="content reveal">
+<span class="pill pill-emerald label">Lifestyle · Social</span>
+<h2>Write it down.<br>Watch it grow.</h2>
+<p class="sub">Social journaling with streaks, trips, and friends who keep you accountable.</p>
+<a href="/daybyday/" class="cta text-emerald">Explore DayByDay →</a>
+</div>
+</section>
 
 <!-- Harmony Tracker -->
-<a href="/harmony/" class="glass-card product-card rounded-2xl p-10 group block">
-<div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-rose-400">favorite</span></div>
-<span class="text-xs font-label font-medium text-rose-400 uppercase tracking-widest">Relationships</span>
-<h3 class="text-2xl font-bold font-headline mt-3 mb-2">Harmony Tracker</h3>
-<p class="text-zinc-400">Love, with a little help from AI. Meet Nova, your relationship coach.</p>
-<span class="inline-flex items-center gap-1 text-sm text-zinc-500 group-hover:text-rose-400 mt-6 transition-colors">Explore <span class="card-arrow">&rarr;</span></span>
-</a>
-
-<!-- Wilco — wide -->
-<a href="/wilco/" class="glass-card product-card rounded-2xl p-10 group block md:col-span-2">
-<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-<div class="flex-1">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-xl bg-sky-500/20 flex items-center justify-center"><span class="material-symbols-outlined text-sky-400">flight</span></div>
-<span class="text-xs font-label font-medium text-sky-400 uppercase tracking-widest">Aviation</span>
-</div>
-<h3 class="text-3xl font-bold font-headline mb-2">Wilco</h3>
-<p class="text-zinc-400 text-lg max-w-lg">Roger that, student pilot. AI-powered ATC simulator with voice I/O and 20 training scenarios.</p>
-</div>
-<span class="text-zinc-500 group-hover:text-sky-400 transition-colors"><span class="material-symbols-outlined text-4xl card-arrow">arrow_forward</span></span>
-</div>
-</a>
-</div>
+<div class="divider"></div>
+<section class="product glow-l glow-rose">
+<div class="content reveal">
+<span class="pill pill-rose label">Relationships · iOS</span>
+<h2>Love, with a little<br>help from AI.</h2>
+<p class="sub">Meet Nova. Your AI relationship coach. Track habits, analyze conversations, grow together.</p>
+<a href="/harmony/" class="cta text-rose">Explore Harmony Tracker →</a>
 </div>
 </section>
 
-<!-- About Teaser -->
-<section class="py-32 relative">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="grid lg:grid-cols-5 gap-16 items-start">
-<div class="lg:col-span-3">
-<h2 class="text-5xl md:text-7xl font-extrabold font-headline leading-[0.95] mb-0">
-Small team.<br><span class="sunset-text">Los Angeles.</span><br>Six products.
-</h2>
-</div>
-<div class="lg:col-span-2 pt-4">
-<p class="text-zinc-400 text-lg leading-relaxed mb-8">
-We started building apps because we couldn't find the ones we wanted. A ski trip planner that actually tracked powder. A finance app that spoke plain English. So we built them ourselves.
-</p>
-<a href="/about.html" class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors">
-Our story <span class="material-symbols-outlined text-lg">arrow_forward</span>
-</a>
-</div>
-</div>
+<!-- Wilco -->
+<div class="divider"></div>
+<section class="product right glow-r glow-sky">
+<div class="content reveal">
+<span class="pill pill-sky label">Aviation · Training</span>
+<h2>Roger that,<br>student pilot.</h2>
+<p class="sub">AI-powered ATC simulator. Voice I/O. ICAO phraseology. 20 real training scenarios.</p>
+<a href="https://ai-atc-training.vercel.app" target="_blank" rel="noopener" class="cta text-sky">Start Training →</a>
 </div>
 </section>
 
-<!-- Stats -->
-<section class="py-16 border-y border-white/5">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<p class="text-center text-lg md:text-xl text-zinc-500 font-label tracking-wide">
-<span class="text-zinc-300">6 products</span> &bull;
-<span class="text-zinc-300">200+ APIs</span> &bull;
-<span class="text-zinc-300">53 ski resorts</span> &bull;
-<span class="text-zinc-300">iOS + Web</span>
-</p>
-</div>
-</section>
-
-<!-- Contact -->
-<section class="py-32">
-<div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-<h2 class="text-5xl md:text-6xl font-extrabold font-headline mb-6">Say hi.</h2>
-<p class="text-zinc-400 text-xl mb-10">We're friendly. Promise.</p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-<a href="mailto:contact@pookieb.com" class="flex items-center gap-3 text-lg text-zinc-200 hover:text-orange-400 transition-colors">
-<span class="material-symbols-outlined">mail</span> contact@pookieb.com
-</a>
-<span class="hidden sm:block text-zinc-700">|</span>
-<span class="flex items-center gap-3 text-lg text-zinc-500">
-<span class="material-symbols-outlined">location_on</span> Los Angeles, CA
-</span>
-</div>
-</div>
+<!-- Closer -->
+<div class="divider"></div>
+<section class="closer">
+<h2 class="reveal">Small team.<br><span class="sunset">Los Angeles.</span><br>Six products.</h2>
+<a href="mailto:contact@pookieb.com" class="reveal reveal-delay-1">contact@pookieb.com</a>
 </section>
 
 <!-- Footer -->
-<footer class="border-t border-white/5 bg-zinc-950">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-10">
-<div class="col-span-2 md:col-span-1">
-<span class="text-xl font-extrabold font-headline sunset-text">PookieB</span>
-<p class="text-sm text-zinc-600 mt-3">Built in Los Angeles.</p>
+<footer>
+<div class="inner">
+<div class="links">
+<a href="/smartspender/">SmartSpender</a>
+<a href="/shredders/">Shredders</a>
+<a href="/news/">News Daily</a>
+<a href="/daybyday/">DayByDay</a>
+<a href="/harmony/">Harmony</a>
+<a href="/wilco/">Wilco</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/terms.html">Terms</a>
 </div>
-<div>
-<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Products</h4>
-<ul class="space-y-3">
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/smartspender/">SmartSpender</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/shredders/">Shredders</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/news/">News Daily</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/daybyday/">DayByDay</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/harmony/">Harmony Tracker</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/wilco/">Wilco</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Company</h4>
-<ul class="space-y-3">
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/about.html">About</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-sm font-semibold font-label text-zinc-400 uppercase tracking-wider mb-4">Legal</h4>
-<ul class="space-y-3">
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/privacy.html">Privacy</a></li>
-<li><a class="text-sm text-zinc-600 hover:text-zinc-300 transition-colors" href="/terms.html">Terms</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t border-white/5 mt-12 pt-8 text-center text-xs text-zinc-700">&copy; 2025 ACL Solutions LLC</div>
+<span class="copy">© 2025 ACL Solutions LLC · Los Angeles</span>
 </div>
 </footer>
 
 <script>
-const o = new IntersectionObserver((e) => { e.forEach(el => { if(el.isIntersecting){el.target.style.opacity='1';el.target.style.transform='translateY(0)';o.unobserve(el.target)} }) }, {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.product-card').forEach((c,i) => { c.style.opacity='0'; c.style.transform='translateY(30px)'; c.style.transition=`opacity 0.7s ease ${i*0.08}s, transform 0.7s ease ${i*0.08}s`; o.observe(c); });
+// Reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Nav background on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 </script>
 
 </body>
